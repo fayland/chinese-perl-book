@@ -1,0 +1,9 @@
+
+=head1 NAME
+
+Book::Chinese::BeACPANTester  - Be a CPAN Tester
+
+=head1 DESCRIPTION
+
+本章主要描述如何配置CPAN和成为一个CPAN测试者
+
