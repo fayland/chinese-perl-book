@@ -7,9 +7,59 @@ Book::Chinese::BeACPANTester - Be a CPAN Tester
 
 本章主要描述如何配置 CPAN 和成为一个 CPAN 测试者
 
+=head2 配置 CPAN
+
+当你安装 Perl 完毕之后，在命令行状态下输入
+
+    $ cpan
+
+会出现类似如下的东西
+
+    E:\Fayland\chinese-perl-book>cpan
+    
+    cpan shell -- CPAN exploration and modules installation (v1.94)
+    ReadLine support enabled
+    
+    
+    cpan>
+
+这将表明您已经成功安装了 CPAN 模块。
+
+=head3 配置 CPAN
+
+在 cpan> 模式下输入
+
+    cpan> o conf init
+
+将重新配置 CPAN 设置
+
+=head3 安装模块
+
+    cpan> install Moose
+
+将开始安装或者升级模块。在安装过程中您将可能遇到以下问题：
+
+=over 4
+
+=item * Win32 下没有 make
+
+如果您安装的是 ActivePerl, 那建议你简单下载 nmake L<http://download.microsoft.com/download/vc15/Patch/1.52/W95/EN-US/Nmake15.exe>
+
+个人建议您安装 L<http://strawberryperl.com/|Strawberry Perl>, Strawberry Perl 自带 dmake
+
+=item * 我没有权限写公用目录，或者，我想拥有自己的安装目录
+
+请阅读 L<local::lib> 文档很简单而且很好用，推荐。
+
+=back
+
+=head2 CPAN 测试者
+
 =head1 SEE ALSO
 
 =over 4
+
+=item * L<CPAN>
 
 =item * L<CPAN::Reporter>
 
