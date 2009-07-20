@@ -1,21 +1,13 @@
 
 =head1 NAME
 
-Book::Chinese::BeACPANTester - Be a CPAN Tester
+Book::Chinese::BeACPANAuthor - Be a CPAN Author
 
 =head1 DESCRIPTION
 
-本章主要描述如何配置 CPAN 和成为一个 CPAN 测试者
+本章主要描述如何成为一个 CPAN 贡献者
 
 =head1 SEE ALSO
-
-=over 4
-
-=item * L<CPAN::Reporter>
-
-=item * L<CPAN::Reporter::FAQ>
-
-=back
 
 =head1 AUTHOR
 
