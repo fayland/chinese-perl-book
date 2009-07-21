@@ -1,0 +1,29 @@
+
+=head1 NAME
+
+Book::Chinese::Preface - Preface
+
+=head1 DESCRIPTION
+
+=over 4
+
+=item *
+
+本书含有错误。请不要职责水平有限的作者。谢绝漫骂，欢迎指正。
+
+=item *
+
+本书将很快过期。阅读模块自带的 POD 永远是最好的办法。
+
+=item *
+
+=back
+
+=head1 AUTHOR
+
+Fayland Lam, C<< <fayland at gmail.com> >>
+
+=head1 COPYRIGHT & LICENSE
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.

@@ -1,0 +1,49 @@
+
+=head1 NAME
+
+Book::Chinese::Guide - Guide
+
+=head1 DESCRIPTION
+
+=head2 建议
+
+个人浅见
+
+=over 4
+
+=item * 多写代码，多写文章
+
+读一本书仅仅读一次是没有多大用处的。只有编写代码一次，才有一半是你的。只有你用你自己的理解写出一篇文章，这才90%是你的。
+
+=back
+
+=head2 全文导读
+
+=over 4
+
+=item * L<Preface>
+
+=item * Guide
+
+=item * L<BeACPANTester>
+
+=item * L<BeACPANAuthor>
+
+=item * L<Moose>
+
+=item * L<DBIx::Class>
+
+=item * L<Template>
+
+=item * L<Catalyst>
+
+=back
+
+=head1 AUTHOR
+
+Fayland Lam, C<< <fayland at gmail.com> >>
+
+=head1 COPYRIGHT & LICENSE
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
