@@ -193,6 +193,56 @@ perl -d 相关模块
 
 通常我们不会将一个（或多个) pm 文件直接上传到 PAUSE, 默认的规则是打包成 .tar.gz 然后再上传。
 
+=head3 h2xs
+
+    > h2xs -AX -n Book::Chinese
+
+L<h2xs> 是最古老的创建新模块的工具。请参阅 h2xs 命令帮助。
+
+不建议使用。
+
+=head3 L<Module::Starter>
+
+    > cpan Module::Starter
+
+安装 L<Module::Starter> 完毕之后，perl bin 目录将有一个 L<module-starter> 可运行文件
+
+    > module-starter --module=Book::Chinese --author="Fayland Lam" --email=fayland@gmail.com
+
+默认使用 L<ExtUtils::MakeMaker> 作为 builder, 可以后面再带 '--mb' 使用 L<Module::Build> 或者带 '--mi' 来使用 L<Module::Install> 作为 builder
+
+L<ExtUtils::MakeMaker> 是最古老和使用最广的 builder 模块。它需要和 make 配合来打包模块。
+
+    > perl Makefile.PL
+    > make
+    > make manifest
+    > make test
+    > make dist
+
+L<Module::Build> 是用来代替 L<ExtUtils::MakeMaker> 的。它不需要 make, 可用 Perl 来完成打包工作。
+
+    > perl Build.PL
+    > perl Build
+    > perl Build manifest
+    > perl Build test
+    > perl Build dist
+
+L<Module::Install> 的打包方法和 L<ExtUtils::MakeMaker> 一样（需要 make 配合）。但不同之处在于
+
+=over 4
+
+=item * 可扩展，拥有丰富的插件
+
+=item * 当 make dist 的时候，所有的 Module::Install 和它的插件文件将被放入 inc 目录随包一起打包成 tar.gz
+
+=back
+
+个人建议使用 L<Module::Build> 或 L<Module::Install>
+
+=head3 L<Dist::Zilla>
+
+    > cpan Dist::Zilla
+
 =head1 SEE ALSO
 
 =head1 AUTHOR
