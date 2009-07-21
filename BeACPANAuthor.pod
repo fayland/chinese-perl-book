@@ -7,6 +7,18 @@ Book::Chinese::BeACPANAuthor - Be a CPAN Author
 
 本章主要描述如何成为一个 CPAN 贡献者
 
+您有一个非常好的模块，您想与整个 Perl 社区贡献。最好的方式是将您的模块上传到 CPAN, 本章将描述如何打包，上传您的模块和一些 CPAN 社区的约定俗成。
+
+=head2 PAUSE
+
+上传模块到 CPAN 您首先需要到 L<http://pause.perl.org/|PAUSE> 申请一个帐号。通常帐号会在一周之内被批准（因为是志愿者自愿维护和批准整个 PAUSE 网站，所以有点慢）。
+
+上传模块将在您通过帐号批准之后，登录 PAUSE 网站，然后点击左侧的 'Upload a file to CPAN' 来上传您的打包文件。
+
+=head2 如何打包模块
+
+
+
 =head1 SEE ALSO
 
 =head1 AUTHOR

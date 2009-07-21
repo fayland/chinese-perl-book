@@ -51,9 +51,25 @@ Book::Chinese::BeACPANTester - Be a CPAN Tester
 
 请阅读 L<local::lib> 文档很简单而且很好用，推荐。
 
+=item * 测试无法通过，但是我想强制安装
+
+    cpan> force install Catalyst
+
+=item * 我想手工运行 perl Makefile.PL
+
+    cpan> look DBIx::Class
+
 =back
 
 =head2 CPAN 测试者
+
+成为一个 CPAN 测试者是对 Perl 社区最快速的贡献办法之一。
+
+    cpan> install CPAN::Reporter
+    cpan> reload cpan
+    cpan> o conf init test_report
+
+这就是成为一个 CPAN 测试者您说需要的所有动作。
 
 =head1 SEE ALSO
 
