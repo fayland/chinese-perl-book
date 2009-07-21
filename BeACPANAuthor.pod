@@ -15,9 +15,109 @@ Book::Chinese::BeACPANAuthor - Be a CPAN Author
 
 上传模块将在您通过帐号批准之后，登录 PAUSE 网站，然后点击左侧的 'Upload a file to CPAN' 来上传您的打包文件。
 
+=head2 如何选择一个模块名
+
+为了更好更清晰的组织 CPAN 上的所有包，您需要准确的命名您的模块。通常请不要给你的模块取最顶层的名字（不带 :: 的包名），和谐的做法是至于某个顶层命名空间下。（当然，如果您觉得您的包将非常有用和流行的话，使用顶层名字也是可以的）
+
+=over 4
+
+=item * Acme:: 
+
+大部分（非全部）的 Acme:: 模块是给人取乐，不成熟或试验的代码，不建议使用在 product 环境的代码
+
+=item * Algorithm::
+
+算法模块
+
+=item * Alien::
+
+外部程序安装文件
+
+=item * Apache::
+
+Apache mod_perl 相关文件
+
+=item * App::
+
+带有可运行脚本的包
+
+=item * Archive::
+
+=item * Audio::
+
+=item * Authen::
+
+=item * B::
+
+perl5 core 相关模块
+
+=item * Bio::
+
+=item * Bundle::
+
+老式模块合集文件，建议使用 Task::
+
+=item * Buniess::
+
+国家商业相关模块。类如信用卡，在线支付，身份证等相关
+
+=item * Cache::
+
+=item * Catalyst::, CatalystX::
+
+=item * CGI::
+
+=item * Class::
+
+=item * Crypt::
+
+=item * Data::
+
+=item * Date::, DateTime::
+
+=item * DBIx::
+
+DBI 扩展模块
+
+=item * Devel::
+
+perl -d 相关模块
+
+=item * Digest::
+
+=item * Email::
+
+邮件相关
+
+=item * ExtUtils::
+
+模块安装相关工具
+
+=item * File::
+
+文件操作相关
+
+=item * Finance::
+
+银行，股票等
+
+=item * Games::
+
+=item * Geo::
+
+地理位置相关
+
+=item * Graph::, Graphics::
+
+=item * HTML::
+
+=item * HTTP::
+
+=back
+
 =head2 如何打包模块
 
-
+通常我们不会将一个（或多个) pm 文件直接上传到 PAUSE, 默认的规则是打包成 .tar.gz 然后再上传。
 
 =head1 SEE ALSO
 
