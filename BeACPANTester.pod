@@ -71,6 +71,24 @@ Book::Chinese::BeACPANTester - Be a CPAN Tester
 
 这就是成为一个 CPAN 测试者您说需要的所有动作。
 
+=head2 CPAN 相关网站
+
+=over 4
+
+=item * L<http://search.cpan.org/>
+
+查找 CPAN 模块最好的地方。建议订阅 RSS
+
+=item * L<http://cpants.perl.org/>
+
+很多很好的服务类如 L<http://cpants.perl.org/dist/used_by/Moose>
+
+=item * L<http://www.cpantesters.org/>
+
+CPAN 测试者网站
+
+=back
+
 =head1 SEE ALSO
 
 =over 4
