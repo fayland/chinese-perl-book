@@ -17,7 +17,9 @@ Book::Chinese::BeACPANAuthor - Be a CPAN Author
 
 =head2 如何选择一个模块名
 
-为了更好更清晰的组织 CPAN 上的所有包，您需要准确的命名您的模块。通常请不要给你的模块取最顶层的名字（不带 :: 的包名），和谐的做法是至于某个顶层命名空间下。（当然，如果您觉得您的包将非常有用和流行的话，使用顶层名字也是可以的）
+为了更好更清晰的组织 CPAN 上的所有包，您需要准确的命名您的模块。
+
+通常请不要给你的模块取最顶层的名字（不带 :: 的包名），和谐的做法是至于某个顶层命名空间下。（当然，如果您觉得您的包将非常有用和流行的话，使用顶层名字也是可以的）
 
 =over 4
 
@@ -85,7 +87,7 @@ perl -d 相关模块
 
 =item * Digest::
 
-=item * Email::
+=item * Email::, Mail::
 
 邮件相关
 
@@ -113,7 +115,79 @@ perl -d 相关模块
 
 =item * HTTP::
 
+=item * Image::
+
+=item * Inline::
+
+=item * IO::
+
+=item * IPC::
+
+=item * JavaScript::, JS::, JSON::
+
+=item * Jifty::
+
+=item * Language::
+
+=item * Lingua::
+
+自然语言相关模块
+
+=item * Log::
+
+=item * Math::
+
+=item * Module::
+
+模块操作相关
+
+=item * MooseX::
+
+=item * Net::
+
+网络相关（参考 WWW::）
+
+=item * Padre::
+
+=item * Pod::, POD::
+
+=item * POE::
+
+=item * Proc::
+
+=item * Regex::
+
+=item * RT::
+
+=item * Search::
+
+=item * SQL::
+
+=item * Statistics::
+
+=item * Task::
+
+模块合集文件，类似 Bundle::, 推荐。
+
+=item * Template::
+
+=item * Test::
+
+测试模块
+
+=item * Text::
+
+=item * URI::
+
+=item * WebServices::
+
+=item * Win32::
+
+=item * WWW::
+
 =back
+
+如果你还是无法找到准确的地方来放您的模块，建议你去 comp.lang.perl.modules 新闻组咨询
 
 =head2 如何打包模块
 
