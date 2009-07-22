@@ -269,6 +269,32 @@ dzil 跟 L<ExtUtils::MakeMaker>, L<Module::Build>, L<Module::Install> 或 L<Modu
 
 =back
 
+=head2 包的组成
+
+一个包通常包括
+
+=over 4
+
+=item * Makefile.PL, Build.PL
+
+你必须拥有其中之一或者二者都有。建议是永远有 Makefile.PL, 使用 Module::Build 可以在 Build.PL 里设置
+
+    create_makefile_pl => 'traditional'
+
+=item * lib/Book/Chinese.pm
+
+主模块。主模块里你最好用 $VERSION
+
+=item * t/
+
+测试目录。建议最起码有一个 00-load.t 来测试主模块的语法是合格的。
+
+=item * README, Changes, INSTALL
+
+所有的文件都是可选的。但是 Changes 和 README 是建议拥有的
+
+=back
+
 =head1 SEE ALSO
 
 =head1 AUTHOR
