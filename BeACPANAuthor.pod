@@ -205,7 +205,7 @@ L<h2xs> 是最古老的创建新模块的工具。请参阅 h2xs 命令帮助。
 
     > cpan Module::Starter
 
-安装 L<Module::Starter> 完毕之后，perl bin 目录将有一个 L<module-starter> 可运行文件
+安装 L<Module::Starter> 完毕之后，perl bin 目录将有一个 L<module-starter> 可执行文件。
 
     > module-starter --module=Book::Chinese --author="Fayland Lam" --email=fayland@gmail.com
 
@@ -218,6 +218,7 @@ L<ExtUtils::MakeMaker> 是最古老和使用最广的 builder 模块。它需要
     > make manifest
     > make test
     > make dist
+    > make realclean
 
 L<Module::Build> 是用来代替 L<ExtUtils::MakeMaker> 的。它不需要 make, 可用 Perl 来完成打包工作。
 
@@ -226,6 +227,7 @@ L<Module::Build> 是用来代替 L<ExtUtils::MakeMaker> 的。它不需要 make,
     > perl Build manifest
     > perl Build test
     > perl Build dist
+    > perl Build realclean
 
 L<Module::Install> 的打包方法和 L<ExtUtils::MakeMaker> 一样（需要 make 配合）。但不同之处在于
 
@@ -242,6 +244,30 @@ L<Module::Install> 的打包方法和 L<ExtUtils::MakeMaker> 一样（需要 mak
 =head3 L<Dist::Zilla>
 
     > cpan Dist::Zilla
+
+安装 L<Dist::Zilla> 完毕之后，perl bin 目录下将有一个 dzil 的可执行文件。
+
+    > dzil new Book::Chinese
+
+dzil 通过 C<dist.ini> 来控制整个过程。
+
+    > dzil test
+    > dzil dist
+    > dzil clean
+
+dzil 跟 L<ExtUtils::MakeMaker>, L<Module::Build>, L<Module::Install> 或 L<Module::Starter> 都不同。
+
+=over 4
+
+=item * dzil 是 distribution builder 而不是 installer. 这是跟 L<Module::Install> 的最大区别。
+
+=item * dzil 的 installer 还是可以选择 ExtUtils::MakeMaker 或 Module::Build
+
+=item * dzil 的优点在于你只需要专注于你所要开发的代码，而不用关心 MANIFEST, Makefile.PL, Build.PL, 版本或者多余的 POD 代码（如 AUTHOR, COPYRIGHT & LICENSE）
+
+=item * dzil 因为基于 L<Moose> 所以它的代码高度可扩展，插件很容易写
+
+=back
 
 =head1 SEE ALSO
 
