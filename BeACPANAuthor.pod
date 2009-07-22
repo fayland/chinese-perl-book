@@ -283,7 +283,7 @@ dzil 跟 L<ExtUtils::MakeMaker>, L<Module::Build>, L<Module::Install> 或 L<Modu
 
 =item * lib/Book/Chinese.pm
 
-主模块。主模块里你最好用 $VERSION
+主模块。主模块里你最好有 $VERSION
 
 =item * t/
 

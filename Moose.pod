@@ -1,0 +1,57 @@
+
+=head1 NAME
+
+Book::Chinese::Moose - OO, Moose
+
+=head1 DESCRIPTION
+
+Perl 的面对对象系统很强大（Moose 是由 Perl 编写），但是并不是很好使用。建议使用 L<Moose>
+
+学习 L<Moose> 最好的方法是阅读 L<Moose::Manual>
+
+=head1 对象系统
+
+如果没有 Moose, Perl5 的 OO 应该是比较繁琐的。
+
+  package Person;
+
+  use strict;
+  use warnings;
+
+  sub new {
+      my $class = shift;
+      my %p = ref $_[0] ? %{ $_[0] } : @_;
+      
+      return bless \%p, $class;
+  }
+
+基本上你在写一些无用的东西，没有任何一行代码是跟实际应用的代码有关的。C<bless> 是什么？这样的代码让人很迷糊。
+
+Moose 让你写 OO 变得非常清晰和简单（很大程度上借鉴了 Perl6）。
+
+  package Person;
+  
+  use Moose;
+
+=head1 概念
+
+=head2 Attribute 属性
+
+CPAN 上拥有上百个创建 Accessor 的模块。其中包括最流行的 L<Class::Accessor> 和 L<Class::Accessor::Fast>, L<Moose> 不是最快的（L<Class::XSAccessor> 目前来说最快），但是是最强大的。
+
+=head2 Role
+
+Role 与 use base 或者 extends 不同。with 'Role' 类似于将 Role 里的整个代码复制到 with 的模块里。
+
+=head1 SEE ALSO
+
+L<Moose>, L<Moose::Manual>
+
+=head1 AUTHOR
+
+Fayland Lam, C<< <fayland at gmail.com> >>
+
+=head1 COPYRIGHT & LICENSE
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
