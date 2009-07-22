@@ -35,13 +35,41 @@ Moose 让你写 OO 变得非常清晰和简单（很大程度上借鉴了 Perl6�
 
 =head1 概念
 
-=head2 Attribute 属性
+=over 4
+
+=item * Attribute 属性
 
 CPAN 上拥有上百个创建 Accessor 的模块。其中包括最流行的 L<Class::Accessor> 和 L<Class::Accessor::Fast>, L<Moose> 不是最快的（L<Class::XSAccessor> 目前来说最快），但是是最强大的。
 
-=head2 Role
+=item * Role
 
 Role 与 use base 或者 extends 不同。with 'Role' 类似于将 Role 里的整个代码复制到 with 的模块里。
+
+=item * Method modifiers
+
+=item * Type
+
+=item * Constructor & Destructor
+
+=back
+
+=head2 MooseX
+
+=over 4
+
+=item * L<MooseX::AttributeHelpers>
+
+=item * L<MooseX::StrictConstructor>
+
+=item * L<MooseX::Singleton>
+
+=item * L<MooseX::Declare>
+
+=item * L<MooseX::Types>
+
+=item * L<MooseX::Role::Parameterized>
+
+=back
 
 =head1 SEE ALSO
 
