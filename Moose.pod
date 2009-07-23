@@ -9,7 +9,7 @@ Perl 的面对对象系统很强大（Moose 是由 Perl 编写），但是并不
 
 学习 L<Moose> 最好的方法是阅读 L<Moose::Manual>
 
-=head1 对象系统
+=head2 对象系统
 
 如果没有 Moose, Perl5 的 OO 应该是比较繁琐的。
 
@@ -33,7 +33,7 @@ Moose 让你写 OO 变得非常清晰和简单（很大程度上借鉴了 Perl6�
   
   use Moose;
 
-=head1 概念
+=head2 概念
 
 =over 4
 
@@ -50,6 +50,53 @@ Role 与 use base 或者 extends 不同。with 'Role' 类似于将 Role 里的�
 =item * Type
 
 =item * Constructor & Destructor
+
+=back
+
+=head2 细节例子
+
+=over 4
+
+=item * handles
+
+delegation 委托，委派。你可以将你自己所需要写的一些 subs 委托给其他的模块来处理，但是外部看起来就像这些 subs 就是属于这个包的。
+
+    package A;
+    
+    use Moose;
+    has 'ua' => (
+        is  => 'rw',
+        isa => 'LWP::UserAgent',
+        lazy => 1,
+        default => sub {
+            LWP::UserAgent->new
+        },
+        handles => ['get', 'post', 'head', 'request']
+    );
+
+使用 C<handles> 后，A->new 之后可以直接调用 get, post 等。 A->new->get 等同于 A->new->ua->get
+
+handles 接受 ARRAY | HASH | REGEXP | ROLE | DUCKTYPE | CODE, 上面的例子是 ARRAY.
+
+HASH 可以让你使用不同的 sub 名字。比如
+
+    handles => {
+        get_url => 'get'
+    }
+
+这种用法在当你的模块里已经有一个 get 的时候就非常有用。sub get 是你原来的 get, 而 A->new->get_url = A->new->ua->get
+
+其他的诸如 REGEXP, ROLE, CODE, DUCKTYPE 都有点高级，在有需要的时候可以去 moose@perl.org 或者 irc.perl.org #moose 咨询
+
+=item * L<MooseX::Types>
+
+一般建议使用 L<MooseX::Types> 而不是内置的 Moose Type
+
+Moose Type 是全局类型, 当你使用多个外部包的时候就有可能会造成类型冲突（除非所有的外部包都是用各自的 'packageA.name.' 作为前缀）。L<MooseX::Types> 是属于当前包变量的类型，不容易冲突。
+
+Moose Type 是放在引号之内如 'Int', 这种检测是在运行时检测。而 L<MooseX::Types> 是不放在引号里的（如 Int），这种在编译时就会检测。
+
+L<MooseX::Types> 拥有更多的变量。更容易扩展。常见的如 L<MooseX::Types::Path::Class>
 
 =back
 
