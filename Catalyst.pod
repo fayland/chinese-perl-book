@@ -5,7 +5,13 @@ Book::Chinese::Catalyst - Catalyst Framework
 
 =head1 DESCRIPTION
 
+本章主要介绍如何使用 Catalyst 来构建一个程序。
 
+详尽的文档请参阅 L<Catalyst::Manual>
+
+=head2 结构
+
+L<Catalyst> 本身很简单。它最大的功能是 URI 匹配和整个 MVC 的 API 接口。
 
 =head1 AUTHOR
 
