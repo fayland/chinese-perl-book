@@ -69,7 +69,7 @@ Book::Chinese::BeACPANTester - Be a CPAN Tester
     cpan> reload cpan
     cpan> o conf init test_report
 
-这就是成为一个 CPAN 测试者您说需要的所有动作。
+这就是成为一个 CPAN 测试者您所需要的所有动作。
 
 =head2 CPAN 相关网站
 
