@@ -7,6 +7,49 @@ Book::Chinese::Template - Template::Toolkit
 
 
 
+=head2 tools
+
+=head3 tpage
+
+L<http://search.cpan.org/perldoc?Template::Tools::tpage>
+
+C<tpage> 用来测试一些简单的 tt2 语法还是比较轻快的。
+
+比如你对 .replace("'", "\'") 是不是正确比较怀疑的话，你可以写个 test.tt2
+
+  [%
+    test = "A'A";
+    test.replace("'", "\'");
+  %]
+
+通过命令行
+
+  $> tpage test.tt2
+  A'A
+
+错误的话可以改改 test.tt2
+
+  [%
+    test = "A'A";
+    test.replace("'", "\\\'");
+  %]
+
+再次运行
+
+  $> tpage test.tt2
+  A\'A
+
+一切 OK, 用 tpage 你可以不用打开浏览器来检测你写的简单改变是不是正确的，非常节省时间。
+
+tpage 还可以传递变量
+
+    $> cat test.tt2
+    [% test.replace("'", "\\\'"); %]
+    $> tpage --define test="A'A" test.tt2
+    A\'A
+    $> tpage --define test="A'A'A" test.tt2
+    A\'A\'A
+
 =head1 AUTHOR
 
 Fayland Lam, C<< <fayland at gmail.com> >>
