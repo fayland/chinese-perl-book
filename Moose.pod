@@ -112,7 +112,7 @@ Traits 其实就是 Role. 它们的区别在于
 
 =back
 
-如果你的模块允许用户配置来使用某个 traits 或不使用的话，一般参考 L<MooseX::Traits>
+如果你的模块允许用户配置来使用哪些 traits 的话，一般参考 L<MooseX::Traits>
 
 =back
 
