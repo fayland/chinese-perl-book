@@ -1,0 +1,17 @@
+
+=head1 NAME
+
+Book::Chinese::Template - Template::Toolkit
+
+=head1 DESCRIPTION
+
+
+
+=head1 AUTHOR
+
+Fayland Lam, C<< <fayland at gmail.com> >>
+
+=head1 COPYRIGHT & LICENSE
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
