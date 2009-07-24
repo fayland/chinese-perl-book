@@ -313,6 +313,59 @@ C<MANIFEST.SKIP> 不是必须的文件。它的意义在于你 make dist 或者 
 
 一般只有在你的 .t 生成某些临时文件，或者你不想将你的一些私有文件包含在 dist 里的时候，将它们加进 MANIFEST.SKIP, 可以使用正则。
 
+=item * meta resources
+
+L<http://search.cpan.org/> 在 dist 的主页上是否显示 Repository （如 L<http://search.cpan.org/dist/WWW-Contact/> ） 是由 META.yml 来控制。
+
+而我们一般使用 Makefile.PL 或者 Build.PL 来生成 META.yml
+
+=over 4
+
+=item * Build.PL (L<Module::Build>)
+
+  meta_merge     => {
+    resources => {
+      homepage => 'http://sourceforge.net/projects/module-build',
+      bugtracker =>
+        'http://rt.cpan.org/NoAuth/Bugs.html?Dist=Module-Build',
+      MailingList => 'mailto:module-build@perl.org',
+      repository  => 'http://svn.perl.org/modules/Module-Build/'
+    }
+  },
+
+将类似上面的东西传进 Module::Build->new, 参考 L<http://search.cpan.org/dist/Module-Build/Build.PL>
+
+=item * Makefile.PL (L<ExtUtils::MakeMaker>
+
+    META_MERGE      => {
+        resources => {
+            license     =>      'http://dev.perl.org/licenses/',
+            homepage    =>      'http://makemaker.org',
+            bugtracker  =>      'http://rt.cpan.org/NoAuth/Bugs.html?Dist=ExtUtils-MakeMaker',
+            repository  =>      'http://github.com/schwern/extutils-makemaker',
+            MailingList =>      'makemaker@perl.org',
+        },
+    },
+
+将类似上面的东西传进 WriteMakefile, 参考 L<http://search.cpan.org/dist/ExtUtils-MakeMaker/Makefile.PL>
+
+=item * Makefile.PL (L<Module::Install>)
+
+    repository 'http://svn.ali.as/cpan/trunk/Module-Install';
+    homepage 'http://homepage/';
+    bugtracker 'http://bugtracker/';
+
+将类似上面的东西直接写进 Makefile.PL
+
+=item * dist.ini L<Dist::Zilla>
+
+    [MetaResources]
+    repository = http://github.com/rjbs/dist-zilla
+
+=back
+
+如果你使用一些版本库控制的话，有自动的寻找 repository 模块。Module::Install 有 L<Module::Install::Repository>, Dist::Zilla 有 L<Dist::Zilla::Plugin::Repository>
+
 =back
 
 =head1 SEE ALSO
