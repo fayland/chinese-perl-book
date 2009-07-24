@@ -98,6 +98,22 @@ Moose Type 是放在引号之内如 'Int', 这种检测是在运行时检测。�
 
 L<MooseX::Types> 拥有更多的变量。更容易扩展。常见的如 L<MooseX::Types::Path::Class>
 
+=item * Roles 和 Traits
+
+Traits 其实就是 Role. 它们的区别在于
+
+=over 4
+
+=item 1 Traits 可以拥有一个短名字
+
+=item 2 通常在编译时使用的是 Role, 在运行时使用的是 Trait
+
+这意味这 Role 是影响了整个 Class, 而 Trait 仅仅影响了 Class 的某个实例(instance)
+
+=back
+
+如果你的模块允许用户配置来使用某个 traits 或不使用的话，一般参考 L<MooseX::Traits>
+
 =back
 
 =head2 MooseX
