@@ -17,6 +17,8 @@ Book::Chinese::Preface - Preface
 
 =item *
 
+本书并不适用于 Perl 新手。关于 Perl 语法的介绍请参阅其他 Perl 书籍。
+
 =back
 
 =head1 AUTHOR
