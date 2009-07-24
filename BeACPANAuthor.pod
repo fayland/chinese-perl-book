@@ -293,6 +293,26 @@ dzil 跟 L<ExtUtils::MakeMaker>, L<Module::Build>, L<Module::Install> 或 L<Modu
 
 所有的文件都是可选的。但是 Changes 和 README 是建议拥有的
 
+=item * MANIFEST, META.yml, MANIFEST.SKIP
+
+这些文件一般可以通过 make manifest 和 make dist (或 perl Build manifest, perl Build dist) 来生成
+
+=back
+
+=head2 FAQ 和建议
+
+=over 4
+
+=item * MANIFEST.SKIP
+
+C<MANIFEST.SKIP> 不是必须的文件。它的意义在于你 make dist 或者 perl Build dist 的时候忽略目录下的哪些文件。比如你使用版本库，一般需要忽略版本库文件。所以 .SKIP 里含有
+
+    \B\.git\b
+    \B\.svn\b
+    \B\.cvsignore$
+
+一般只有在你的 .t 生成某些临时文件，或者你不想将你的一些私有文件包含在 dist 里的时候，将它们加进 MANIFEST.SKIP, 可以使用正则。
+
 =back
 
 =head1 SEE ALSO
