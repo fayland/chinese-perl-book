@@ -5,7 +5,25 @@ Book::Chinese::DBIx-Class - DBIx-Class ORM
 
 =head1 DESCRIPTION
 
+本章主要描述如何组织你的 L<DBIx::Class> ORM 的结构和一些用法。
 
+=head2 声明
+
+=over 4
+
+=item *
+
+L<DBIx::Class> 是和 L<Catalyst> 分开, 二者是各自独立的。只是他们的作者之间有交集。
+
+=item *
+
+L<DBIx::Class> 不是为了性能而开发的。如果你的代码强烈要求性能的话，不建议你使用 DBIx::Class
+
+=item *
+
+如果你觉得 DBIx::Class 很难用，这可能有两个原因，一是你用错了，二是它不是你喜欢的类型。
+
+=back
 
 =head1 AUTHOR
 
