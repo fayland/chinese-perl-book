@@ -386,6 +386,10 @@ Adam Kennedy 是 CPAN 最多产的作者之一。 L<File::HomeDir>, L<IPC::Run>,
 
 ☻ 唐鳳 ☺, 国人的骄傲（台湾）。Perl6 pugs 的开发者。L<Locale::Maketext::Lexicon>, L<Module::Install>, L<PAR> 的发起者
 
+=item * L<http://search.cpan.org/~CHROMATIC/|CHROMATIC>
+
+chromatic, L<Modern::Perl>.
+
 =item * L<http://search.cpan.org/~DROLSKY/|DROLSKY>
 
 Dave Rolsky, L<Moose>, L<DateTime> 和 L<HTML::Mason> 的开发者和维护者。
