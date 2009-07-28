@@ -426,8 +426,6 @@ Ricardo SIGNES, Email 模块最多的作者。L<Dist::Zilla>, L<Email::Sender>
 
 Steffen Müller, L<Class::XSAccessor>, L<PAR>
 
-Dave Cross, 
-
 =back
 
 =head1 SEE ALSO
