@@ -430,6 +430,10 @@ Ricardo SIGNES, Email 模块最多的作者。L<Dist::Zilla>, L<Email::Sender>
 
 Steffen Müller, L<Class::XSAccessor>, L<PAR>
 
+=item * L<http://search.cpan.org/~TIMB/|TIMB>
+
+Tim Bunce, L<DBI>, L<Devel::NYTProf>
+
 =back
 
 =head1 SEE ALSO
