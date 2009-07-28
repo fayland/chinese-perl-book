@@ -438,6 +438,10 @@ Ricardo SIGNES, Email 模块最多的作者。L<Dist::Zilla>, L<Email::Sender>
 
 Steffen Müller, L<Class::XSAccessor>, L<PAR>
 
+=item * L<http://search.cpan.org/~STEVAN/|STEVAN>
+
+Stevan Little, L<Moose> 的原始作者。L<Class::C3>, L<JSORB>
+
 =item * L<http://search.cpan.org/~SZABGAB/|SZABGAB>
 
 גאבור סבו - Gábor Szabó, L<Padre>
