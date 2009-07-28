@@ -368,6 +368,30 @@ L<http://search.cpan.org/> 在 dist 的主页上是否显示 Repository （如 L
 
 =back
 
+=head2 CPAN 作者
+
+跟踪 Perl 高手的足迹和阅读他们的代码
+
+根据首字母排序：
+
+=over 4
+
+=item * L<http://search.cpan.org/~ADAMK/|ADAMK>
+
+Adam Kennedy 是 CPAN 最多产的作者之一。 L<File::HomeDir>, L<IPC::Run>, L<Perl::Dist>, L<pip>, L<PPI>  etc.
+
+=item * L<http://search.cpan.org/~DROLSKY/|DROLSKY>
+
+Dave Rolsky, L<Moose>, L<DateTime> 和 L<HTML::Mason> 的开发者和维护者。
+
+=item * L<http://search.cpan.org/~SMUELLER/|SMUELLER>
+
+Steffen Müller, L<Class::XSAccessor>, L<PAR>
+
+Dave Cross, 
+
+=back
+
 =head1 SEE ALSO
 
 =head1 AUTHOR
