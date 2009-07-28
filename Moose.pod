@@ -120,13 +120,17 @@ Traits 其实就是 Role. 它们的区别在于
 
 =over 4
 
+=item * L<MooseX::Declare>
+
+L<MooseX::Declare> 可以说是当前 Perl5 最前沿和激动人心的模块。
+
+它通过 L<Devel::Declare> 定义了一些类似 Perl6 的关键字，使得你写代码的时候更加简洁和方便。
+
 =item * L<MooseX::AttributeHelpers>
 
 =item * L<MooseX::StrictConstructor>
 
 =item * L<MooseX::Singleton>
-
-=item * L<MooseX::Declare>
 
 =item * L<MooseX::Types>
 
@@ -172,9 +176,15 @@ L<Dist::Zilla> 拥有一个与 L<MooseX::Object::Pluggable> 不同的写 Plugins
 
 代码使用不同的 Role 来依次执行 Plugins, 简洁而有效。
 
+=item * L<KiokuDB>
+
+=item * L<TryCatch>
+
 =item * More
 
 L<http://cpants.perl.org/dist/used_by/Moose>
+
+不要因为担心 L<Moose> 的启动速度而放弃它，这点速度是绝对物有所值的。
 
 =back
 
