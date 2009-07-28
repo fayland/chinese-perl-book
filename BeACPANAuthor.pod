@@ -446,6 +446,10 @@ Steffen Müller, L<Class::XSAccessor>, L<PAR>
 
 Tim Bunce, L<DBI>, L<Devel::NYTProf>
 
+=item * More
+
+建议订阅 L<http://search.cpan.org/recent> 的 RSS 以便跟踪 CPAN 最新模块
+
 =back
 
 =head1 SEE ALSO
