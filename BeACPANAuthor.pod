@@ -406,6 +406,10 @@ Gisle Aas, L<Digest::MD5>, L<Digest::SHA1>, L<HTML::Parser>, L<LWP>, L<URI>
 
 Jesse Vincent, L<Jifty>, RT, L<CommitBit>
 
+=item * L<http://search.cpan.org/~MIYAGAWA/|MIYAGAWA>
+
+Tatsuhiko Miyagawa, L<Plagger>, L<Web::Scraper>, L<XML::Atom>, Template-Plugin-*, 
+
 =item * L<http://search.cpan.org/~MSCHWERN/|MSCHWERN>
 
 Michael G Schwern, L<ExtUtils::MakeMaker>, L<Test::More>, L<Time::y2038>, L<URI::Find>
@@ -433,6 +437,10 @@ Ricardo SIGNES, Email 模块最多的作者。L<Dist::Zilla>, L<Email::Sender>
 =item * L<http://search.cpan.org/~SMUELLER/|SMUELLER>
 
 Steffen Müller, L<Class::XSAccessor>, L<PAR>
+
+=item * L<http://search.cpan.org/~SZABGAB/|SZABGAB>
+
+גאבור סבו - Gábor Szabó, L<Padre>
 
 =item * L<http://search.cpan.org/~TIMB/|TIMB>
 
