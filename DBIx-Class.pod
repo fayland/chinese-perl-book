@@ -25,6 +25,38 @@ L<DBIx::Class> 不是为了性能而开发的。如果你的代码强烈要求�
 
 =back
 
+=head2 例子
+
+本章将参考 L<TheSchwartz::Moosified> 的 schema/SQLite.sql 作为 database schema. （请参考 eg/DBIx-Class/schema.sql）
+
+=over 4
+
+=item * db.sqlite
+
+第一步你需要创建一个 database, 定义好你的 schema. 例如：
+
+    E:\Fayland\chinese-perl-book\eg\DBIx-Class>perl create_sqlite_db.pl
+
+=item * 初始化 DBIx::Class
+
+这里有两种方式可供选择，一种是手工编写所有的 DBIx::Class pm, 另一种是使用 L<DBIx::Class::Schema::Loader> 全自动生成
+
+通常我会在第一次使用 L<DBIx::Class::Schema::Loader> 的 make_schema_at 来生成，而在以后就手工增加和修改 pm 或再次 make_schema_at
+
+eg/DBIx-Class/make_schema_at.pl
+
+    use FindBin qw/$Bin/;
+    use DBIx::Class::Schema::Loader qw/ make_schema_at /;
+    
+    my $dbname = "$Bin/db.sqlite";
+    make_schema_at(
+        'TheSchwartz::Schema',
+        { debug => 1, dump_directory => './lib' },
+        [ "dbi:SQLite:dbname=$dbname" ],
+    );
+
+=back
+
 =head1 AUTHOR
 
 Fayland Lam, C<< <fayland at gmail.com> >>
