@@ -146,6 +146,38 @@ L<http://chainsawblues.vox.com/library/post/develrepl-part-4---script-options-rc
 
 =back
 
+=head2 Moose 所开发的软件
+
+但你在写一个小脚本的时候，你可能不会觉得 Moose 是怎么的有用。但是当你写一个很大的系统的时候，你会由衷的为自己选择 Moose 而感到幸运。
+
+=over 4
+
+=item * L<Catalyst>, L<Reaction>
+
+Catalyst 应当是使用 Moose 最广的例子。而 L<Reaction> 应该是最复杂的例子。
+
+=item * L<Dist::Zilla>
+
+L<Dist::Zilla> 拥有一个与 L<MooseX::Object::Pluggable> 不同的写 Plugins 的技巧。
+
+  $_->before_build for $self->plugins_with(-BeforeBuild)->flatten;
+  
+  $_->gather_files    for $self->plugins_with(-FileGatherer)->flatten;
+  $_->prune_files     for $self->plugins_with(-FilePruner)->flatten;
+  $_->munge_files     for $self->plugins_with(-FileMunger)->flatten;
+  $_->setup_installer for $self->plugins_with(-InstallTool)->flatten;
+  
+  $_->after_build({ build_root => $build_root })
+    for $self->plugins_with(-AfterBuild)->flatten;
+
+代码使用不同的 Role 来依次执行 Plugins, 简洁而有效。
+
+=item * More
+
+L<http://cpants.perl.org/dist/used_by/Moose>
+
+=back
+
 =head1 SEE ALSO
 
 L<Moose>, L<Moose::Manual>
