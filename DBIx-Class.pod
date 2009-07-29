@@ -231,6 +231,12 @@ DBIx::Class 的正确使用方法就是用 ResultSet （最起码个人认为是
 
 =back
 
+=head2 小结
+
+限于水平有限，只能简单介绍 DBIx::Class 到此。我会在接下来的 Catalyst 说再次写 DBIx::Class 例子。
+
+至于其他的诸如 Relationship 之类的，只能是以后再说了。
+
 =head1 AUTHOR
 
 Fayland Lam, C<< <fayland at gmail.com> >>
