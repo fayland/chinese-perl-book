@@ -301,6 +301,18 @@ dzil 跟 L<ExtUtils::MakeMaker>, L<Module::Build>, L<Module::Install> 或 L<Modu
 
 =head2 如何编写测试
 
+本段落仅仅描述如何简单的编写测试和验证测试，更多跟详尽的内容，建议参考《Perl Testing程序高手秘笈》。本书 China-pub, 当当和卓越均可购买，由盛春(chunzi)和蒋永清(joe jiang)翻译。
+
+最简单和使用最广泛的测试模块当属 L<Test::More>, 建议阅读的有
+
+=over 4
+
+=item * L<Test::Tutorial>
+
+=item * L<prove>
+
+=back
+
 XXX? TODO
 
 =head2 FAQ 和建议
