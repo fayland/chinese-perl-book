@@ -5,9 +5,45 @@ Book::Chinese::Template - Template::Toolkit
 
 =head1 DESCRIPTION
 
+=head2 filter 过滤器
 
+过滤器是指将一段文字传递进来，然后通过过滤器的函数，最后传递文字回去。我们将通过自定义过滤器来跟清楚的了解过滤器的运作过程。
 
-=head2 tools
+=head3 内置过滤器
+
+Template 定义了一些常用的过滤器，我们将通过语法介绍来认识一些过滤器，更多更详细的介绍请参考 L<Template::Manual::Filters>
+
+    [% # 1 %]
+    [% FILTER html %]
+    <script language="JavaScript" type="text/javascript">
+    <!--
+    document.writeln("Hello, world");
+    //-->
+    </script>
+    [% END %]
+
+    [% # 2 %]
+    [% pi = 3.1415926536 %]
+    [% pi | format('%0.3f') %]
+
+上文是两种过滤器的写法。本质上说 FILTER 和 | 是等价的。所有用 FILTER 的地方都可以用 | 来替换，反之亦然。一种是 [% FILTER html %][% END %] 一种是 [% pi | format('%0.3f') %]
+
+[% FILTER html %][% END %] 可以写作
+
+    [% output = BLOCK %]
+    <script language="JavaScript" type="text/javascript">
+    <!--
+    document.writeln("Hello, world");
+    //-->
+    </script>
+    [% END %]
+    [% output FILTER html %]
+
+两者的效果是一样的，只是 FILTER END 在某些情况下更方便和简洁。
+
+过滤器可以在一个变量上多次使用，类如 [% output | html | truncate(30) %]，这等同于 [% output = output | html %][% output | truncate(30) %], 这里我们使用了变量来接受过滤器返回的值。
+
+=head2 tools 工具
 
 =head3 tpage
 
