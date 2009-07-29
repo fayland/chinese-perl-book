@@ -133,7 +133,101 @@ eg/DBIx-Class/t/01-basic.t
 
 =item * ResultSet
 
+DBIx::Class 的正确使用方法就是用 ResultSet （最起码个人认为是正确的）。
 
+与某个 table 相关的代码放到相关的 ResultSet 里，再写一个测试文件。
+
+比如针对 TheSchwartz::Schema::Result::Error 我们写一个 TheSchwartz::Schema::ResultSet::Error, eg/DBIx-Class/lib/TheSchwartz/Schema/ResultSet/Error.pm
+
+    package TheSchwartz::Schema::ResultSet::Error;
+    
+    use strict;
+    use warnings;
+    use base 'DBIx::Class::ResultSet';
+    
+    sub failure_log {
+        my ( $self, $jobid ) = @_;
+    
+        my $rs = $self->search( {
+            jobid => $jobid
+        }, {
+            columns => ['message']
+        } );
+    
+        my @failures;
+        while (my $r = $rs->next) {
+            push @failures, $r->message;
+        }
+    
+        return @failures;
+    }
+    
+    sub failures {
+        return scalar shift->failure_log(@_);
+    }
+    
+    1;
+
+所有的 ResultSet 模块都应该 use base 'DBIx::Class::ResultSet' 或它的继承类。调用的方法可以参考 eg/DBIx-Class/t/02-error.t
+
+    #!/usr/bin/perl
+    
+    use strict;
+    use warnings;
+    use Test::More tests => 5;
+    use FindBin qw/$Bin/;
+    use TheSchwartz::Schema;
+    
+    my $dbname = "$Bin/../db.sqlite";
+    my $schema = TheSchwartz::Schema->connect(
+        "dbi:SQLite:dbname=$dbname", '', '', {
+        RaiseError => 1,
+        PrintError => 0,
+    } );
+    
+    my $dbh = $schema->storage->dbh;
+    # truncate the table so we can run the tests again and again
+    $dbh->do("DELETE FROM error");
+    # insert some faked data
+    my $sth = $dbh->prepare("INSERT INTO error (error_time, jobid, message, funcid) VALUES (?, ?, ?, ?)");
+    $sth->execute(time(), 1, 'Message A', 1);
+    $sth->execute(time(), 2, 'Message B', 1);
+    $sth->execute(time(), 2, 'Message C', 1);
+    
+    # test failure_log/failures
+    my @failures = $schema->resultset('Error')->failure_log( 2 );
+    is scalar @failures, 2;
+    ok( grep { $_ eq 'Message B' } @failures );
+    ok( grep { $_ eq 'Message C' } @failures );
+    
+    my $failure_num = $schema->resultset('Error')->failures( 1 );
+    is $failure_num, 1;
+    $failure_num = $schema->resultset('Error')->failures( 2 );
+    is $failure_num, 2;
+    
+    # truncate the table so it wouldn't effect others
+    $dbh->do("DELETE FROM error");
+    
+    1;
+
+调用的方法跟普通的 ->search 之类的一样，$schema->resultset('Error')->failure_log, $schema->resultset('Error') 其实就是 TheSchwartz::Schema::ResultSet::Error
+
+在 TheSchwartz::Schema::ResultSet::Error 里，如果想调用其他的 resultset 或想用 dbh
+
+    sub test {
+        my ( $self, $args ) = @_;
+        
+        my $schema = $self->result_source->schema;
+        my $dbh = $schema->storage->dbh;
+        $schema->resultset('Job')->do_anything();
+
+所有的 ResultSet 之间可以用 $schema 相连。上述例子虽然没什么大用处，但是显示了基本的作法。
+
+    E:\Fayland\chinese-perl-book\eg\DBIx-Class>prove -l t/02-error.t
+    t/02-error.t .. ok
+    All tests successful.
+    Files=1, Tests=5,  1 wallclock secs ( 0.05 usr +  0.03 sys =  0.08 CPU)
+    Result: PASS
 
 =back
 
