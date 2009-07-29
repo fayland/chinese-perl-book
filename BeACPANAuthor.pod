@@ -313,7 +313,37 @@ dzil 跟 L<ExtUtils::MakeMaker>，L<Module::Build>，L<Module::Install> 或 L<Mo
 
 =back
 
-XXX? TODO
+一个简单的测试文件如下 (eg/BeACPANAuthor/01-basic.t)
+
+    #!/usr/bin/perl
+    
+    use strict;
+    use warnings;
+    use Test::More tests => 3;
+    
+    ok(1, 'true value');
+    cmp_ok( 1+1, '==', 2, '1+1=2');
+    use_ok('Test::More');
+    
+    1;
+
+测试所写的 .t 文件跟普通的 Perl 文件一样，你可以使用 perl 01-basic.t 来运行它。比如：
+
+    E:\Fayland\chinese-perl-book\eg\BeACPANAuthor>perl 01-basic.t
+    1..3
+    ok 1 - true value
+    ok 2 - 1+1=2
+    ok 3 - use Test::More;
+
+prove 仅仅是在 perl 输出结果的基础上进行总结
+
+    E:\Fayland\chinese-perl-book\eg\BeACPANAuthor>prove 01-basic.t
+    01-basic.t .. ok
+    All tests successful.
+    Files=1, Tests=3,  0 wallclock secs ( 0.08 usr +  0.00 sys =  0.08 CPU)
+    Result: PASS
+
+L<Test::More> 遵从 L<TAP> (The Test Anything Protocal) 格式，而 prove 能解析所有遵从 TAP 格式的输出（可以是其他语言写的）。
 
 =head2 FAQ 和建议
 
