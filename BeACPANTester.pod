@@ -93,6 +93,8 @@ CPAN 测试者网站
 
 报告模块 bug, patch 或者建议，一般请不要用 email 私下和作者联系，请尽量使用 RT
 
+=item * L<http://annocpan.org/>
+
 =back
 
 =head1 SEE ALSO

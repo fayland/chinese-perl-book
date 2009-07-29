@@ -131,6 +131,10 @@ eg/DBIx-Class/t/01-basic.t
     Files=2, Tests=10,  1 wallclock secs ( 0.05 usr +  0.05 sys =  0.09 CPU)
     Result: PASS
 
+=item * ResultSet
+
+
+
 =back
 
 =head1 AUTHOR
