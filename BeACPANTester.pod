@@ -5,7 +5,7 @@ Book::Chinese::BeACPANTester - Be a CPAN Tester
 
 =head1 DESCRIPTION
 
-本章主要描述如何配置 CPAN 和成为一个 CPAN 测试者
+本章主要描述如何配置 CPAN 和成为一个 CPAN 测试者。
 
 =head2 配置 CPAN
 
@@ -91,7 +91,7 @@ CPAN 测试者网站
 
 =item * L<https://rt.cpan.org/>
 
-报告模块 bug, patch 或者建议，一般请不要用 email 私下和作者联系，请尽量使用 RT
+报告模块 bug，patch 或者建议，一般请不要用 email 私下和作者联系，请尽量使用 RT
 
 =item * L<http://annocpan.org/>
 

@@ -5,13 +5,13 @@ Book::Chinese::Moose - OO, Moose
 
 =head1 DESCRIPTION
 
-Perl 的面对对象系统很强大（Moose 是由 Perl 编写），但是并不是很好使用。建议使用 L<Moose>
+Perl 的面对对象系统很强大（Moose 是由 Perl 编写），但并不是很好使用。建议使用 L<Moose>。
 
-学习 L<Moose> 最好的方法是阅读 L<Moose::Manual>
+学习 L<Moose> 最好的方法是阅读 L<Moose::Manual>。
 
 =head2 对象系统
 
-如果没有 Moose, Perl5 的 OO 应该是比较繁琐的。
+如果没有 Moose，Perl5 的 OO 应该是比较繁琐的。
 
   package Person;
 
@@ -39,7 +39,7 @@ Moose 的意义在于它可以让你专注于写什么(what)，而不是怎么�
 
 =item * Attribute 属性
 
-CPAN 上拥有上百个创建 Accessor 的模块。其中包括最流行的 L<Class::Accessor> 和 L<Class::Accessor::Fast>, L<Moose> 不是最快的（L<Class::XSAccessor> 目前来说最快），但是是最强大的。
+CPAN 上拥有上百个创建 Accessor 的模块。其中包括最流行的 L<Class::Accessor> 和 L<Class::Accessor::Fast>。L<Moose> 不是最快的（L<Class::XSAccessor> 目前来说最快），但却是最强大的。
 
 =item * Role
 
@@ -59,7 +59,7 @@ Role 与 use base 或者 extends 不同。with 'Role' 类似于将 Role 里的�
 
 =item * handles
 
-delegation 委托，委派。你可以将你自己所需要写的一些 subs 委托给其他的模块来处理，但是外部看起来就像这些 subs 就是属于这个包的。
+delegation 委托，委派。你可以将你自己所需要写的一些 subs 委托给其他的模块来处理，这样外部看起来就像这些 subs 就是属于这个包的。
 
     package A;
     
@@ -74,9 +74,9 @@ delegation 委托，委派。你可以将你自己所需要写的一些 subs 委
         handles => ['get', 'post', 'head', 'request']
     );
 
-使用 C<handles> 后，A->new 之后可以直接调用 get, post 等。 A->new->get 等同于 A->new->ua->get
+使用 C<handles> 后，A->new 之后可以直接调用 get, post 等方法。 A->new->get 等同于 A->new->ua->get
 
-handles 接受 ARRAY | HASH | REGEXP | ROLE | DUCKTYPE | CODE, 上面的例子是 ARRAY.
+handles 接受 ARRAY | HASH | REGEXP | ROLE | DUCKTYPE | CODE, 上面的例子是 ARRAY。
 
 HASH 可以让你使用不同的 sub 名字。比如
 
@@ -86,29 +86,29 @@ HASH 可以让你使用不同的 sub 名字。比如
 
 这种用法在当你的模块里已经有一个 get 的时候就非常有用。sub get 是你原来的 get, 而 A->new->get_url = A->new->ua->get
 
-其他的诸如 REGEXP, ROLE, CODE, DUCKTYPE 都有点高级，在有需要的时候可以去 moose@perl.org 或者 irc.perl.org #moose 咨询
+其他的诸如 REGEXP, ROLE, CODE, DUCKTYPE 都有点高级，在有需要的时候可以去 moose@perl.org 或者 irc.perl.org #moose 咨询。
 
 =item * L<MooseX::Types>
 
-一般建议使用 L<MooseX::Types> 而不是内置的 Moose Type
+一般建议使用 L<MooseX::Types> 而不是内置的 Moose Type。
 
-Moose Type 是全局类型, 当你使用多个外部包的时候就有可能会造成类型冲突（除非所有的外部包都是用各自的 'packageA.name.' 作为前缀）。L<MooseX::Types> 是属于当前包变量的类型，不容易冲突。
+Moose Type 是全局类型，当你使用多个外部包的时候就有可能会造成类型冲突（除非所有的外部包都是用各自的 'packageA.name.' 作为前缀）。L<MooseX::Types> 是属于当前包变量的类型，不容易冲突。
 
-Moose Type 是放在引号之内如 'Int', 这种检测是在运行时检测。而 L<MooseX::Types> 是不放在引号里的（如 Int），这种在编译时就会检测。
+Moose Type 是放在引号之内如 'Int'，这种检测是在运行时检测。而 L<MooseX::Types> 是不放在引号里的（如 Int），这种在编译时就会检测。
 
 L<MooseX::Types> 拥有更多的变量。更容易扩展。常见的如 L<MooseX::Types::Path::Class>
 
 =item * Roles 和 Traits
 
-Traits 其实就是 Role. 它们的区别在于
+Traits 其实就是 Role。它们的区别在于：
 
 =over 4
 
 =item 1 Traits 可以拥有一个短名字
 
-=item 2 通常在编译时使用的是 Role, 在运行时使用的是 Trait
+=item 2 通常在编译时使用的是 Role，在运行时使用的是 Trait
 
-这意味这 Role 是影响了整个 Class, 而 Trait 仅仅影响了 Class 的某个实例(instance)
+这意味这 Role 是影响了整个 Class，而 Trait 仅仅影响了 Class 的某个实例(instance)
 
 =back
 
@@ -152,7 +152,7 @@ L<http://chainsawblues.vox.com/library/post/develrepl-part-4---script-options-rc
 
 =head2 Moose 所开发的软件
 
-但你在写一个小脚本的时候，你可能不会觉得 Moose 是怎么的有用。但是当你写一个很大的系统的时候，你会由衷的为自己选择 Moose 而感到幸运。
+但你在写一个小脚本的时候，你可能不会觉得 Moose 怎么有用。但当你写一个很大的系统的时候，你会由衷地为自己选择 Moose 而感到幸运。
 
 =over 4
 
@@ -174,7 +174,7 @@ L<Dist::Zilla> 拥有一个与 L<MooseX::Object::Pluggable> 不同的写 Plugins
   $_->after_build({ build_root => $build_root })
     for $self->plugins_with(-AfterBuild)->flatten;
 
-代码使用不同的 Role 来依次执行 Plugins, 简洁而有效。
+代码使用不同的 Role 来依次执行 Plugins，简洁而有效。
 
 =item * L<KiokuDB>
 

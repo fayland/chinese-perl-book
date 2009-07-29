@@ -7,25 +7,25 @@ Book::Chinese::BeACPANAuthor - Be a CPAN Author
 
 本章主要描述如何成为一个 CPAN 贡献者
 
-您有一个非常好的模块，您想与整个 Perl 社区贡献。最好的方式是将您的模块上传到 CPAN, 本章将描述如何打包，上传您的模块和一些 CPAN 社区的约定俗成。
+您有一个非常好的模块，您想与整个 Perl 社区分享。最好的方式是将您的模块上传到 CPAN，本章将描述如何打包，上传您的模块和一些 CPAN 社区约定俗成的惯例。
 
 =head2 PAUSE
 
-上传模块到 CPAN 您首先需要到 L<http://pause.perl.org/|PAUSE> 申请一个帐号。通常帐号会在一周之内被批准（因为是志愿者自愿维护和批准整个 PAUSE 网站，所以有点慢）。
+上传模块到 CPAN 之前，您首先需要到 L<http://pause.perl.org/|PAUSE> 申请一个帐号。通常帐号会在一周之内被批准（因为是志愿者自愿维护和批准整个 PAUSE 网站，所以有点慢）。
 
 上传模块将在您通过帐号批准之后，登录 PAUSE 网站，然后点击左侧的 'Upload a file to CPAN' 来上传您的打包文件。
 
 =head2 如何选择一个模块名
 
-为了更好更清晰的组织 CPAN 上的所有包，您需要准确的命名您的模块。
+为了更好更清晰地组织 CPAN 上的所有包，您需要准确的命名您的模块。
 
-通常请不要给你的模块取最顶层的名字（不带 :: 的包名），和谐的做法是至于某个顶层命名空间下。（当然，如果您觉得您的包将非常有用和流行的话，使用顶层名字也是可以的）
+通常请不要给你的模块取最顶层的名字（不带 :: 的包名），和谐的做法是置于某个顶层命名空间下。（当然，如果您觉得您的包将非常有用和流行的话，使用顶层名字也是可以的。）
 
 =over 4
 
 =item * Acme:: 
 
-大部分（非全部）的 Acme:: 模块是给人取乐，不成熟或试验的代码，不建议使用在 product 环境的代码
+大部分（非全部）的 Acme:: 模块是给人取乐，不成熟或试验的代码，不建议使用在 product 环境的代码。
 
 =item * Algorithm::
 
@@ -59,7 +59,7 @@ perl5 core 相关模块
 
 老式模块合集文件，建议使用 Task::
 
-=item * Buniess::
+=item * Business::
 
 国家商业相关模块。类如信用卡，在线支付，身份证等相关
 
@@ -187,11 +187,11 @@ perl -d 相关模块
 
 =back
 
-如果你还是无法找到准确的地方来放您的模块，建议你去 comp.lang.perl.modules 新闻组咨询
+如果你还是无法找到准确的地方来放您的模块，建议去 comp.lang.perl.modules 新闻组咨询。
 
 =head2 如何打包模块
 
-通常我们不会将一个（或多个) pm 文件直接上传到 PAUSE, 默认的规则是打包成 .tar.gz 然后再上传。
+通常我们不会将一个（或多个) pm 文件直接上传到 PAUSE，默认的规则是打包成 .tar.gz 然后再上传。
 
 =head3 h2xs
 
@@ -209,7 +209,7 @@ L<h2xs> 是最古老的创建新模块的工具。请参阅 h2xs 命令帮助。
 
     > module-starter --module=Book::Chinese --author="Fayland Lam" --email=fayland@gmail.com
 
-默认使用 L<ExtUtils::MakeMaker> 作为 builder, 可以后面再带 '--mb' 使用 L<Module::Build> 或者带 '--mi' 来使用 L<Module::Install> 作为 builder
+默认使用 L<ExtUtils::MakeMaker> 作为 builder，可以后面再带 '--mb' 使用 L<Module::Build> 或者带 '--mi' 来使用 L<Module::Install> 作为 builder 引擎。
 
 L<ExtUtils::MakeMaker> 是最古老和使用最广的 builder 模块。它需要和 make 配合来打包模块。
 
@@ -220,7 +220,7 @@ L<ExtUtils::MakeMaker> 是最古老和使用最广的 builder 模块。它需要
     > make dist
     > make realclean
 
-L<Module::Build> 是用来代替 L<ExtUtils::MakeMaker> 的。它不需要 make, 可用 Perl 来完成打包工作。
+L<Module::Build> 是用来代替 L<ExtUtils::MakeMaker> 的。它不需要 make，可用 Perl 来完成打包工作。
 
     > perl Build.PL
     > perl Build
@@ -229,13 +229,13 @@ L<Module::Build> 是用来代替 L<ExtUtils::MakeMaker> 的。它不需要 make,
     > perl Build dist
     > perl Build realclean
 
-L<Module::Install> 的打包方法和 L<ExtUtils::MakeMaker> 一样（需要 make 配合）。但不同之处在于
+L<Module::Install> 的打包方法和 L<ExtUtils::MakeMaker> 一样（需要 make 配合）。但不同之处在于：
 
 =over 4
 
 =item * 可扩展，拥有丰富的插件
 
-=item * 当 make dist 的时候，所有的 Module::Install 和它的插件文件将被放入 inc 目录随包一起打包成 tar.gz
+=item * 当 make dist 的时候，所有的 Module::Install 和它的插件文件将被放入 inc 目录随包一起打包成 .tar.gz 文件。
 
 =back
 
@@ -255,17 +255,17 @@ dzil 通过 C<dist.ini> 来控制整个过程。
     > dzil dist
     > dzil clean
 
-dzil 跟 L<ExtUtils::MakeMaker>, L<Module::Build>, L<Module::Install> 或 L<Module::Starter> 都不同。
+dzil 跟 L<ExtUtils::MakeMaker>，L<Module::Build>，L<Module::Install> 或 L<Module::Starter> 都不同。
 
 =over 4
 
-=item * dzil 是 distribution builder 而不是 installer. 这是跟 L<Module::Install> 的最大区别。
+=item * dzil 是 distribution builder 而不是 installer。这是跟 L<Module::Install> 的最大区别。
 
-=item * dzil 的 installer 还是可以选择 ExtUtils::MakeMaker 或 Module::Build
+=item * dzil 的 installer 还是可以选择用 L<ExtUtils::MakeMaker> 或 L<Module::Build>。
 
-=item * dzil 的优点在于你只需要专注于你所要开发的代码，而不用关心 MANIFEST, Makefile.PL, Build.PL, 版本或者多余的 POD 代码（如 AUTHOR, COPYRIGHT & LICENSE）
+=item * dzil 的优点在于你只需要专注于你所要开发的代码，而不用关心 MANIFEST，Makefile.PL，Build.PL 版本或者多余的 POD 代码（如 AUTHOR，COPYRIGHT & LICENSE）。
 
-=item * dzil 因为基于 L<Moose> 所以它的代码高度可扩展，插件很容易写
+=item * dzil 因为基于 L<Moose> 所以它的代码高度可扩展，插件很容易写。
 
 =back
 
@@ -277,7 +277,7 @@ dzil 跟 L<ExtUtils::MakeMaker>, L<Module::Build>, L<Module::Install> 或 L<Modu
 
 =item * Makefile.PL, Build.PL
 
-你必须拥有其中之一或者二者都有。建议是永远有 Makefile.PL, 使用 Module::Build 可以在 Build.PL 里设置
+你必须拥有其中之一或者二者都有。建议是永远有 Makefile.PL，使用 Module::Build 可以在 Build.PL 里设置
 
     create_makefile_pl => 'traditional'
 
@@ -291,19 +291,19 @@ dzil 跟 L<ExtUtils::MakeMaker>, L<Module::Build>, L<Module::Install> 或 L<Modu
 
 =item * README, Changes, INSTALL
 
-所有的文件都是可选的。但是 Changes 和 README 是建议拥有的
+所有的文件都是可选的。但是 Changes 和 README 是建议拥有的。
 
 =item * MANIFEST, META.yml, MANIFEST.SKIP
 
-这些文件一般可以通过 make manifest 和 make dist (或 perl Build manifest, perl Build dist) 来生成
+这些文件一般可以通过 make manifest 和 make dist (或 perl Build manifest，perl Build dist) 来生成。
 
 =back
 
 =head2 如何编写测试
 
-本段落仅仅描述如何简单的编写测试和验证测试，更多跟详尽的内容，建议参考《Perl Testing程序高手秘笈》。本书 China-pub, 当当和卓越均可购买，由盛春(chunzi)和蒋永清(joe jiang)翻译。
+本段落仅仅描述如何简单地编写测试和验证测试，更多跟详尽的内容，建议参考《Perl Testing 程序高手秘笈》。本书 China-pub，当当和卓越均可购买，由盛春(chunzi)和蒋永清(joe jiang)翻译。
 
-最简单和使用最广泛的测试模块当属 L<Test::More>, 建议阅读的有
+最简单和使用最广泛的测试模块当属 L<Test::More>，建议阅读的有
 
 =over 4
 
@@ -327,13 +327,13 @@ C<MANIFEST.SKIP> 不是必须的文件。它的意义在于你 make dist 或者 
     \B\.svn\b
     \B\.cvsignore$
 
-一般只有在你的 .t 生成某些临时文件，或者你不想将你的一些私有文件包含在 dist 里的时候，将它们加进 MANIFEST.SKIP, 可以使用正则。
+一般只有在你的 .t 生成某些临时文件，或者你不想将你的一些私有文件包含在 dist 里的时候，将它们加进 MANIFEST.SKIP，可以使用正则。
 
 =item * meta resources
 
 L<http://search.cpan.org/> 在 dist 的主页上是否显示 Repository （如 L<http://search.cpan.org/dist/WWW-Contact/> ） 是由 META.yml 来控制。
 
-而我们一般使用 Makefile.PL 或者 Build.PL 来生成 META.yml
+而我们一般使用 Makefile.PL 或者 Build.PL 来生成 META.yml。
 
 =over 4
 
@@ -349,7 +349,7 @@ L<http://search.cpan.org/> 在 dist 的主页上是否显示 Repository （如 L
     }
   },
 
-将类似上面的东西传进 Module::Build->new, 参考 L<http://search.cpan.org/dist/Module-Build/Build.PL>
+将类似上面的东西传进 Module::Build->new，参考 L<http://search.cpan.org/dist/Module-Build/Build.PL>。
 
 =item * Makefile.PL (L<ExtUtils::MakeMaker>
 
@@ -363,7 +363,7 @@ L<http://search.cpan.org/> 在 dist 的主页上是否显示 Repository （如 L
         },
     },
 
-将类似上面的东西传进 WriteMakefile, 参考 L<http://search.cpan.org/dist/ExtUtils-MakeMaker/Makefile.PL>
+将类似上面的东西传进 WriteMakefile，参考 L<http://search.cpan.org/dist/ExtUtils-MakeMaker/Makefile.PL>。
 
 =item * Makefile.PL (L<Module::Install>)
 
@@ -371,7 +371,7 @@ L<http://search.cpan.org/> 在 dist 的主页上是否显示 Repository （如 L
     homepage 'http://homepage/';
     bugtracker 'http://bugtracker/';
 
-将类似上面的东西直接写进 Makefile.PL
+将类似上面的东西直接写进 Makefile.PL。
 
 =item * dist.ini L<Dist::Zilla>
 
@@ -380,13 +380,13 @@ L<http://search.cpan.org/> 在 dist 的主页上是否显示 Repository （如 L
 
 =back
 
-如果你使用一些版本库控制的话，有自动的寻找 repository 模块。Module::Install 有 L<Module::Install::Repository>, Dist::Zilla 有 L<Dist::Zilla::Plugin::Repository>
+如果你使用一些版本库控制的话，有自动的寻找 repository 的模块。Module::Install 有 L<Module::Install::Repository>, Dist::Zilla 有 L<Dist::Zilla::Plugin::Repository>
 
 =back
 
 =head2 CPAN 作者
 
-跟踪 Perl 高手的足迹和阅读他们的代码
+跟踪 Perl 高手的足迹和阅读他们的代码。
 
 根据首字母排序：
 
@@ -394,7 +394,7 @@ L<http://search.cpan.org/> 在 dist 的主页上是否显示 Repository （如 L
 
 =item * L<http://search.cpan.org/~ADAMK/|ADAMK>
 
-Adam Kennedy 是 CPAN 最多产的作者之一。 L<File::HomeDir>, L<IPC::Run>, L<Perl::Dist>, L<pip>, L<PPI>  etc.
+Adam Kennedy 是 CPAN 最多产的作者之一。L<File::HomeDir>，L<IPC::Run>，L<Perl::Dist>，L<pip>，L<PPI> 等等。
 
 =item * L<http://search.cpan.org/~AUTRIJUS/|AUTRIJUS>
 
@@ -436,7 +436,7 @@ Matt S Trout, L<DBIx::Class>, L<Catalyst>, L<Devel::REPL>, L<local::lib>, L<Reac
 
 =item * L<http://search.cpan.org/~NUFFIN/|NUFFIN>
 
-יובל קוג'מן (Yuval Kogman), Catalyst n多 Plugin 和 n多 MooseX 的作者。L<Moose> 的作者之一。L<KiokuDB> 的发起者
+יובל קוג'מן (Yuval Kogman), Catalyst n 多 Plugin 和 n 多 MooseX 的作者。L<Moose> 的作者之一。L<KiokuDB> 的发起者
 
 =item * L<http://search.cpan.org/~OVID/|OVID>
 
@@ -472,7 +472,7 @@ Tim Bunce, L<DBI>, L<Devel::NYTProf>
 
 =item * More
 
-建议订阅 L<http://search.cpan.org/recent> 的 RSS 以便跟踪 CPAN 最新模块
+建议订阅 L<http://search.cpan.org/recent> 的 RSS 以便跟踪 CPAN 最新模块。
 
 =back
 

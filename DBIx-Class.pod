@@ -13,7 +13,7 @@ Book::Chinese::DBIx-Class - DBIx-Class ORM
 
 =item *
 
-L<DBIx::Class> 是和 L<Catalyst> 分开, 二者是各自独立的。只是他们的作者之间有交集。
+L<DBIx::Class> 是和 L<Catalyst> 分开，两者各自独立。只是他们的作者之间有交集。
 
 =item *
 
@@ -27,21 +27,21 @@ L<DBIx::Class> 不是为了性能而开发的。如果你的代码强烈要求�
 
 =head2 例子
 
-本章将参考 L<TheSchwartz::Moosified> 的 schema/SQLite.sql 作为 database schema. （请参考 eg/DBIx-Class/schema.sql）
+本章将参考 L<TheSchwartz::Moosified> 的 schema/SQLite.sql 作为 database schema。（请参考 eg/DBIx-Class/schema.sql）
 
 =over 4
 
 =item * db.sqlite
 
-第一步你需要创建一个 database, 定义好你的 schema. 例如：
+第一步你需要创建一个 database，定义好你的 schema。例如：
 
     E:\Fayland\chinese-perl-book\eg\DBIx-Class>perl create_sqlite_db.pl
 
 =item * 初始化 DBIx::Class
 
-这里有两种方式可供选择，一种是手工编写所有的 DBIx::Class pm, 另一种是使用 L<DBIx::Class::Schema::Loader> 全自动生成
+这里有两种方式可供选择，一种是手工编写所有的 DBIx::Class pm, 另一种是使用 L<DBIx::Class::Schema::Loader> 全自动生成。
 
-通常我会在第一次使用 L<DBIx::Class::Schema::Loader> 的 make_schema_at 来生成，而在以后就手工增加和修改 pm 或再次 make_schema_at
+通常我会在第一次使用 L<DBIx::Class::Schema::Loader> 的 make_schema_at 来生成，而在以后就手工增加和修改 pm 或再次 make_schema_at。
 
 eg/DBIx-Class/make_schema_at.pl
 
@@ -59,14 +59,14 @@ eg/DBIx-Class/make_schema_at.pl
 
 DBIx::Class::Schema::Loader v0.04006 创建 schema 的时候是用了 load_classes
 
-而从 DBIx::Class 0.081 开始，一个更推荐的做法是 L<http://search.cpan.org/dist/DBIx-Class/lib/DBIx/Class/Schema.pm#load_namespaces|load_namespaces>
+而从 DBIx::Class 0.081 开始，一个更推荐的做法是 L<http://search.cpan.org/dist/DBIx-Class/lib/DBIx/Class/Schema.pm#load_namespaces|load_namespaces>。
 
-不排除以后 Loader 会改为 load_namespaces. 所以以下修改可能很快就过期。
+不排除以后 Loader 会改为 load_namespaces。所以以下修改可能很快就过时。
 
-将 TheSchwartz::Schema 里的 load_classes 改为 load_namespaces, 将 lib/TheSchwartz/Schema/*.pm 移动到 
+将 TheSchwartz::Schema 里的 load_classes 改为 load_namespaces，将 lib/TheSchwartz/Schema/*.pm 移动到 
 lib/TheSchwartz/Schema/Result/*.pm 并修改 package 增加 Result::
 
-load_namespaces 将从 TheSchwartz::Schema::Result 下载入模块，从 TheSchwartz::Schema::ResultSet 下载入 ResultSet 模块
+load_namespaces 将从 TheSchwartz::Schema::Result 下载入模块，从 TheSchwartz::Schema::ResultSet 下载入 ResultSet 模块。
 
 =item * 编写 load.t
 
@@ -92,7 +92,7 @@ load_namespaces 将从 TheSchwartz::Schema::Result 下载入模块，从 TheSchw
 
 测试的重要性是再说一百次都不会过分。本章将从头到尾贯穿着不同的测试来验证自己所写的代码是自己所需的。
 
-如何编写测试将在 L<BeACPANAuthor> 中做简单介绍
+如何编写测试将在 L<BeACPANAuthor> 中做简单介绍。
 
 =item * 更多的测试代码
 
@@ -133,7 +133,7 @@ eg/DBIx-Class/t/01-basic.t
 
 =item * ResultSet
 
-DBIx::Class 的正确使用方法就是用 ResultSet （最起码个人认为是正确的）。
+DBIx::Class 的正确使用方法就是用 ResultSet（最起码个人认为是正确的）。
 
 与某个 table 相关的代码放到相关的 ResultSet 里，再写一个测试文件。
 
