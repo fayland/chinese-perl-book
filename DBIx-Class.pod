@@ -94,6 +94,43 @@ load_namespaces 将从 TheSchwartz::Schema::Result 下载入模块，从 TheSchw
 
 如何编写测试将在 L<BeACPANAuthor> 中做简单介绍
 
+=item * 更多的测试代码
+
+仅仅使用 use_ok 是验证代码是否有语法错误。而我们从上面的测试中无法知道具体的位置移动到底对不对。
+
+eg/DBIx-Class/t/01-basic.t
+
+    #!/usr/bin/perl
+    
+    use strict;
+    use warnings;
+    use Test::More tests => 5;
+    use FindBin qw/$Bin/;
+    use TheSchwartz::Schema;
+    
+    my $dbname = "$Bin/../db.sqlite";
+    my $schema = TheSchwartz::Schema->connect(
+        "dbi:SQLite:dbname=$dbname", '', '', {
+        RaiseError => 1,
+        PrintError => 0,
+    } );
+    isa_ok($schema, 'TheSchwartz::Schema');
+    
+    foreach ('Exitstatus', 'Job', 'Error', 'Funcmap') {
+        can_ok( $schema->resultset($_), 'search' );
+    }
+    
+    1;
+
+在这里我们创建了 TheSchwartz::Schema 的实例，用 ->connect 方法。然后判断了 4 个 resultset 都能使用 search 方法 (L<DBIx::Class::ResultSet> 提供)，最后我们运行 prove
+
+    E:\Fayland\chinese-perl-book\eg\DBIx-Class>prove -l t/
+    t\00-load.t ... ok
+    t\01-basic.t .. ok
+    All tests successful.
+    Files=2, Tests=10,  1 wallclock secs ( 0.05 usr +  0.05 sys =  0.09 CPU)
+    Result: PASS
+
 =back
 
 =head1 AUTHOR
