@@ -68,6 +68,32 @@ lib/TheSchwartz/Schema/Result/*.pm 并修改 package 增加 Result::
 
 load_namespaces 将从 TheSchwartz::Schema::Result 下载入模块，从 TheSchwartz::Schema::ResultSet 下载入 ResultSet 模块
 
+=item * 编写 load.t
+
+为了验证所修改的是正确的，我们将使用一个 eg/DBIx-Class/t/00-load.t 文件来测试。
+
+    #!/usr/bin/perl
+    
+    use strict;
+    use warnings;
+    use Test::More tests => 1;
+    
+    use_ok('TheSchwartz::Schema');
+    
+    1;
+
+运行 prove 来测试
+
+    E:\Fayland\chinese-perl-book\eg\DBIx-Class>prove -l t/
+    t\00-load.t .. ok
+    All tests successful.
+    Files=1, Tests=1,  2 wallclock secs ( 0.05 usr +  0.02 sys =  0.06 CPU)
+    Result: PASS
+
+测试的重要性是再说一百次都不会过分。本章将从头到尾贯穿着不同的测试来验证自己所写的代码是自己所需的。
+
+如何编写测试将在 L<BeACPANAuthor> 中做简单介绍
+
 =back
 
 =head1 AUTHOR

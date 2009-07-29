@@ -1,4 +1,4 @@
-package TheSchwartz::Schema::Exitstatus;
+package TheSchwartz::Schema::Result::Exitstatus;
 
 use strict;
 use warnings;

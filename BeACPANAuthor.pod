@@ -299,6 +299,10 @@ dzil 跟 L<ExtUtils::MakeMaker>, L<Module::Build>, L<Module::Install> 或 L<Modu
 
 =back
 
+=head2 如何编写测试
+
+XXX? TODO
+
 =head2 FAQ 和建议
 
 =over 4
