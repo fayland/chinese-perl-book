@@ -45,6 +45,55 @@ Template 定义了一些常用的过滤器，我们将通过语法介绍来认�
 
 =head3 自定义过滤器
 
+我们将过滤器分为两种，一种类如 [% output FILTER html %]，称之为静态过滤器；另一种为 [% pi | format('%0.3f') %] （过滤器上带参数），称之为动态过滤器。
+
+这两种不同的过滤器有两种不同的写法。
+
+=head3 FILTERS
+
+    my $tt = Template->new({
+        FILTERS => {
+            'ucf' => \&ucf,
+            'lcf' => sub { lcfirst uc shift; },
+            'cut' => [ \&cut, 1 ], # our dynamic filter
+        },
+    });
+    
+    sub ucf {
+        my $text = shift;
+        $text = ucfirst lc $text;
+        return $text;
+    }
+    sub cut {
+        my ($context, $len) = @_;
+        return sub {
+            my $text = shift;
+            $text = substr($text, 0, $len);
+            return $text;
+        }
+    }
+
+这是一种通过 Template FILTERS 而定义的过滤器。静态的过滤器通过子程序引用（或匿名子程序），第一次参数而需要过滤的文本。动态过滤器通过传递数组引用（第一参数为子程序引用，第二参数为1）。静态子程序也接受数组引用，但是第二参数为0，如 'ucf' => [ \&ucf, 0 ]
+
+动态过滤器需要返回匿名子程序，过滤器的参数将传递进数组引用的第一个参数子程序引用，而需要过滤的文本将是返回的匿名子程序的第一参数。
+
+测试的代码参考 eg/Template/filter.pl
+
+    [% FILTER ucf %]
+    template is great
+    [% END %]
+    [% lcf_text = 'template is great' %]
+    [% lcf_text | lcf %]
+    
+    [% FILTER cut(6) %]template is great[% END %]
+
+运行结果为
+
+    E:\Fayland\chinese-perl-book\eg\Template>perl filter.pl
+    Template is great
+    tEMPLATE IS GREAT
+    templa
+
 =head2 tools 工具
 
 =head3 tpage
