@@ -94,6 +94,55 @@ Template 定义了一些常用的过滤器，我们将通过语法介绍来认�
     tEMPLATE IS GREAT
     templa
 
+=head3 PLUGINS
+
+L<Template::Plugin::Filter>
+
+    package MyTemplate::Plugin::Filter::Textile;
+
+    use strict;
+    use warnings;
+    use Template::Plugin::Filter;
+    use base qw(Template::Plugin::Filter);
+    use Text::Textile ();
+    
+    sub filter {
+       my ($self, $text) = @_;
+       return Text::Textile::textile($text);
+    }
+    
+    1;
+
+另一种过滤器的写法是通过继承 L<Template::Plugin::Filter>
+
+注册使用的办法有两种，如果你有很多个 MyTemplate::Plugin::Filter 你可以使用 PLUGIN_BASE 来注册。
+
+    my $tt2 = Template->new( {
+        PLUGIN_BASE => 'MyTemplate::Plugin::Filter'
+    } );
+
+如果仅仅是一个或两个的话，可以使用 PLUGINS 来注册该过滤器插件。
+
+    my $tt2 = Template->new({
+        PLUGINS => {
+            Textile => 'MyTemplate::Plugin::Filter::Textile',
+        },
+    });
+
+它的使用方法与普通插件类似
+
+    [% USE Textile %]
+    [% FILTER $Textile %]this is _like_ *so* *cool*[% END %]
+
+运行参考 eg/Template/filter_plugin.pl
+
+    E:\Fayland\chinese-perl-book\eg\Template>perl filter_plugin.pl
+    <p>this is <em>like</em> <strong>so</strong> <strong>cool</strong></p>
+
+上面的例子是静态过滤器，如果想写动态过滤器的话，可以在 package 里写 our $DYNAMIC = 1; 或在 sub init 里定义 $self->{ _DYNAMIC } = 1; 具体可以参考 L<Template::Plugin::Filter> 文档。
+
+如果你很熟悉写 Template 插件的话，其实你可以通过在 sub new 里调用 $context->define_filter('html2text', [ \&html2text, 1 ]); 来定义一个过滤器，而不必继承 L<Template::Plugin::Filter>。例子可以查看 L<Template::Plugin::HtmlToText> 的源码。
+
 =head2 tools 工具
 
 =head3 tpage
