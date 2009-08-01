@@ -5,6 +5,104 @@ Book::Chinese::Template - Template::Toolkit
 
 =head1 DESCRIPTION
 
+=head2 INSERT INCLUDE PROCESS
+
+为了更好的组织和复用代码，我们会经常将一个网页所调用的 tt 模板分为好几个。
+
+而在一个主模版里调用外部模板，我们有好多种办法，介绍如下：
+
+=over 4
+
+=item * INSERT
+
+假设我们有一个外部文件 eg/Template/ex.tt2
+
+    [% foo = 'bar' %]
+    foo = [% foo %] in External File.
+
+INSERT 一般不常用。它仅仅是将外部文件读取然后输出，不经过任何改变。(eg/Template/insert.tt2)
+
+    [% foo = 'main' %]
+    foo = [% foo %] in Main
+    [% INSERT ex.tt2 %]
+    foo = [% foo %] in Main after insert/include/process
+
+输出结果如下：
+
+    E:\Fayland\chinese-perl-book\eg\Template>tpage insert.tt2
+    
+    foo = main in Main
+    [% foo = 'bar' %]
+    foo = [% foo %] in External File.
+    foo = main in Main after insert/include/process
+
+=item * INCLUDE
+
+    [% foo = 'main' %]
+    foo = [% foo %] in Main
+    [% INCLUDE ex.tt2 %]
+    foo = [% foo %] in Main after insert/include/process
+
+输出结果：(eg/Template/include.tt2)
+
+    E:\Fayland\chinese-perl-book\eg\Template>tpage --pre_chomp include.tt2
+    
+    foo = main in Main
+    foo = bar in External File.
+    foo = main in Main after insert/include/process
+
+=item * PROCESS
+
+    [% foo = 'main' %]
+    foo = [% foo %] in Main
+    [% PROCESS ex.tt2 %]
+    foo = [% foo %] in Main after insert/include/process
+
+输出结果：(eg/Template/process.tt2)
+
+    E:\Fayland\chinese-perl-book\eg\Template>tpage --pre_chomp process.tt2
+    
+    foo = main in Main
+    foo = bar in External File.
+    foo = bar in Main after insert/include/process
+
+INCLUDE 和 PROCESS 是最常用的调用方法。如上面的例子说显示的，如果想调用外部模板里的变量不影响主模版里的变量，我们就用 INCLUDE, 反之用 PROCESS
+
+传递参数给外部模板的话，我们一般直接写在 INSERT/PROCESS 的模板后面，如：
+
+    [% INCLUDE ex.tt2 foo = '77' %]
+    [% PROCESS ex.tt2 foo = '77', bar = 88 %]
+
+=item * BLOCK
+
+我们顺便在这里讲讲 BLOCK
+
+有时候在一个页面，我们可能在不同的地方输出相同的一段 HTML，重复写两次代码是愚蠢的。而将这段代码写到外部文件里也是有点繁琐，这时候，我们很大程度上需要 BLOCK (BLOCK 也有其他用处，这里就简单介绍一种用途)
+
+    [% BLOCK guide %]
+    -guide text-
+    [% END %]
+    [% INCLUDE guide %]
+    
+    [% blk_var = BLOCK %]
+    -block var-
+    [% END %]
+    [% blk_var %]
+    
+    [% INCLUDE guide %]
+    [% blk_var %]
+
+eg/Template/block.tt2 输出结果：
+
+    E:\Fayland\chinese-perl-book\eg\Template>tpage --pre_chomp --post_chomp block.tt2
+    -guide text--block var--guide text--block var-
+
+两种写法，用 INCLUDE/PROCESS 的时候，可以跟调用外部文件一样传递参数。如 [% INCLUDE guide foo='77' %]
+
+而 var = BLOCK 更像是定义一个变量。
+
+=back
+
 =head2 filter 过滤器
 
 过滤器是指将一段文字传递进来，然后通过过滤器的函数，最后传递文字回去。我们将通过自定义过滤器来更清楚的了解过滤器的运作过程。

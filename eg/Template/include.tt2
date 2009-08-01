@@ -1,0 +1,4 @@
+[% foo = 'main' %]
+foo = [% foo %] in Main
+[% INCLUDE ex.tt2 %]
+foo = [% foo %] in Main after insert/include/process

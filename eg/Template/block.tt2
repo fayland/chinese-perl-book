@@ -1,0 +1,12 @@
+[% BLOCK guide %]
+-guide text-
+[% END %]
+[% INCLUDE guide %]
+
+[% blk_var = BLOCK %]
+-block var-
+[% END %]
+[% blk_var %]
+
+[% INCLUDE guide %]
+[% blk_var %]
