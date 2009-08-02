@@ -1,7 +1,7 @@
 
 =head1 NAME
 
-Book::Chinese::Moose - OO, Moose
+Book::Chinese::Moose - Moose, OO
 
 =head1 DESCRIPTION
 
@@ -87,6 +87,25 @@ HASH 可以让你使用不同的 sub 名字。比如
 这种用法在当你的模块里已经有一个 get 的时候就非常有用。sub get 是你原来的 get, 而 A->new->get_url = A->new->ua->get
 
 其他的诸如 REGEXP, ROLE, CODE, DUCKTYPE 都有点高级，在有需要的时候可以去 moose@perl.org 或者 irc.perl.org #moose 咨询。
+
+=item * init_arg
+
+  package AAAA;
+  use Moose;
+  has 'bigness' => (
+      is       => 'ro',
+      init_arg => 'size',
+  );
+
+初始化 AAAA->new 的时候就要用 AAAA->new( size => 1 );
+
+如果你不允许一个变量在 new 里被初始化，可以参考如下：
+
+  has '_genetic_code' => (
+      is         => 'ro',
+      lazy_build => 1,
+      init_arg   => undef,
+  );
 
 =item * L<MooseX::Types>
 
