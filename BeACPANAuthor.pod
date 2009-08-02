@@ -506,6 +506,124 @@ Tim Bunce, L<DBI>, L<Devel::NYTProf>
 
 =back
 
+大陆（和香港） Perl CPAN 作者 L<Acme::CPANAuthors::Chinese>
+
+首字母排序：
+
+=over 4
+
+=item * L<http://search.cpan.org/~AGENT/|AGENT>
+
+agentzh (章亦春)，大陆最牛的 Perler 之一，L<OpenResty> 的源码值得学习
+
+=item * L<http://search.cpan.org/~ALEXE/|ALEXE>
+
+Alexe, 运营自己的公司（以 Perl 为主）。
+
+=item * L<http://search.cpan.org/~CHAOSLAW/|CHAOSLAW>
+
+王晓哲，smth Perl 版主力
+
+=item * L<http://search.cpan.org/~CHENYR/|CHENYR>
+
+Chen Yirong (春江)
+
+=item * L<http://search.cpan.org/~CHUNZI/|CHUNZI>
+
+chunzi, 译有《Perl Testing 程序高手秘笈》
+
+=item * L<http://search.cpan.org/~CNANGEL/|CNANGEL>
+
+李俊良
+
+=item * L<http://search.cpan.org/~DONGXU/|DONGXU>
+
+Dongxu Ma
+
+=item * L<http://search.cpan.org/~FAYLAND/|FAYLAND>
+
+Fayland 林，本书作者
+
+=item * L<http://search.cpan.org/~FOOLFISH/|FOOLFISH>
+
+钱宇/Qian Yu
+
+=item * L<http://search.cpan.org/~HGNENG/|HGNENG>
+
+黄冠能
+
+=item * L<http://search.cpan.org/~HOOWA/|HOOWA>
+
+孙冰
+
+=item * L<http://search.cpan.org/~ISLUE/|ISLUE>
+
+胡海麟
+
+=item * L<http://search.cpan.org/~JOEJIANG/|JOEJIANG>
+
+蒋永清，译有《Perl Testing 程序高手秘笈》
+
+=item * L<http://search.cpan.org/~JWU/|JWU>
+
+=item * L<http://search.cpan.org/~MAIN/|MAIN>
+
+吴健源
+
+=item * L<http://search.cpan.org/~JZHANG/|JZHANG>
+
+张军
+
+=item * L<http://search.cpan.org/~KAILI/|KAILI>
+
+李凯
+
+=item * L<http://search.cpan.org/~LAOMOI/|LAOMOI>
+
+xiaoshengcaicai
+
+=item * L<http://search.cpan.org/~NSNAKE/NSNAKE>
+
+徐昊
+
+=item * L<http://search.cpan.org/~PANGJ/|PANGJ>
+
+Jeff Pang
+
+=item * L<http://search.cpan.org/~QJZHOU/|QJZHOU>
+
+Qing-Jie Zhou
+
+=item * L<http://search.cpan.org/~RANN/|RANN>
+
+灿烂微笑 / Ran Ningyu
+
+=item * L<http://search.cpan.org/~REDICAPS/|REDICAPS>
+
+woshini
+
+=item * L<http://search.cpan.org/~ROOTKWOK/|ROOTKWOK>
+
+☰郭樂聰☷ ☯βαggiσ☯
+
+=item * L<http://search.cpan.org/~SAL/|SAL>
+
+Sal Zhong (仲伟祥)
+
+=item * L<http://search.cpan.org/~SUNTONG/|SUNTONG>
+
+Tong Sun
+
+=item * L<http://search.cpan.org/~SWANSUN/|SWANSUN>
+
+swansun huang
+
+=item * L<http://search.cpan.org/~YEWENBIN/|YEWENBIN>
+
+叶文彬，smth Perl 版主力
+
+=back
+
 =head1 SEE ALSO
 
 =head1 AUTHOR
