@@ -25,7 +25,9 @@ Book::Chinese::BeACPANTester - Be a CPAN Tester
 
 这将表明您已经成功安装了 CPAN 模块。
 
-=head3 配置 CPAN
+=over 4
+
+=item * 配置 CPAN
 
 在 cpan> 模式下输入
 
@@ -33,9 +35,26 @@ Book::Chinese::BeACPANTester - Be a CPAN Tester
 
 将重新配置 CPAN 设置
 
-=head3 安装模块
+=item * 安装模块
 
     cpan> install Moose
+
+=item * 搜寻模块
+
+    cpan> m /Catalyst.*?Trait/
+    Module    Catalyst::TraitFor::Log::Audio (RJURNEY/Catalyst-TraitFor-Log-Audio-0.02.tar.gz)
+    Module  = Catalyst::TraitFor::Model::DBIC::Schema::Caching (MSTROUT/Catalyst-Model-DBIC-Schema-0.26.tar.gz)
+    Module  < Catalyst::TraitFor::Model::DBIC::Schema::QueryLog (FAYLAND/Catalyst-TraitFor-Model-DBIC-Schema-QueryLog-0.02.tar.gz)
+    Module  = Catalyst::TraitFor::Model::DBIC::Schema::Replicated (MSTROUT/Catalyst-Model-DBIC-Schema-0.26.tar.gz)
+    Module    Catalyst::TraitFor::Request::ProxyBase (VEEP/Catalyst-TraitFor-Request-ProxyBase-0.000003.tar.gz)
+    Module  < CatalystX::Component::Traits (BOBTFISH/CatalystX-Component-Traits-0.08.tar.gz)
+    6 items found
+
+更多搜索选项请使用帮助
+
+    cpan> h
+
+=back
 
 将开始安装或者升级模块。在安装过程中您将可能遇到以下问题：
 
@@ -79,6 +98,10 @@ Book::Chinese::BeACPANTester - Be a CPAN Tester
 
 查找 CPAN 模块最好的地方。建议订阅 RSS
 
+=item * L<http://cpan.uwinnipeg.ca/>
+
+如果打不开 search.cpan
+
 =item * L<http://cpants.perl.org/>
 
 很多很好的服务类如 L<http://cpants.perl.org/dist/used_by/Moose>
@@ -94,6 +117,10 @@ CPAN 测试者网站
 报告模块 bug，patch 或者建议，一般请不要用 email 私下和作者联系，请尽量使用 RT
 
 =item * L<http://annocpan.org/>
+
+=item * L<http://cpantools.com/>
+
+=item * L<http://hexten.net/cpan-faces/>
 
 =back
 
