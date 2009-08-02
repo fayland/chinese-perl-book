@@ -39,6 +39,8 @@ Book::Chinese::BeACPANTester - Be a CPAN Tester
 
     cpan> install Moose
 
+将开始安装或者升级模块。
+
 =item * 搜寻模块
 
     cpan> m /Catalyst.*?Trait/
@@ -54,9 +56,35 @@ Book::Chinese::BeACPANTester - Be a CPAN Tester
 
     cpan> h
 
+=item * 安装老版本模块
+
+有时候安装某个模块完毕之后可能发现出错，想安装回原来的模块。或者您的脚本只能运行在老版本的某个模块之上。请遵循如下步骤
+
+首先打开该模块老版本的 CPAN 页面如 http://search.cpan.org/~mramberg/Catalyst-Runtime-5.7015/，然后查看 Download 的链接如 http://search.cpan.org/CPAN/authors/id/M/MR/MRAMBERG/Catalyst-Runtime-5.7015.tar.gz
+
+    cpan> install MRAMBERG/Catalyst-Runtime-5.7015.tar.gz
+
+或者直接命令行下
+
+    $> cpan MRAMBERG/Catalyst-Runtime-5.7015.tar.gz
+
+都会安装该版本模块而非最新的模块。
+
+=item * 测试无法通过，但是我想强制安装
+
+    cpan> force install Catalyst
+
+或者在命令行：
+
+    $> perl -MCPAN -e 'force("install", "Foorum");'
+
+=item * 我想手工运行 perl Makefile.PL
+
+    cpan> look DBIx::Class
+
 =back
 
-将开始安装或者升级模块。在安装过程中您将可能遇到以下问题：
+在安装过程中您将可能遇到以下问题：
 
 =over 4
 
@@ -69,14 +97,6 @@ Book::Chinese::BeACPANTester - Be a CPAN Tester
 =item * 我没有权限写公用目录，或者，我想拥有自己的安装目录
 
 请阅读 L<local::lib> 文档很简单而且很好用，推荐。
-
-=item * 测试无法通过，但是我想强制安装
-
-    cpan> force install Catalyst
-
-=item * 我想手工运行 perl Makefile.PL
-
-    cpan> look DBIx::Class
 
 =back
 
