@@ -97,7 +97,7 @@ HASH 可以让你使用不同的 sub 名字。比如
       init_arg => 'size',
   );
 
-初始化 AAAA->new 的时候就要用 AAAA->new( size => 1 );
+初始化的时候就要用 AAAA->new( size => 1 );
 
 如果你不允许一个变量在 new 里被初始化，可以参考如下：
 
