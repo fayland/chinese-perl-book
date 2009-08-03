@@ -231,6 +231,70 @@ DBIx::Class 的正确使用方法就是用 ResultSet（最起码个人认为是�
 
 =back
 
+=head2 FAQ
+
+=over 4
+
+=item * 复杂的 search
+
+建议阅读 L<DBIx::Class::Manual::Cookbook> 和 L<SQL::Abstract>
+
+    resultset('XXX')->search( {
+        requestor => 'inna',
+        worker => ['nwiger', 'rcwe', 'sfz'],
+        status => { '!=', 'completed' }
+    } );
+    # SQL:
+    # FROM xxx WHERE
+    #   ( requestor = ? ) AND ( status != ? )
+    #   AND ( worker = ? OR worker = ? OR worker = ? )
+
+    resultset('XXX')->search( {
+        date_entered => { '>' => \["to_date(?, 'MM/DD/YYYY')", "11/26/2008"] },
+        date_expires => { '<' => \"now()" }
+    } );
+    # SQL:
+    # FROM xxx WHERE
+    #   date_entered > "to_date(?, 'MM/DD/YYYY') AND date_expires < now()
+
+    resultset('XXX')->search( {
+        -or => [
+            -and => [a => 1, b => 2],
+            -or  => [c => 3, d => 4],
+            e    => [-and => {-like => 'foo%'}, {-like => '%bar'} ]
+        ],
+    } );
+    # SQL:
+    # FROM xxx WHERE
+    #   ( (    ( a = ? AND b = ? ) 
+    #       OR ( c = ? OR d = ? ) 
+    #       OR ( e LIKE ? AND e LIKE ? ) ) )
+
+=item * as_query
+
+如果你对你所写的 ->search 不太确定，你可以使用 ->as_query 来 debug
+
+  $schema->resultset('user')->search( {
+    user_id => { 'IN', [1, 2] },
+    -or => [
+      last_visit => { '>', time() - 86400 },
+      last_update => { '>', time() - 86400 },
+    ]
+  }, {
+    columns => ['username'],
+    rows    => 1,
+  } )->as_query;
+
+  [ '(SELECT me.username FROM user me 
+     WHERE ( ( ( last_visit > ?
+              OR last_update > ? )
+        AND user_id IN ( ?, ? ) ) )
+     LIMIT 1)',
+    [ 'last_visit', 1242290843 ]
+  ... ]
+
+=back
+
 =head2 小结
 
 限于水平有限，只能简单介绍 DBIx::Class 到此。我会在接下来的 Catalyst 说再次写 DBIx::Class 例子。
