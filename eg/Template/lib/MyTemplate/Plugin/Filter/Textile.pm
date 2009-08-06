@@ -1,4 +1,5 @@
-package MyTemplate::Plugin::Filter::Textile;
+package     # hidden from PAUSE
+    MyTemplate::Plugin::Filter::Textile;
 
 use strict;
 use warnings;

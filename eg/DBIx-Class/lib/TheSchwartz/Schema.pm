@@ -1,4 +1,5 @@
-package TheSchwartz::Schema;
+package     # hidden from PAUSE
+    TheSchwartz::Schema;
 
 use strict;
 use warnings;

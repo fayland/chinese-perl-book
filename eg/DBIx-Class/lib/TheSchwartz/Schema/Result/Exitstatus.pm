@@ -1,4 +1,5 @@
-package TheSchwartz::Schema::Result::Exitstatus;
+package     # hidden from PAUSE
+    TheSchwartz::Schema::Result::Exitstatus;
 
 use strict;
 use warnings;

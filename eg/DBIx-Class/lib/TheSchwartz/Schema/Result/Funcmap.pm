@@ -1,4 +1,5 @@
-package TheSchwartz::Schema::Result::Funcmap;
+package     # hidden from PAUSE
+    TheSchwartz::Schema::Result::Funcmap;
 
 use strict;
 use warnings;

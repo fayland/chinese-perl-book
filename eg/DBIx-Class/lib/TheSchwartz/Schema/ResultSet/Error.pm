@@ -1,4 +1,5 @@
-package TheSchwartz::Schema::ResultSet::Error;
+package     # hidden from PAUSE
+    TheSchwartz::Schema::ResultSet::Error;
 
 use strict;
 use warnings;

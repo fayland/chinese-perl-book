@@ -1,4 +1,5 @@
-package TheSchwartz::Schema::Result::Job;
+package     # hidden from PAUSE
+    TheSchwartz::Schema::Result::Job;
 
 use strict;
 use warnings;
