@@ -11,7 +11,7 @@ Book::Chinese::MasterPerlToday::Catalyst - Catalyst Framework
 
 =head2 结构
 
-L<Catalyst> 本身很简单。它最大的功能是 URI 匹配和整个 MVC 的 API 接口。
+本章节 TODO, Sorry
 
 =head1 AUTHOR
 
