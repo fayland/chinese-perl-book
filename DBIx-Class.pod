@@ -60,7 +60,7 @@ eg/DBIx-Class/make_schema_at.pl
 
 DBIx::Class::Schema::Loader v0.04006 创建 schema 的时候是用了 load_classes
 
-而从 DBIx::Class 0.081 开始，一个更推荐的做法是 L<http://search.cpan.org/dist/DBIx-Class/lib/DBIx/Class/Schema.pm#load_namespaces|load_namespaces>。
+而从 DBIx::Class 0.081 开始，一个更推荐的做法是 L<load_namespaces|http://search.cpan.org/dist/DBIx-Class/lib/DBIx/Class/Schema.pm#load_namespaces>。
 
 不排除以后 Loader 会改为 load_namespaces。所以以下修改可能很快就过时。
 
@@ -93,7 +93,7 @@ load_namespaces 将从 TheSchwartz::Schema::Result 下载入模块，从 TheSchw
 
 测试的重要性是再说一百次都不会过分。本章将从头到尾贯穿着不同的测试来验证自己所写的代码是自己所需的。
 
-如何编写测试将在 L<BeACPANAuthor> 中做简单介绍。
+如何编写测试将在 L<Book::Chinese::MasterPerlToday::BeACPANAuthor> 中做简单介绍。
 
 =item * 更多的测试代码
 
