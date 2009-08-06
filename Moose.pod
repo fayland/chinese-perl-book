@@ -1,7 +1,7 @@
 
 =head1 NAME
 
-Book::Chinese::Moose - Moose, OO
+Book::Chinese::MasterPerlToday::Moose - Moose, OO
 
 =head1 DESCRIPTION
 

@@ -1,7 +1,7 @@
 
 =head1 NAME
 
-Book::Chinese::BeACPANTester - Be a CPAN Tester
+Book::Chinese::MasterPerlToday::BeACPANTester - Be a CPAN Tester
 
 =head1 DESCRIPTION
 

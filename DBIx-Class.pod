@@ -1,7 +1,7 @@
 
 =head1 NAME
 
-Book::Chinese::DBIx-Class - DBIx-Class ORM
+Book::Chinese::MasterPerlToday::DBIx-Class - DBIx-Class ORM
 
 =head1 DESCRIPTION
 

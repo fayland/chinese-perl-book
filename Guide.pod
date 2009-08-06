@@ -1,7 +1,7 @@
 
 =head1 NAME
 
-Book::Chinese::Guide - Guide
+Book::Chinese::MasterPerlToday::Guide - Guide
 
 =head1 DESCRIPTION
 
@@ -37,21 +37,21 @@ Book::Chinese::Guide - Guide
 
 =over 4
 
-=item * L<Preface>
+=item * L<Book::Chinese::MasterPerlToday::Preface>
 
-=item * Guide
+=item * Book::Chinese::MasterPerlToday::Guide
 
-=item * L<BeACPANTester>
+=item * L<Book::Chinese::MasterPerlToday::BeACPANTester>
 
-=item * L<BeACPANAuthor>
+=item * L<Book::Chinese::MasterPerlToday::BeACPANAuthor>
 
-=item * L<Moose>
+=item * L<Book::Chinese::MasterPerlToday::Moose>
 
-=item * L<DBIx::Class>
+=item * L<Book::Chinese::MasterPerlToday::DBIx-Class>
 
-=item * L<Template>
+=item * L<Book::Chinese::MasterPerlToday::Template>
 
-=item * L<Catalyst>
+=item * L<Book::Chinese::MasterPerlToday::Catalyst>
 
 =back
 

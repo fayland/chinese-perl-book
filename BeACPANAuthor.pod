@@ -1,7 +1,7 @@
 
 =head1 NAME
 
-Book::Chinese::BeACPANAuthor - Be a CPAN Author
+Book::Chinese::MasterPerlToday::BeACPANAuthor - Be a CPAN Author
 
 =head1 DESCRIPTION
 

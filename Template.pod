@@ -1,7 +1,7 @@
 
 =head1 NAME
 
-Book::Chinese::Template - Template::Toolkit
+Book::Chinese::MasterPerlToday::Template - Template::Toolkit
 
 =head1 DESCRIPTION
 

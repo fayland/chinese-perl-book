@@ -1,25 +1,34 @@
+package Book::Chinese::MasterPerlToday;
+
+# ABSTRACT: free book in Chinese <Master Perl Today>
+
+use strict;
+use warnings;
+
+1;
+__END__
 
 =head1 NAME
 
-Book::Chinese::MasterPerlToday::Preface - Preface
+Book::Chinese::MasterPerlToday - free book in Chinese <Master Perl Today>
 
 =head1 DESCRIPTION
 
-=over 4
+=head2 L<Book::Chinese::MasterPerlToday::Preface>
 
-=item *
+=head2 L<Book::Chinese::MasterPerlToday::Guide>
 
-本书含有错误。请不要指责水平有限的作者。谢绝谩骂，欢迎指正。
+=head2 L<Book::Chinese::MasterPerlToday::BeACPANTester>
 
-=item *
+=head2 L<Book::Chinese::MasterPerlToday::BeACPANAuthor>
 
-本书将很快过期。阅读模块自带的 POD 永远是最好的办法。
+=head2 L<Book::Chinese::MasterPerlToday::Moose>
 
-=item *
+=head2 L<Book::Chinese::MasterPerlToday::DBIx-Class>
 
-本书并不适用于 Perl 新手。关于 Perl 语法的介绍请参阅其他 Perl 书籍。
+=head2 L<Book::Chinese::MasterPerlToday::Template>
 
-=back
+=head2 L<Book::Chinese::MasterPerlToday::Catalyst>
 
 =head1 AUTHOR
 
