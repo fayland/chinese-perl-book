@@ -7,6 +7,10 @@ Book::Chinese::MasterPerlToday::Catalyst - Catalyst Framework
 
 本章主要介绍如何使用 Catalyst 来构建一个程序。
 
+    cpan> install Catalyst::Runtime
+    cpan> install Catalyst::Devel
+    cpan> install Catalyst::Manual
+
 详尽的文档请参阅 L<Catalyst::Manual>
 
 =head2 结构
