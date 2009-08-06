@@ -35,6 +35,20 @@ Book::Chinese::MasterPerlToday::BeACPANTester - Be a CPAN Tester
 
 将重新配置 CPAN 设置
 
+    cpan> o conf urllist
+    urllist
+        0 [http://cpan.strawberryperl.com/]
+        1 [http://www.cpan.org/]
+
+    cpan> o conf urllist unshift http://cpan.perl.org/
+    cpan> o conf urllist
+    urllist
+        0 [http://cpan.perl.org/]
+        1 [http://cpan.strawberryperl.com/]
+        2 [http://www.cpan.org/]
+
+可以快速控制模块远程网址。
+
 =item * 安装模块
 
     cpan> install Moose
