@@ -472,7 +472,7 @@ Gisle Aas, L<Digest::MD5>, L<Digest::SHA1>, L<HTML::Parser>, L<LWP>, L<URI>
 
 =item * L<JESSE|http://search.cpan.org/~JESSE/>
 
-Jesse Vincent, L<Jifty>, RT, L<CommitBit>
+Jesse Vincent, from Best Practical Solutions, L<Jifty>, RT, L<CommitBit>
 
 =item * L<MIYAGAWA|http://search.cpan.org/~MIYAGAWA/>
 
@@ -509,6 +509,10 @@ Steffen Müller, L<Class::XSAccessor>, L<PAR>
 =item * L<SRI|http://search.cpan.org/~SRI/>
 
 Sebastian Riedel, L<Catalyst> 创建者，L<Maypole> 维护者，L<Mojo> 创建者
+
+=item * L<SARTAK|http://search.cpan.org/~SARTAK/>
+
+Shawn M Moore, from Best Practical Solutions, core Moose hacker
 
 =item * L<STEVAN|http://search.cpan.org/~STEVAN/>
 
