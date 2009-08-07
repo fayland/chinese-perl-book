@@ -512,7 +512,7 @@ Sebastian Riedel, L<Catalyst> 创建者，L<Maypole> 维护者，L<Mojo> 创建�
 
 =item * L<SARTAK|http://search.cpan.org/~SARTAK/>
 
-Shawn M Moore, from Best Practical Solutions, core Moose hacker
+Shawn M Moore, from Best Practical Solutions, Moose 核心开发者
 
 =item * L<STEVAN|http://search.cpan.org/~STEVAN/>
 
