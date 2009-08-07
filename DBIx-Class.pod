@@ -60,7 +60,7 @@ eg/DBIx-Class/make_schema_at.pl
 
 DBIx::Class::Schema::Loader v0.04006 创建 schema 的时候是用了 load_classes
 
-而从 DBIx::Class 0.081 开始，一个更推荐的做法是 L<DBIx::Class::Schema/"load_namespaces">。
+而从 DBIx::Class 0.081 开始，一个更推荐的做法是 L<load_namespaces|DBIx::Class::Schema/load_namespaces>。
 
 不排除以后 Loader 会改为 load_namespaces。所以以下修改可能很快就过时。
 
