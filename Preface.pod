@@ -20,6 +20,10 @@ Book::Chinese::MasterPerlToday::Preface - Preface
 
 本书并不适用于 Perl 新手。关于 Perl 语法的介绍请参阅其他 Perl 书籍。
 
+=item *
+
+本书最新更新和例子都可以在 L<http://github.com/fayland/chinese-perl-book> 中找到
+
 =back
 
 =head1 AUTHOR
