@@ -20,6 +20,24 @@ Book::Chinese::MasterPerlToday::Catalyst - Catalyst Framework
 
 L<Catalyst> 采用当前最流行的 MVC 结构。
 
+=over 4
+
+=item * V(View)
+
+MVC 中的 V 是比较清晰的，输出可以是直接的文本($c->res->body)，可以是 HTML(如 L<Catalyst::View::TT>), 可以是 RSS, 或者是 JSON 或其他的（如 Wx 等 GUI）。所有的输出都是经过 ->res->body 或 ->res->write, 最终由 Catalyst::Engine::* 来渲染。
+
+=item * M(Model)
+
+Catalyst 中的 M 是瘦 Model. 常见的通过 L<Catalyst::Model::DBIC::Schema> 和 L<Catalyst::Model::Adaptor> 来加载外部 Model. 使用这种方法的好处是：真正的 L<DBIx::Class> 结构 ORM 或其他模块可以作为 Catalyst Model，也可以被 cron 等外部 pl 脚本使用。
+
+=item * C(Controller)
+
+Controller 与 Model 是最容易混淆的结构。有些代码你不知道放 Model 里还是放 Controller 里好。个人浅见，以该代码是否可以被外部 pl 程序调用来决定放哪里。
+
+Controller 最大的用处是定义一系列的 URI 和通过 params 或 Model 的返回值来确定使用采用什么 action。简而言之，连接 Model 和 View 的一个桥梁。
+
+=back
+
 =head2 FAQ
 
 =over 4
