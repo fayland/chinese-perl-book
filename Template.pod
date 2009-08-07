@@ -285,6 +285,18 @@ tpage 还可以传递变量
     $> tpage --define test="A'A'A" test.tt2
     A\'A\'A
 
+=head2 资源
+
+=over 4
+
+=item * 主页：<http://template-toolkit.org/>
+
+=item * 邮件列表：L<http://template-toolkit.org/mail/index.html>
+
+=item * IRC: irc.perl.org#tt2
+
+=back
+
 =head1 AUTHOR
 
 Fayland Lam, C<< <fayland at gmail.com> >>

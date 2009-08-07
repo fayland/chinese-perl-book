@@ -18,6 +18,22 @@ Book::Chinese::MasterPerlToday::Catalyst - Catalyst Framework
 
 本章节 TODO, Sorry
 
+=head2 资源
+
+=over 4
+
+=item * 主页：L<http://www.catalystframework.org/>
+
+=item * Wiki: L<http://dev.catalystframework.org/wiki/>
+
+=item * 邮件列表：L<http://lists.scsys.co.uk/mailman/listinfo/catalyst/>
+
+=item * 一年一度的 Advent: L<http://dev.catalystframework.org/wiki/adventcalendararticles>
+
+=item * IRC: irc.perl.org#catalyst
+
+=back
+
 =head1 AUTHOR
 
 Fayland Lam, C<< <fayland at gmail.com> >>

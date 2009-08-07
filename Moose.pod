@@ -208,6 +208,26 @@ L<http://cpants.perl.org/dist/used_by/Moose>
 
 =back
 
+=head2 资源
+
+=over 4
+
+=item * 主页：L<http://www.iinteractive.com/moose/>
+
+有很多的演讲幻灯片
+
+=item * 邮件列表
+
+发送至 moose-subscribe@perl.org 订阅。网页浏览地址：L<http://news.gmane.org/gmane.comp.lang.perl.moose>
+
+=item * Git: git clone git://jules.scsys.co.uk/gitmo/Moose.git
+
+网页浏览地址：L<https://jules.scsys.co.uk/gitweb/gitweb.cgi>
+
+=item * IRC: irc.perl.org#moose
+
+=back
+
 =head1 SEE ALSO
 
 L<Moose>, L<Moose::Manual>

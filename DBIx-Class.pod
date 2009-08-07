@@ -296,6 +296,18 @@ DBIx::Class 的正确使用方法就是用 ResultSet（最起码个人认为是�
 
 =back
 
+=head2 资源
+
+=over 4
+
+=item * 邮件列表：L<http://lists.scsys.co.uk/mailman/listinfo/dbix-class/>
+
+=item * SVN: L<http://dev.catalyst.perl.org/repos/bast/DBIx-Class/>
+
+=item * IRC: irc.perl.org#dbix-class
+
+=back
+
 =head2 小结
 
 限于水平有限，只能简单介绍 DBIx::Class 到此。我会在接下来的 Catalyst 说再次写 DBIx::Class 例子。
