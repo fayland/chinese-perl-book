@@ -3,7 +3,7 @@
 echo "Copying POD/eg to lib"
 mkdir lib/Book/Chinese/MasterPerlToday
 cp -fv ../*.pod lib/Book/Chinese/MasterPerlToday/
-cp -fvr ../eg lib/Book/Chinese/MasterPerlToday/
+cp -fvr ../eg ./
 
 echo "dzil build"
 dzil build
