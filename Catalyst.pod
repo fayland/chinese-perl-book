@@ -6,7 +6,7 @@ Book::Chinese::MasterPerlToday::Catalyst - Catalyst Framework
 
 =head1 DESCRIPTION
 
-本章主要介绍如何使用 Catalyst 来构建一个程序。
+本章主要介绍如何使用 L<Catalyst> 来构建一个程序。
 
     cpan> install Catalyst::Runtime
     cpan> install Catalyst::Devel
@@ -14,9 +14,71 @@ Book::Chinese::MasterPerlToday::Catalyst - Catalyst Framework
 
 详尽的文档请参阅 L<Catalyst::Manual>
 
-=head2 结构
+=head2 前言
 
-本章节 TODO, Sorry
+所有模块或工具的用意都在于简化您任务所需的代码。
+
+L<Catalyst> 采用当前最流行的 MVC 结构。
+
+=head2 FAQ
+
+=over 4
+
+=item * auto 中怎么用 $c->detach 不好使？
+
+    if ( $bla ) {
+        $c->forward('/where/some');
+        return 0;
+    }
+    return 1;
+
+在 sub auto 中，return 值是非常重要的。return 0 就直接去 sub end 了。
+
+=item * param 和 params
+
+    use Data::Dumper;
+    sub test_params :Path('test_params') {
+        my ($self, $c) = @_;
+       
+        my $test = {
+            a => $c->req->param('a'),
+            b => $c->req->param('b'),
+            c => $c->req->param('c'),
+        };
+        $c->res->body(Dumper(\$test));
+    }
+
+当 DBIx::Class ->create 的时候，上文这种格式还是比较常见的。但是这种格式返回的结果可能会让你大吃一惊。
+
+    E:\Fayland\chinese-perl-book\eg\Catalyst\TestApp>perl script/testapp_test.pl /test_params?b=1
+    # 省略输出
+    $VAR1 = \{
+            '1' => 'c',
+            'a' => 'b'
+          };
+
+快速的修正可以使用 params
+
+    sub test_params2 :Path('test_params2') {
+        my ($self, $c) = @_;
+       
+        my $test = {
+             a => $c->req->params->{'a'},
+             b => $c->req->params->{'b'},
+             c => $c->req->params->{'c'},
+        };
+        $c->res->body(Dumper(\$test));
+    }
+
+    E:\Fayland\chinese-perl-book\eg\Catalyst\TestApp>perl script/testapp_test.pl /test_params2?b=1
+    # 省略输出
+    $VAR1 = \{
+            'c' => undef,
+            'a' => undef,
+            'b' => '1'
+          };
+
+=back
 
 =head2 资源
 
