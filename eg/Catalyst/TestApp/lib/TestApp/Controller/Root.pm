@@ -1,4 +1,5 @@
-package TestApp::Controller::Root;
+package     # hidden from PAUSE
+    TestApp::Controller::Root;
 
 use strict;
 use warnings;

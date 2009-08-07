@@ -1,4 +1,5 @@
-package TestApp;
+package     # hidden from PAUSE
+    TestApp;
 
 use strict;
 use warnings;
