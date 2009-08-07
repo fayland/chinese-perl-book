@@ -346,6 +346,20 @@ prove 仅仅是在 perl 输出结果的基础上进行总结
 
 L<Test::More> 遵从 L<TAP> (The Test Anything Protocal) 格式，而 prove 能解析所有遵从 TAP 格式的输出（可以是其他语言写的）。
 
+=head3 测试 Tip
+
+=over 4
+
+=item * skip_all
+
+    eval "use Test::Pod 1.14";
+    plan skip_all => 'Test::Pod 1.14 required' if $@;
+    plan skip_all => 'set TEST_POD to enable this test' unless $ENV{TEST_POD};
+
+你不能要求你的测试者安装某个模块（如果要求，放到 requires 或 test_requires 里），但你可以选择在没有安装的时候跳过该测试。
+
+=back
+
 =head2 FAQ 和建议
 
 =over 4
