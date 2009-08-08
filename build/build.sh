@@ -10,3 +10,4 @@ dzil build
 
 echo "Clean Up";
 rm -fvr lib/Book/Chinese/MasterPerlToday
+rm -fvr eg
