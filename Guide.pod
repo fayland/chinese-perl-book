@@ -2,7 +2,7 @@
 
 =head1 NAME
 
-Book::Chinese::MasterPerlToday::Guide - Guide
+Book::Chinese::MasterPerlToday::Guide - 导读
 
 =head1 DESCRIPTION
 
@@ -38,9 +38,9 @@ Book::Chinese::MasterPerlToday::Guide - Guide
 
 =over 4
 
-=item * L<Book::Chinese::MasterPerlToday::Preface>
+=item * 前言 L<Book::Chinese::MasterPerlToday::Preface>
 
-=item * Book::Chinese::MasterPerlToday::Guide
+=item * 导读 Book::Chinese::MasterPerlToday::Guide
 
 =item * L<Book::Chinese::MasterPerlToday::BeACPANTester>
 
