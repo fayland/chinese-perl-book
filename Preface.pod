@@ -2,7 +2,7 @@
 
 =head1 NAME
 
-Book::Chinese::MasterPerlToday::Preface - Preface
+Book::Chinese::MasterPerlToday::Preface - 前言
 
 =head1 DESCRIPTION
 
@@ -22,7 +22,7 @@ Book::Chinese::MasterPerlToday::Preface - Preface
 
 =item *
 
-本书最新更新和例子都可以在 L<http://github.com/fayland/chinese-perl-book> 中找到。
+本书最近更新和例子都可以在 L<http://github.com/fayland/chinese-perl-book> 中找到。
 
 =back
 
