@@ -434,6 +434,14 @@ L<http://search.cpan.org/> 在 dist 的主页上是否显示 Repository （如 L
 
 如果你使用一些版本库控制的话，有自动的寻找 repository 的模块。Module::Install 有 L<Module::Install::Repository>, Dist::Zilla 有 L<Dist::Zilla::Plugin::Repository>
 
+=item * dev 版本
+
+    our $VERSION = '0.01_01';
+
+在版本里使用 _01 _02 等所生成的包不会被 CPAN 索引记录，但会显示成 B<DEVELOPER RELEASE>
+
+该情况在模块改动大的时候比较有用，先发布一个或多个 dev 版本以供测试。然后去掉 _XX 正式发布。
+
 =back
 
 =head2 CPAN 作者
