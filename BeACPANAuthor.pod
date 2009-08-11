@@ -442,6 +442,10 @@ L<http://search.cpan.org/> 在 dist 的主页上是否显示 Repository （如 L
 
 该情况在模块改动大的时候比较有用，先发布一个或多个 dev 版本以供测试。然后去掉 _XX 正式发布。
 
+=item * 头像
+
+CPAN 使用 L<Gravatar::URL> 调用 L<http://gravatar.com> 上的公用图片。您可以在 http://gravatar.com 上使用你的 CPAN 公开邮件注册并且上传图像。
+
 =back
 
 =head2 CPAN 作者
