@@ -91,6 +91,14 @@ cpan 默认缓存 index, 这样每次 install 模块的时候可以直接从索�
 
 都会安装该版本模块而非最新的模块。
 
+=item * 安装某个本地或远程地址的包
+
+有时候某个包不在 CPAN 上，但是你想通过 cpan 简化安装的话，请安装 L<pip>。安装之后：
+
+    $> pip http://fayland.org/CPAN/Book-Chinese-MasterPerlToday-0.01.tar.gz
+    # 或者
+    $> pip Local-Package.tar.gz
+
 =item * 测试无法通过，但是我想强制安装
 
     cpan> force install Catalyst
