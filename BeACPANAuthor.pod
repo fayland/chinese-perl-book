@@ -506,6 +506,10 @@ Matt S Trout, L<DBIx::Class>, L<Catalyst>, L<Devel::REPL>, L<local::lib>, L<Reac
 
 Curtis "Ovid" Poe, L<Class::Sniff>, L<HTML::TokeParser::Simple>, L<Test::Aggregate>, L<Test::Most>
 
+=item * L<PERIGRIN|http://search.cpan.org/~PERIGRIN/>
+
+Chris Prather, L<JSON::Any>, L<Task::Kensho>
+
 =item * L<PETDANCE|http://search.cpan.org/~PETDANCE/>
 
 Andy Lester, L<ack>, L<File::Next>, L<Test::Harness>, L<WWW::Mechanize>
