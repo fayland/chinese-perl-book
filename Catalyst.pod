@@ -38,6 +38,90 @@ Controller 最大的用处是定义一系列的 URI 和通过 params 或 Model �
 
 =back
 
+=head2 扩展 Catalyst
+
+参阅 L<Catalyst::Manual::ExtendingCatalyst>, L<Catalyst::Manual::Internals>, L<Catalyst::Manual::Plugins>
+
+=head3 Plugin
+
+Plugin 在 5.80 以前（乃至现在）是使用最广的一种扩展方式，虽然有些 plugin 其实没必要成为一个 plugin。
+
+Plugin 通过更新 Catalyst 流程中的某些子程序，或者给 $c 添加一些函数。
+
+通常更改 Catalyst 流程的 plugin 是值得的。但是如果仅仅是方便调用，给 $c 添加某个函数，是非常没有必要成为一个 plugin 的。
+
+=over 4
+
+Catalyst 的整个流程包括两个部分。
+
+=item * setup
+
+一个是 setup 部分，在 Catalyst 启动的时候调用一次。
+
+    setup
+      setup_home
+      setup_log
+      setup_plugins
+      setup_dispatcher
+      setup_engine
+      setup_stats
+      setup_components
+      setup_actions
+      setup_finalize
+
+上述 setup 函数我们一般不进行改动，如果自定义的 Plugin 需要在 setup 里检查 config 或做一些初始化的话，一般直接改 setup
+
+  use MRO::Compat;
+  sub setup {
+    my $c = shift;
+
+    $c->maybe::next::method(@_);
+    $c->setup_my_plugin_stuff;
+  }
+
+上述 setup plugin 例子有 L<Catalyst::Plugin::ConfigLoader>, L<Catalyst::Plugin::I18N>
+
+L<Catalyst::Plugin::Server> 使用了 setup_dispatcher
+
+=item * request
+
+另一个是 request 部分，每个 url 的 request 都调用一次。
+
+    handle_request
+      prepare
+        prepare_request
+        prepare_connection
+        prepare_query_parameters
+        prepare_headers
+        prepare_cookies
+        prepare_path
+        prepare_body (unless parse_on_demand)
+          prepare_body_parameters
+          prepare_parameters
+          prepare_uploads
+        prepare_action
+      dispatch
+      finalize
+        finalize_uploads
+        finalize_error (if one happened)
+        finalize_headers
+          finalize_cookies
+        finalize_body
+
+这种 plugin 很多。
+
+L<Catalyst::Plugin::PageCache> 使用 dispatch+finalize
+
+L<Catalyst::Plugin::Unicode> 使用 prepare_parameters+finalize
+
+=back
+
+=head3 Controller/View/Model
+
+=head3 ActionClass
+
+=head3 Controller 属性
+
 =head2 FAQ
 
 =over 4
