@@ -146,6 +146,18 @@ Controller 的模块并不多，毕竟共享的 Controller 内容很窄。更多
 
 =head3 ActionClass
 
+Action 类似于 L<Moose> 的 C<around>, 最常见的 ActionClass 是 L<Catalyst::Action::RenderView>
+
+所有的 Action 都基于 L<Catalyst::Action> 并且需要 sub execute, 原始的 sub 调用通过 L<MRO::Compat>, 大致类似
+
+  sub execute {
+    my $self = shift;
+    my ($controller, $c ) = @_;
+    
+    $self->next::method( @_ );
+
+$self->next::method( @_ ); 可以放到 sub execute 的任何地方。这意味你可以在原始 sub 之前写代码也可以在其之后。
+
 =head3 Controller 属性
 
 =head2 FAQ
