@@ -168,6 +168,14 @@ $self->next::method( @_ ); 可以放到 sub execute 的任何地方。这意味�
 
 这种类型的扩展一般直接返回一个 ActionClass, 或配合 C<create_action> 来进行操作。
 
+=head2 其它 (TraitFor)
+
+因为基于强大的 Moose 系统，所以我们也可以用一些 Moose 的方法来扩展 Catalyst.
+
+比如基于 L<CatalystX::RoleApplicator> 的 L<Catalyst::TraitFor::Request::ProxyBase>, L<Catalyst::TraitFor::Request::BrowserDetect> (Catalyst::Plugin::Browser)
+
+基于 L<CatalystX::Component::Traits> 的 L<Catalyst::Model::DBIC::Schema>
+
 =head2 FAQ
 
 =over 4
