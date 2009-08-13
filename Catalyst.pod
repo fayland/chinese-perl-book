@@ -140,7 +140,7 @@ Controller 的模块并不多，毕竟共享的 Controller 内容很窄。更多
 
 最有名气的当属 L<Catalyst::Controller::WrapCGI> 该模块能让 cgi 脚本运行在 Catalyst 里，这将有助于你的计划安排，你可以在以后恰当的时间将该 cgi 改为 Catalyst
 
-另一个是 L<Catalyst::Controller::REST>, 极大的简化 REST 工作。
+其他的有 L<Catalyst::Controller::REST>, L<Catalyst::Controller::reCAPTCHA>
 
 =back
 
@@ -159,6 +159,14 @@ Action 类似于 L<Moose> 的 C<around>, 最常见的 ActionClass 是 L<Catalyst
 $self->next::method( @_ ); 可以放到 sub execute 的任何地方。这意味你可以在原始 sub 之前写代码也可以在其之后。
 
 =head3 Controller 属性
+
+如果你阅读过 L<Catalyst::Controller> 的源码的话，你会发现一些 _parse_*_attr 的 sub 类如 _parse_Global_attr, _parse_Path_attr, _parse_Regex_attr, _parse_Chained_attr 等
+
+我们可以通过自定义属性和增加该属性对应的 _parse_*_attr 来扩展 Catalyst Controller.
+
+这种类型的扩展有 L<Catalyst::Controller::ActionRole>, L<Catalyst::Controller::SOAP>
+
+这种类型的扩展一般直接返回一个 ActionClass, 或配合 C<create_action> 来进行操作。
 
 =head2 FAQ
 
