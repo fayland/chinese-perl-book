@@ -69,7 +69,7 @@ Catalyst 的整个流程包括两个部分。
       setup_actions
       setup_finalize
 
-上述 setup 函数我们一般不进行改动，如果自定义的 Plugin 需要在 setup 里检查 config 或做一些初始化的话，一般直接改 setup
+上述 setup_* 函数我们一般不进行改动，如果自定义的 Plugin 需要在启动的时候检查 config 或做一些初始化的话，一般直接改 sub setup
 
   use MRO::Compat;
   sub setup {
@@ -79,7 +79,7 @@ Catalyst 的整个流程包括两个部分。
     $c->setup_my_plugin_stuff;
   }
 
-上述 setup plugin 例子有 L<Catalyst::Plugin::ConfigLoader>, L<Catalyst::Plugin::I18N>
+上述 setup plugin 例子有 L<Catalyst::Plugin::ConfigLoader>, L<Catalyst::Plugin::I18N> 等
 
 L<Catalyst::Plugin::Server> 使用了 setup_dispatcher
 
