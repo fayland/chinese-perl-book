@@ -118,6 +118,32 @@ L<Catalyst::Plugin::Unicode> 使用 prepare_parameters+finalize
 
 =head3 Controller/View/Model
 
+这种类型的扩展一般用于被 use base 或 use parent
+
+=over 4
+
+=item * View
+
+View 是最常见的一种扩展，最常用的如 L<Catalyst::View::TT>, L<Catalyst::View::JSON>, TT::Alloy, PHP, Mason, Template::Declare, GraphViz, GD 等。所有的 View 扩展都基于 L<Catalyst::View>, 它们都覆盖 sub process, 并且在函数最后用 $c->res->body 输出内容。
+
+=item * Model
+
+Model 的扩展不多，最常用的当然是 L<Catalyst::Model::DBIC::Schema> 和 L<Catalyst::Model::Adaptor>. 大部分的 Model 都跟 storage 有关。
+
+所有的 Model 扩展语法跟我们平常写的并无任何区别，所不同的仅仅在于公用性。
+
+写 Model 扩展的时候，有时候我们会用到 L<Catalyst::Component::InstancePerContext>, 该模块是对 B<ACCEPT_CONTEXT> 的一个技巧应用。当你的模块需要在每个 request 里都应用一些代码时非常有用。
+
+=item * Controller
+
+Controller 的模块并不多，毕竟共享的 Controller 内容很窄。更多的我们将在下文中讲到。
+
+最有名气的当属 L<Catalyst::Controller::WrapCGI> 该模块能让 cgi 脚本运行在 Catalyst 里，这将有助于你的计划安排，你可以在以后恰当的时间将该 cgi 改为 Catalyst
+
+另一个是 L<Catalyst::Controller::REST>, 极大的简化 REST 工作。
+
+=back
+
 =head3 ActionClass
 
 =head3 Controller 属性
