@@ -26,7 +26,7 @@ Perl 的面对对象系统很强大（Moose 是由 Perl 编写），但并不是
       return bless \%p, $class;
   }
 
-基本上你在写一些无用的东西，没有任何一行代码是跟实际应用的代码有关的。C<bless> 是什么？这样的代码让人很迷糊。
+基本上你在写一些无用的东西，没有任何一行代码是跟实际应用的代码有关的。C<bless> 是什么？这样的代码让人很迷惑。
 
 Moose 的意义在于它可以让你专注于写什么(what)，而不是怎么写(how)。
 
@@ -124,9 +124,9 @@ Traits 其实就是 Role。它们的区别在于：
 
 =over 4
 
-=item 1 Traits 可以拥有一个短名字
+=item * Traits 可以拥有一个短名字
 
-=item 2 通常在编译时使用的是 Role，在运行时使用的是 Trait
+=item * 通常在编译时使用的是 Role，在运行时使用的是 Trait
 
 这意味这 Role 是影响了整个 Class，而 Trait 仅仅影响了 Class 的某个实例(instance)
 
@@ -160,13 +160,17 @@ L<MooseX::Declare> 可以说是当前 Perl5 最前沿和激动人心的模块。
 
 L<Devel::REPL> 是 L<MooseX::Object::Pluggable> 的一个绝好例子。开发过程的介绍（需要爬墙工具）：
 
-L<http://chainsawblues.vox.com/library/post/a-perl-read-excute-print-loop-repl.html>
+=over 4
 
-L<http://chainsawblues.vox.com/library/post/writing-a-perl-read-eval-print-loop-repl---part-2.html>
+=item * L<http://chainsawblues.vox.com/library/post/a-perl-read-excute-print-loop-repl.html>
 
-L<http://chainsawblues.vox.com/library/post/writing-a-perl-repl-part-3---lexical-environments.html>
+=item * L<http://chainsawblues.vox.com/library/post/writing-a-perl-read-eval-print-loop-repl---part-2.html>
 
-L<http://chainsawblues.vox.com/library/post/develrepl-part-4---script-options-rc-files-profiles-and-packaging.html>
+=item * L<http://chainsawblues.vox.com/library/post/writing-a-perl-repl-part-3---lexical-environments.html>
+
+=item * L<http://chainsawblues.vox.com/library/post/develrepl-part-4---script-options-rc-files-profiles-and-packaging.html>
+
+=back
 
 =back
 

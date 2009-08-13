@@ -77,9 +77,9 @@ cpan 默认缓存 index, 这样每次 install 模块的时候可以直接从索�
 
     cpan> h
 
-=item * 安装老版本模块
+=item * 安装老版本或测试版本模块
 
-有时候安装某个模块完毕之后可能发现出错，想安装回原来的模块。或者您的脚本只能运行在老版本的某个模块之上。请遵循如下步骤
+有时候安装某个模块完毕之后可能发现出错，想安装回原来的模块。或者您的脚本只能运行在老版本的某个模块之上。或者你想测试某个新版本的模块。请尝试如下步骤
 
 首先打开该模块老版本的 CPAN 页面如 L<http://search.cpan.org/~mramberg/Catalyst-Runtime-5.7015/>，然后查看 Download 的链接如 L<http://search.cpan.org/CPAN/authors/id/M/MR/MRAMBERG/Catalyst-Runtime-5.7015.tar.gz>
 
@@ -90,6 +90,14 @@ cpan 默认缓存 index, 这样每次 install 模块的时候可以直接从索�
     $> cpan MRAMBERG/Catalyst-Runtime-5.7015.tar.gz
 
 都会安装该版本模块而非最新的模块。
+
+=item * 安装某个本地或远程地址的包
+
+有时候某个包不在 CPAN 上，但是你想通过 cpan 简化安装的话，请安装 L<pip>。安装之后：
+
+    $> pip http://fayland.org/CPAN/Book-Chinese-MasterPerlToday-0.01.tar.gz
+    # 或者
+    $> pip Local-Package.tar.gz
 
 =item * 测试无法通过，但是我想强制安装
 
