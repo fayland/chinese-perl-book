@@ -176,6 +176,32 @@ $self->next::method( @_ ); 可以放到 sub execute 的任何地方。这意味�
 
 基于 L<CatalystX::Component::Traits> 的 L<Catalyst::Model::DBIC::Schema>
 
+=head2 Session 和 Authentication
+
+Catalyst 的高度可扩展名声很大程度上来自 Session, Authentication 和 View
+
+=head3 Session
+
+我们所说的 Session 指的是 L<Catalyst::Plugin::Session>
+
+Session 分为两个部分，一个是 State 另一个是 Store.
+
+State 一般推荐只有 L<Catalyst::Plugin::Session::State::Cookie>, URI State 不太安全
+
+Store 有很多种，你可以存到 DBI (DBIC) 里也可以存到 Memcached 或 FastMmap
+
+永久登录可以参阅 L<Catalyst::Plugin::Session::DynamicExpiry>, 该模块通过每次都更改 cookie 的过期日子来获得长时间的储存。
+
+坦白说，该 Session 模块并不是很好。因为统一的 API 接口缺陷，你不能通过一个 user_id 来删除该用户的 session 数据。Session 模块的过期数据清理也很麻烦。有时候可能出些莫名的错误。
+
+但是整体来说，还是做到了应该需要做到的。
+
+=head3 Authentication
+
+Authentication 指的是 L<Catalyst::Plugin::Authentication>
+
+Authentication 分为两个部分，一个是 Credential 另一个是 Store
+
 =head2 FAQ
 
 =over 4
