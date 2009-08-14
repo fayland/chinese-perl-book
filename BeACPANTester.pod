@@ -167,6 +167,10 @@ CPAN 测试者网站
 
 =item * L<http://annocpan.org/>
 
+=item * L<http://backpan.cpan.org/>
+
+寻找老版本或过期版本模块
+
 =item * L<http://cpantools.com/>
 
 =item * L<http://hexten.net/cpan-faces/>
