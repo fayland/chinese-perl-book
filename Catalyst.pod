@@ -200,7 +200,29 @@ Store 有很多种，你可以存到 DBI (DBIC) 里也可以存到 Memcached 或
 
 Authentication 指的是 L<Catalyst::Plugin::Authentication>
 
-Authentication 分为两个部分，一个是 Credential 另一个是 Store
+=over 4
+
+Authentication 分为两个部分
+
+=item * Credential
+
+Credential 是指通过什么方式来验证这个 user 提供的登录信息是否正确。最常用的是 L<Catalyst::Authentication::Credential::Password>, 通过 password 来验证。
+
+其他的还有 OpenID, OAuth, Authen::Simple, HTTP, 甚至 Flickr, FBConnect等
+
+所有的 Credential 模块都拥有 sub authenticate
+
+=item * Store
+
+Store 是指去哪里找到这个 user, 最常用的是 L<Catalyst::Authentication::Store::DBIx::Class>
+
+其他的还有 LDAP, RDBO, KiokuDB, Jifty::DBI, Htpasswd 等
+
+Store 一般分为 2 个模块，一个是主模块用于如何查找 user （通过 sub find_user），另一个是 User 模块，该模块定义了 from_session, for_session, get_object AUTOLOAD 等。
+
+=back
+
+
 
 =head2 FAQ
 
