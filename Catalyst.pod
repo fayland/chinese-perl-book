@@ -274,7 +274,25 @@ Store 一般分为 2 个模块，一个是主模块用于如何查找 user （�
 
 我们将以 L<Catalyst::Authentication::Credential::Password> + L<Catalyst::Authentication::Store::DBIx::Class> 为例，讲述一点内部知识。
 
+=over 4
 
+=item * 流程
+
+在 $c->authenticate 验证通过后，将通过 for_session 来 insert 些数据到 $c->session 里。
+
+在以后的 request 里，通过 from_session 可以得到 $c->user
+
+=item * $c->user
+
+用 L<Catalyst::Authentication::Store::DBIx::Class> 的话，$c->user 就是 Catalyst::Authentication::Store::DBIx::Class::User
+
+用 L<Catalyst::Authentication::Store::Jifty::DBI> 的话，$c->user 就是 Catalyst::Authentication::Store::Jifty::DBI::User
+
+所有的这些 Catalyst::Authentication::Store::*::User 都定义了 get_object, $c->user->get_object 才返回真正的 user 数据。
+
+而当你调用 $c->user->xxxx 的时候，一般是调用了 Catalyst::Authentication::Store::*::User 的 C<AUTOLOAD>
+
+=back
 
 =head2 FAQ
 
