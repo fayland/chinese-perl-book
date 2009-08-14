@@ -198,9 +198,9 @@ Store 有很多种，你可以存到 DBI (DBIC) 里也可以存到 Memcached 或
 
 =back
 
-永久登录可以参阅 L<Catalyst::Plugin::Session::DynamicExpiry>, 该模块通过每次都更改 cookie 的过期日子来获得长时间的储存。
+永久登录可以参阅 L<Catalyst::Plugin::Session::DynamicExpiry>, 该模块通过每次都更改 cookie 的 Expire 日期来获得长时间的储存。
 
-坦白说，该 Session 模块并不是很好。因为统一的 API 接口缺陷，你不能通过一个 user_id 来删除该用户的 session 数据。Session 模块的过期数据清理也很麻烦。有时候可能出些莫名的错误。
+坦白说，该 Session 模块并不是很好。因为统一的 API 接口缺陷，你不能通过一个 user_id 来删除该用户的 session 数据。Session 模块的过期数据清理也需要自己做。
 
 但是整体来说，还是做到了应该需要做到的。
 
@@ -210,13 +210,13 @@ Store 有很多种，你可以存到 DBI (DBIC) 里也可以存到 Memcached 或
 
 =item * sessionid
 
-第一步，我们将在用户调用 $c->session 或 $c->sessionid 或其他的时候，通过 get_session_id 来获得 sessionid
+第一步，我们将在用户调用 $c->session 或 $c->sessionid 或其他的时候，通过 C<get_session_id> 来获得 sessionid
 
 在 State::Cookie 里，get_session_id 仅仅是查询 $c->request->cookies->{$cookie_name};
 
 =item * session
 
-在得到 sessionid 之后，我们将在用户调用 $c->session 或 ->flash 的时候，通过 get_session_data 来获得 session 的数据。同时，我们通过 L<Object::Signature> 来得到 session 数据的一个当前 signature
+在得到 sessionid 之后，我们将在用户调用 $c->session 或 ->flash 的时候，通过 C<get_session_data> 来获得 session 的数据。同时，我们通过 L<Object::Signature> 来得到 session 数据的一个当前 signature
 
 get_session_data 函数在 L<Catalyst::Plugin::Session::Store::Delegate>, 它将通过 C<session_store_delegate_key_to_accessor> 来调用得到 session("session:$sid"), expires("expires:$sid")
 
@@ -242,7 +242,7 @@ finalize_headers 主要用于更改 cookie 的 Expire 时间。
 
 如果进行了新增更改或删除的话，那这两个值就不一样了。这时候我们就会调用 Store 里的 C<store_session_data> 来更新数据。
 
-这里还有个更新 session 的 expires 时间。这个跟上面的更新 cookie expires 时间一样，每次 request 都会调用。有点浪费。
+这里还有个更新 session 的 expires 时间。这个跟上面的更新 cookie Expire 时间一样，每次 request 都会调用。有点浪费。
 
 =back
 
@@ -268,7 +268,7 @@ Store 是指去哪里找到这个 user, 最常用的是 L<Catalyst::Authenticati
 
 其他的还有 LDAP, RDBO, KiokuDB, Jifty::DBI, Htpasswd 等
 
-Store 一般分为 2 个模块，一个是主模块用于如何查找 user （通过 sub find_user），另一个是 User 模块，该模块定义了 from_session, for_session, get_object AUTOLOAD 等。
+Store 一般分为 2 个模块，一个是主模块用于如何查找 user （通过 sub find_user），另一个是 User 模块，该模块定义了 from_session, for_session, get_object, AUTOLOAD 等。
 
 =back
 
