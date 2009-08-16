@@ -354,6 +354,34 @@ Store 一般分为 2 个模块，一个是主模块用于如何查找 user （�
 
 =back
 
+=head2 Catalyst 例子
+
+-over 4
+
+=item * L<http://dev.catalyst.perl.org/repos/Catalyst/trunk/examples/>
+
+=item * L<MojoMojo>
+
+A Catalyst & DBIx::Class powered Wik
+
+=item * L<Angerwhale>
+
+filesystem-based blog with integrated cryptography
+
+=item * L<CatalystX::Usul>
+
+A base class for Catalyst MVC components
+
+=item * L<Foorum>, L<Parley>
+
+forum application
+
+=item * L<Module::CPANTS::Site>
+
+=item * L<Perldoc::Server>
+
+=back
+
 =head2 资源
 
 =over 4
@@ -361,6 +389,8 @@ Store 一般分为 2 个模块，一个是主模块用于如何查找 user （�
 =item * 主页：L<http://www.catalystframework.org/>
 
 =item * Wiki: L<http://dev.catalystframework.org/wiki/>
+
+=item * SVN: L<http://dev.catalyst.perl.org/repos/Catalyst/>
 
 =item * 邮件列表：L<http://lists.scsys.co.uk/mailman/listinfo/catalyst/>
 
