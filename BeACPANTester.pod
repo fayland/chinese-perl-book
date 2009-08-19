@@ -139,6 +139,24 @@ cpan 默认缓存 index, 这样每次 install 模块的时候可以直接从索�
 
 这就是成为一个 CPAN 测试者您所需要的所有动作。
 
+=head2 minicpan
+
+    cpan> install CPAN::Mini
+
+L<CPAN::Mini> 主要用于创建一个本地最小的 CPAN 镜像。它可以加速你的 CPAN 模块安装，或者可以让你在离线情况下安装 CPAN 模块。
+
+相关参考文章有
+
+=over 4
+
+=item * L<http://www.stonehenge.com/merlyn/LinuxMag/col42.html>
+
+=item * L<http://www.fayland.org/journal/minicpan.html>
+
+=item * L<http://perladvent.org/2004/5th/>
+
+=back
+
 =head2 CPAN 相关网站
 
 =over 4
@@ -174,6 +192,10 @@ CPAN 测试者网站
 =item * L<http://cpantools.com/>
 
 =item * L<http://hexten.net/cpan-faces/>
+
+=item * L<http://perladvent.org/>
+
+The Perl Advent Calendar, 年度模块介绍
 
 =back
 
