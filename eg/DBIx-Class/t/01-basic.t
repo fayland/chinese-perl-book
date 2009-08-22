@@ -15,7 +15,7 @@ my $schema = TheSchwartz::Schema->connect(
 isa_ok($schema, 'TheSchwartz::Schema');
 
 foreach ('Exitstatus', 'Job', 'Error', 'Funcmap') {
-    can_ok( $schema->resultset($_), 'search' );
+    isa_ok( $schema->resultset($_), 'DBIx::Class::ResultSet' );
 }
 
 1;

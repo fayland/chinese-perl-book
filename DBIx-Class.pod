@@ -2,7 +2,7 @@
 
 =head1 NAME
 
-Book::Chinese::MasterPerlToday::DBIx-Class - DBIx-Class ORM
+Book::Chinese::MasterPerlToday::DBIx-Class - DBIx::Class ORM
 
 =head1 DESCRIPTION
 
@@ -118,7 +118,7 @@ eg/DBIx-Class/t/01-basic.t
     isa_ok($schema, 'TheSchwartz::Schema');
     
     foreach ('Exitstatus', 'Job', 'Error', 'Funcmap') {
-        can_ok( $schema->resultset($_), 'search' );
+        isa_ok( $schema->resultset($_), 'DBIx::Class::ResultSet' );
     }
     
     1;
