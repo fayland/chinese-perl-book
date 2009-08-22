@@ -264,6 +264,24 @@ Row 组件 L<DBIx::Class::Row> 是必须的组件。它为 L<DBIx::Class::Result
 
 当对性能要求比较高的时候，我们可以替换 Core 为某几个组件，如果出错再加回去。当你拥有一个完整的测试集的时候，增加和减少就会变得比较简单。
 
+=item * 扩展组件
+
+DBIx::Class 最常见的插件有两种，一种是 ResultSet 的插件（通过 use base 'DBIx::Class::ResultSet';），另一种就是作为组件。
+
+ResultSet 的插件一般通过覆盖 L<DBIx::Class::ResultSet> 的函数（如我写的 L<DBIx::Class::ResultSet::Void>），或者另外提供某个函数。（还有些插件如 L<DBIx::Class::QueryLog> 就不详细介绍了）
+
+另一种作为组件的插件更为常见。详细的参考 L<DBIx::Class::Manual::Component>，下面只做简单介绍。
+
+编写组件一般都需要覆盖原有函数，请注意 load_components 的顺序，这里使用了 C<Class::C3> 来做一个依次调用。
+
+  sub insert {
+    my $self = shift;
+    # Do stuff with $self, like set default values.
+    return $self->next::method( @_ );
+  }
+
+常见的组件有 L<DBIx::Class::UTF8Columns>, L<DBIx::Class::UUIDColumns> 等。代码都是比较简单，可以查看源代码进行阅读。
+
 =back
 
 =head2 FAQ
