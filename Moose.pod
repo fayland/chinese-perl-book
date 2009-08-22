@@ -193,6 +193,57 @@ HASH 可以让你使用不同的 sub 名字。比如
 
 具体的代码解释可以参考 L<Class::MOP::Method::Wrapped>
 
+=item * inner 和 augment, override 和 super
+
+C<inner> 和 C<augment> 一般用于基础的父类定义通用代码，而继承的子类定义不同的代码。
+
+  package Document;
+  use Moose;
+  sub as_xml {
+      my $self = shift;
+
+      my $xml = "<document>\n";
+      $xml .= inner();
+      $xml .= "</document>\n";
+
+      return $xml;
+  }
+  
+  package Report;
+  use Moose;
+  extends 'Document';
+  augment 'as_xml' => sub {
+      my $self = shift;
+
+      my $xml = "<report>\n";
+      $xml .= inner();
+      $xml .= "</report>\n";
+
+      return $xml;
+  };
+  
+  package Report::IncomeAndExpenses;
+  use Moose;
+  extends 'Report';
+  augment 'as_xml' => sub {
+      my $self = shift;
+
+      my $xml = '<income>' . $self->income . '</income>';
+      $xml .= "\n";
+      $xml .= '<expenses>' . $self->expenses . '</expenses>';
+      $xml .= "\n";
+
+      $xml .= inner() || q{};
+
+      return $xml;
+  };
+
+可以在 argment 里再次调用 inner.
+
+C<override> 和 C<super> 与普通的 C<< $self->SUPER::display_name >> 并无特别大的不同。
+
+参考 L<Moose::Manual::MethodModifiers>
+
 =item * L<MooseX::Types>
 
 一般建议使用 L<MooseX::Types> 而不是内置的 Moose Type。
