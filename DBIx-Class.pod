@@ -232,6 +232,40 @@ DBIx::Class 的正确使用方法就是用 ResultSet（最起码个人认为是�
 
 =back
 
+=head2 内部结构介绍
+
+=haed3 components 组件
+
+=over 4
+
+=item * 什么是组件？
+
+L<DBIx::Class> 由不同的组件 (component) 构成，不同的组件提供不同的功能。比如在 TheSchwartz::Schema::Result::Error 里，我们有一行代码是
+
+    __PACKAGE__->load_components("Core");
+
+而 Core 调用 L<DBIx::Class::Core>, 里面提供了
+
+    __PACKAGE__->load_components(qw/
+      Relationship
+      InflateColumn
+      PK::Auto
+      PK
+      Row
+      ResultSourceProxy::Table/);
+
+这六个组件是最常用和最基础的组件，这是为了方便而提供的。但是有时候你可能并不会用到某个组件，那你可以去掉这个组件。比如在 Error.pm 里我们可以仅仅调用两个组件
+
+    __PACKAGE__->load_components("Row", "ResultSourceProxy::Table");
+
+Row 组件 L<DBIx::Class::Row> 是必须的组件。它为 L<DBIx::Class::ResultSourceProxy> 里 add_columns 提供 register_column 等，并且当你调用 search->first, find, all 所得到的就是基于该组件的实例。
+
+而 ResultSourceProxy::Table 组件 L<DBIx::Class::ResultSource::Table> 也是必须的组件。该组件提供了 __PACKAGE__->table("error"), （由它的父类 L<DBIx::Class::ResultSourceProxy> 提供） ->add_columns, ->set_primary_key 等功能。
+
+当对性能要求比较高的时候，我们可以替换 Core 为某几个组件，如果出错再加回去。当你拥有一个完整的测试集的时候，增加和减少就会变得比较简单。
+
+=back
+
 =head2 FAQ
 
 =over 4
@@ -273,7 +307,7 @@ DBIx::Class 的正确使用方法就是用 ResultSet（最起码个人认为是�
 
 =item * as_query
 
-如果你对你所写的 ->search 不太确定，你可以使用 ->as_query 来 debug
+如果你对所写的 ->search 不太确定，你可以使用 ->as_query 来 debug
 
   $schema->resultset('user')->search( {
     user_id => { 'IN', [1, 2] },
@@ -312,7 +346,7 @@ DBIx::Class 的正确使用方法就是用 ResultSet（最起码个人认为是�
 
 限于水平有限，只能简单介绍 DBIx::Class 到此。我会在接下来的 Catalyst 说再次写 DBIx::Class 例子。
 
-至于其他的诸如 Relationship 之类的，只能是以后再说了。
+至于其他的诸如 Relationship 之类的，欢迎读者补充。
 
 =head1 AUTHOR
 
