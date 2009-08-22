@@ -92,6 +92,27 @@ L<Moose> 在 L<Class::MOP> 的基础上提供了更多的功能。
 
 =over 4
 
+=item * C<no Moose> 和 immutabilize
+
+  package Person;
+
+  use Moose;
+
+  # extends, roles, attributes, etc.
+  # methods
+
+  no Moose;
+  __PACKAGE__->meta->make_immutable;
+
+  1;
+
+我把这个写在最前面是因为这是当你写完 use Moose; 之后就应该马上要写下来的。
+
+还有
+
+    no Moose::Util::TypeConstraints;
+    no Moose::Role;
+
 =item * default 和 builder
 
 default 和 builder 都用于设置一个属性的初始化变量。
