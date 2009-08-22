@@ -34,13 +34,15 @@ L<DBIx::Class> 不是为了性能而开发的。如果你的代码强烈要求�
 
 Schema 在大部分情况下可以等同于 database
 
-=item * ResultSource
+=item * ResultSource, Result
 
 ResultSource 可以认为是一个 table
 
 =item * ResultSet
 
-ResultSet 没有等同的概念，它可以是整个 table，也可以是某个 query 之后的一个结果集。数据的内容不保存在 ResultSet 里，它只是如果获取数据的一些方法
+ResultSet 没有等同的概念，它可以是整个 table，也可以是某个 query 之后的一个结果集。数据的内容不保存在 ResultSet 里，它只是如果获取数据的一些方法。
+
+简单的说，当你调用一个 SQL 的时候，往往需要创建一个 ResultSet
 
 =item * Row
 
