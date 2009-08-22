@@ -244,6 +244,19 @@ C<override> 和 C<super> 与普通的 C<< $self->SUPER::display_name >> 并无�
 
 参考 L<Moose::Manual::MethodModifiers>
 
+=item * Role exclude/alias
+
+当你使用两个或多个 Role 的时候，因为 Role 是平行无序的进入主模块的，所以如果有两个 Role 有相同的方法名字的时候，主模块就不知道采用哪个 Role 的方法。
+
+这个时候，如果某个 Role 里的方法有用而另一个方法没用的时候，我们一般用 exclude
+
+    with 'Net::GitHub::V2::NoRepo' => { excludes => [ 'args_to_pass' ] };;
+
+如果两个 Role 的方法都有用的时候，一般用 alias
+
+  with 'Breakable'   => { alias => { break => 'break_bone' } },
+       'Breakdancer' => { alias => { break => 'break_dance' } };
+
 =item * L<MooseX::Types>
 
 一般建议使用 L<MooseX::Types> 而不是内置的 Moose Type。
