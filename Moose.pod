@@ -288,7 +288,9 @@ L<MooseX::Declare> 可以说是当前 Perl5 最前沿和激动人心的模块。
 
 =item * L<MooseX::Singleton>
 
-=item * L<MooseX::Types>
+=item * L<MooseX::Getopt>
+
+=item * L<MooseX::ClassAttribute>
 
 =item * L<MooseX::Role::Parameterized>
 
@@ -305,6 +307,8 @@ L<Devel::REPL> 是 L<MooseX::Object::Pluggable> 的一个绝好例子。开发�
 =item * L<http://chainsawblues.vox.com/library/post/writing-a-perl-repl-part-3---lexical-environments.html>
 
 =item * L<http://chainsawblues.vox.com/library/post/develrepl-part-4---script-options-rc-files-profiles-and-packaging.html>
+
+=item * L<MooseX::POE>
 
 =back
 
