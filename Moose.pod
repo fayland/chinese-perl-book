@@ -38,19 +38,51 @@ Moose 的意义在于它可以让你专注于写什么(what)，而不是怎么�
 
 =over 4
 
+=item * Class 类
+
+简单的讲，所以调用 use Moose 的包（package）都可以看做一个类。
+
+更简单的，一个类是由属性和方法组成。还有 Role, Constructor 和 Destructor
+
 =item * Attribute 属性
 
-CPAN 上拥有上百个创建 Accessor 的模块。其中包括最流行的 L<Class::Accessor> 和 L<Class::Accessor::Fast>。L<Moose> 不是最快的（L<Class::XSAccessor> 目前来说最快），但却是最强大的。
+属性是一个类所拥有的性质。比如人都有一个名字。
+
+你可以简单的认为是类似 $self->{something} 的东西。
+
+一个属性最基本的用途是可读写。CPAN 上拥有上百个创建 Accessor 的模块。其中包括最流行的 L<Class::Accessor> 和 L<Class::Accessor::Fast>。L<Moose> 不是最快的（L<Class::XSAccessor> 目前来说最快），但却是最强大的。
+
+=item * Method 方法
+
+方法与其他地方相同，由 sub 关键字定义。方法与属性最大区别是它往往是动词而属性一般是名词。
 
 =item * Role
 
-Role 与 use base 或者 extends 不同。with 'Role' 类似于将 Role 里的整个代码复制到 with 的模块里。
+Role 与 use base 或者 extends 不同。with 'Role' 类似于将 Role 里的整个代码复制到 with 的模块里。它不显示在继承结构里。
 
 =item * Method modifiers
 
+方法修改器主要用于修改父类的方法。可以看做同类的有 SUPER, L<NEXT> 和 L<Class::C3>
+
 =item * Type
 
+类型主要用于变量检测。
+
 =item * Constructor & Destructor
+
+原来的 Constructor 由 sub new 和 bless 组成。Moose 为你编写了一个 new, 如果你需要在初始化里做什么的话，可以编写 C<BUILD>, 该方法会在 new 后调用。
+
+原来的 Destructor 由 DESTROY 控制。Moose 中一般使用 C<DEMOLISH>
+
+查看 L<Moose::Object> 源码可获得内部解释。
+
+=item * META
+
+meta 是描述一个类的类，由 C<Class::MOP> 提供。
+
+L<Moose> 在 L<Class::MOP> 的基础上提供了更多的功能。
+
+通过 meta, 你可以得到一个包的内在细节，包括它的父类，所有属性方法等。不仅仅如此，你还可以动态增减属性方法，修改父类等等。
 
 =back
 
@@ -114,9 +146,9 @@ HASH 可以让你使用不同的 sub 名字。比如
 
 Moose Type 是全局类型，当你使用多个外部包的时候就有可能会造成类型冲突（除非所有的外部包都是用各自的 'packageA.name.' 作为前缀）。L<MooseX::Types> 是属于当前包变量的类型，不容易冲突。
 
-Moose Type 是放在引号之内如 'Int'，这种检测是在运行时检测。而 L<MooseX::Types> 是不放在引号里的（如 Int），这种在编译时就会检测。
+Moose Type 是放在引号之内如 'Int'，这种检测是在运行时检测，出错比较难发现。而 L<MooseX::Types> 是不放在引号里的（如 Int），这种在编译时就会检测。
 
-L<MooseX::Types> 拥有更多的变量。更容易扩展。常见的如 L<MooseX::Types::Path::Class>
+L<MooseX::Types> 拥有更多类型，更容易扩展。常见的如 L<MooseX::Types::Path::Class>
 
 =item * Roles 和 Traits
 
