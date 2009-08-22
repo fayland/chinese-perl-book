@@ -288,6 +288,34 @@ ResultSet 的插件一般通过覆盖 L<DBIx::Class::ResultSet> 的函数（如�
 
 =over 4
 
+=item * 获取当个 row
+
+    resultset('Errors')->search( { cond => 'bla' } )->first;
+    resultset('Errors')->single( { cond => 'bla' } );
+
+->first 与 ->single 不同之处在于 ->first 会产生 C<cursor>, 而 ->single 不会。所以 single 略微快一点。但是需要注意的几点是
+
+=over 4
+
+=item * single 里不能有属性
+
+    ->single( { cond => 'bla' }, { order_by => 'rating' } ); # Wrong
+    ->search( { cond => 'bla' }, { order_by => 'rating' } )->single; # Right
+
+=item * single 只能返回一条记录
+
+当 single 选调用的 SQL 返回多于一条数据时，后台会有警告。如果你确定的知道你要用 single 在多条数据里，可以使用 rows
+
+    ->search( { cond => 'bla' }, { rows => 1 } )->single; # Right
+
+=back
+
+另一种获取方式是使用
+
+    resultset('Errors')->search( { cond => 'bla' } )->slice(0);
+
+它将使用 LIMIT/OFFSET 直接得到一条数据。
+
 =item * 复杂的 search
 
 建议阅读 L<DBIx::Class::Manual::Cookbook> 和 L<SQL::Abstract>
