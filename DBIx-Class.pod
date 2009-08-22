@@ -26,6 +26,28 @@ L<DBIx::Class> 不是为了性能而开发的。如果你的代码强烈要求�
 
 =back
 
+=head2 概念
+
+=over 4
+
+=item * Schema
+
+Schema 在大部分情况下可以等同于 database
+
+=item * ResultSource
+
+ResultSource 可以认为是一个 table
+
+=item * ResultSet
+
+ResultSet 没有等同的概念，它可以是整个 table，也可以是某个 query 之后的一个结果集。数据的内容不保存在 ResultSet 里，它只是如果获取数据的一些方法
+
+=item * Row
+
+Row 保存你的记录数据。它通常由 ResultSet 返回。
+
+=back
+
 =head2 例子
 
 本章将参考 L<TheSchwartz::Moosified> 的 schema/SQLite.sql 作为 database schema。（请参考 eg/DBIx-Class/schema.sql）
