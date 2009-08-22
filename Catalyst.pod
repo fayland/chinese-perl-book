@@ -362,11 +362,11 @@ Store 一般分为 2 个模块，一个是主模块用于如何查找 user （�
 
 =item * L<MojoMojo>
 
-A Catalyst & DBIx::Class powered Wik
+Catalyst & DBIx::Class 所基于的 Wiki
 
 =item * L<Angerwhale>
 
-filesystem-based blog with integrated cryptography
+基于文件的博客
 
 =item * L<CatalystX::Usul>
 
@@ -374,7 +374,7 @@ A base class for Catalyst MVC components
 
 =item * L<Foorum>, L<Parley>
 
-forum application
+论坛
 
 =item * L<Module::CPANTS::Site>
 
