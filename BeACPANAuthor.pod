@@ -632,6 +632,10 @@ xiaoshengcaicai
 
 Jeff Pang
 
+=item * L<PANYU|http://search.cpan.org/~PANYU/>
+
+PAN YU
+
 =item * L<QJZHOU|http://search.cpan.org/~QJZHOU/>
 
 Qing-Jie Zhou
