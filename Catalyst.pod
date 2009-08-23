@@ -356,7 +356,7 @@ Store 一般分为 2 个模块，一个是主模块用于如何查找 user （�
 
 =head2 Catalyst 例子
 
--over 4
+=over 4
 
 =item * L<http://dev.catalyst.perl.org/repos/Catalyst/trunk/examples/>
 
