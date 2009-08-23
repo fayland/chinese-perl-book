@@ -321,9 +321,9 @@ L<Devel::REPL> 是 L<MooseX::Object::Pluggable> 的一个绝好例子。开发�
 
 =item * L<http://chainsawblues.vox.com/library/post/develrepl-part-4---script-options-rc-files-profiles-and-packaging.html>
 
-=item * L<MooseX::POE>
-
 =back
+
+=item * L<MooseX::POE>
 
 =back
 
