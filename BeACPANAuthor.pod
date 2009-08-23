@@ -686,6 +686,8 @@ swansun huang
 
 =head1 SEE ALSO
 
+L<Book::Chinese::MasterPerlToday::BeACPANTester>
+
 =head1 AUTHOR
 
 Fayland Lam, C<< <fayland at gmail.com> >>
