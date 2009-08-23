@@ -494,7 +494,7 @@ Gisle Aas, L<Digest::MD5>, L<Digest::SHA1>, L<HTML::Parser>, L<LWP>, L<URI>
 
 =item * L<JESSE|http://search.cpan.org/~JESSE/>
 
-Jesse Vincent, from Best Practical Solutions, L<Jifty>, RT, L<CommitBit>
+Jesse Vincent, 来自 Best Practical Solutions, L<Jifty>, RT, L<CommitBit> 等
 
 =item * L<MIYAGAWA|http://search.cpan.org/~MIYAGAWA/>
 
@@ -538,7 +538,7 @@ Sebastian Riedel, L<Catalyst> 创建者，L<Maypole> 维护者，L<Mojo> 创建�
 
 =item * L<SARTAK|http://search.cpan.org/~SARTAK/>
 
-Shawn M Moore, from Best Practical Solutions, Moose 核心开发者
+Shawn M Moore, 来自 Best Practical Solutions, Moose 核心开发者
 
 =item * L<STEVAN|http://search.cpan.org/~STEVAN/>
 
@@ -558,7 +558,7 @@ Tim Bunce, L<DBI>, L<Devel::NYTProf>
 
 =back
 
-大陆（和香港） Perl CPAN 作者 L<Acme::CPANAuthors::Chinese>
+大陆（和香港） Perl CPAN 作者，参考 L<Acme::CPANAuthors::Chinese>
 
 首字母排序：
 
@@ -665,6 +665,10 @@ woshini
 =item * L<SAL|http://search.cpan.org/~SAL/>
 
 Sal Zhong (仲伟祥)
+
+=item * L<SUNNAVY|http://search.cpan.org/~SUNNAVY/>
+
+孙海军，来自 Best Practical Solutions, L<Shipwright> 维护者
 
 =item * L<SUNTONG|http://search.cpan.org/~SUNTONG/>
 
