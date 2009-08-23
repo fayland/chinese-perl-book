@@ -121,7 +121,7 @@ cpan 默认缓存 index, 这样每次 install 模块的时候可以直接从索�
 
 如果您安装的是 ActivePerl, 那建议你简单下载 nmake L<http://download.microsoft.com/download/vc15/Patch/1.52/W95/EN-US/Nmake15.exe>
 
-个人建议您安装 L<http://strawberryperl.com/|Strawberry Perl>, Strawberry Perl 自带 dmake
+个人建议您安装 L<Strawberry Perl|http://strawberryperl.com/>, Strawberry Perl 自带 dmake
 
 =item * 我没有权限写公用目录，或者，我想拥有自己的安装目录
 
