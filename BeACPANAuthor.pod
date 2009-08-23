@@ -442,6 +442,16 @@ L<http://search.cpan.org/> 在 dist 的主页上是否显示 Repository （如 L
 
 该情况在模块改动大的时候比较有用，先发布一个或多个 dev 版本以供测试。然后去掉 _XX 正式发布。
 
+=item * 修复 World-writable files 错误？
+
+该错误一般发生在 Win32 下。解决方法有三：
+
+一是用最新版的 L<Module::Build>
+
+二是使用该脚本来修复 L<http://perlmonks.org/index.pl?node_id=731935>
+
+三是用非 Win32 系统打包。
+
 =item * 头像
 
 CPAN 使用 L<Gravatar::URL> 调用 L<http://gravatar.com> 上的公用图片。您可以在 http://gravatar.com 上使用你的 CPAN 公开邮件注册并且上传图像。
