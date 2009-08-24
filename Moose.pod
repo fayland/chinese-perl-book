@@ -263,9 +263,9 @@ C<override> 和 C<super> 与普通的 C<< $self->SUPER::display_name >> 并无�
 
 Moose Type 是全局类型，当你使用多个外部包的时候就有可能会造成类型冲突（除非所有的外部包都是用各自的 'packageA.name.' 作为前缀）。C<MooseX::Types> 是属于当前包变量的类型，不容易冲突。
 
-Moose Type 是放在引号之内如 'Int'，这种检测是在运行时检测，出错比较难发现。而 L<MooseX::Types> 是不放在引号里的（如 Int），这种在编译时就会检测。
+Moose Type 是放在引号之内如 'Int'，这种检测是在运行时检测，出错比较难发现。而 MooseX::Types 是不放在引号里的（如 Int），这种在编译时就会检测。
 
-L<MooseX::Types> 拥有更多类型，更容易扩展。常见的如 L<MooseX::Types::Path::Class>
+MooseX::Types 拥有更多类型，更容易扩展。常见的如 L<MooseX::Types::Path::Class>
 
 =item * Roles 和 Traits
 
@@ -309,7 +309,7 @@ L<MooseX::Declare> 可以说是当前 Perl5 最前沿和激动人心的模块。
 
 =item * L<MooseX::Object::Pluggable>
 
-L<Devel::REPL> 是 L<MooseX::Object::Pluggable> 的一个绝好例子。开发过程的介绍（需要爬墙工具）：
+L<Devel::REPL> 是 MooseX::Object::Pluggable 的一个绝好例子。开发过程的介绍（需要爬墙工具）：
 
 =over 4
 
@@ -361,7 +361,7 @@ L<Dist::Zilla> 拥有一个与 L<MooseX::Object::Pluggable> 不同的写 Plugins
 
 L<http://cpants.perl.org/dist/used_by/Moose>
 
-不要因为担心 L<Moose> 的启动速度而放弃它，这点速度是绝对物有所值的。
+不要因为担心 Moose 的启动速度而放弃它，这点速度是绝对物有所值的。
 
 =back
 

@@ -18,7 +18,7 @@ L<DBIx::Class> 是和 L<Catalyst> 分开，两者各自独立。只是他们的�
 
 =item *
 
-L<DBIx::Class> 不是为了性能而开发的。如果你的代码强烈要求性能的话，不建议你使用 DBIx::Class
+DBIx::Class 不是为了性能而开发的。如果你的代码强烈要求性能的话，不建议你使用 DBIx::Class
 
 =item *
 
