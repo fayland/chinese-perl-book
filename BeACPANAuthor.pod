@@ -496,6 +496,10 @@ Gisle Aas, L<Digest::MD5>, L<Digest::SHA1>, L<HTML::Parser>, L<LWP>, L<URI>
 
 Jesse Vincent, 来自 Best Practical Solutions, L<Jifty>, RT, L<CommitBit> 等
 
+=item * JROCKWAY L<http://search.cpan.org/~JROCKWAY/>
+
+Jonathan Rockway, L<Catalyst>, L<Moose> 等新技术的使用者。
+
 =item * MIYAGAWA L<http://search.cpan.org/~MIYAGAWA/>
 
 Tatsuhiko Miyagawa, L<Plagger>, L<Web::Scraper>, L<XML::Atom>, Template-Plugin-*, 
