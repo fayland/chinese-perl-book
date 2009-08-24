@@ -338,7 +338,7 @@ L<Template::Plugin::Filter>
 
 =head3 tpage
 
-L<http://search.cpan.org/perldoc?Template::Tools::tpage>
+L<Template::Tools::tpage>
 
 C<tpage> 用来测试一些简单的 tt2 语法还是比较轻快的。
 
