@@ -84,9 +84,15 @@ L<Template::Manual::Filters>
         END;
        END; %]
 
-注意 loop.next 是得到下一个函数，而 NEXT 是下一个循环；loop.last 是判断是否是最后一个元素，而 LAST 是退出循环。
+注意 loop.next 是得到下一个元素，而 NEXT 是下一个循环；loop.last 是判断是否是最后一个元素，而 LAST 是退出循环。（可以理解成：指令 NEXT, LAST 并没有任何返回值，而变量 loop.next|last 都有返回值。）
 
 更多更详尽的参考 L<Template::Iterator>
+
+=item * CALL
+
+    [% CALL inc_page_counter(page_count) %]
+
+CALL 与 GET 相似但不输出任何东西（忽略返回结果）。
 
 =back
 
