@@ -682,6 +682,10 @@ Tong Sun
 
 swansun huang
 
+=item * XUERON L<http://search.cpan.org/~XUERON/>
+
+Xueron Nee
+
 =item * YEWENBIN L<http://search.cpan.org/~YEWENBIN/>
 
 叶文彬，smth Perl 版主力
