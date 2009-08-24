@@ -96,6 +96,8 @@ CALL 与 GET 相似但不输出任何东西（忽略返回结果）。
 
 =back
 
+更多的请参考 L<Template::Manual::Syntax>
+
 =head2 INSERT INCLUDE PROCESS
 
 为了更好的组织和复用代码，我们会经常将一个网页所调用的 tt 模板分为好几个。
