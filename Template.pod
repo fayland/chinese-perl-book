@@ -6,6 +6,44 @@ Book::Chinese::MasterPerlToday::Template - Template::Toolkit
 
 =head1 DESCRIPTION
 
+=head2 概念
+
+=over 4
+
+=item * Directives 指令类
+
+指令类的语法一般都是大写的。L<Template::Manual::Directives>
+
+最常用的指令有 PROCESS, INCLUDE, IF, ELSE, END, FOREACH, USE, NEXT, LAST 等
+
+=item * Variables 变量
+
+变量一般通过 stash 设置。L<Template::Manual::Variables>
+
+TT 里有几个内置变量需要注意。如 [% template; component; loop; error; content; %]
+
+=item * VMethods 虚拟方法
+
+虚拟方法大部分由 Perl 内在函数转化而已。L<Template::Manual::VMethods>
+
+比如正则替换，排序，删除或切分等。虚拟方法与变量的类型密切相关。
+
+=item * Filters 过滤器
+
+L<Template::Manual::Filters>
+
+过滤器从内在来说与虚拟方法并无很大区分。所有的虚拟方法都可以转为过滤器，反之亦然。
+
+只不过太多的虚拟方法可能会与 HASH/Object 的 key/method 造成键冲突，所以一般（并不绝对）内置函数成虚拟方法而外部模块的方法转成过滤器。
+
+=item * Plugins 插件
+
+插件一般提供实例和基于实例的多种方法。L<Template::Manual::Plugins>
+
+插件一般是 Template 与其他模块的胶水。也可以通过插件来编写过滤器或虚拟方法。
+
+=back
+
 =head2 细节语法
 
 =over 4
