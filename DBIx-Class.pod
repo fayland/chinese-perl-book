@@ -258,7 +258,7 @@ DBIx::Class 的正确使用方法就是用 ResultSet（最起码个人认为是�
 
 =head2 内部结构介绍
 
-=haed3 components 组件
+=head3 components 组件
 
 =over 4
 

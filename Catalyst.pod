@@ -50,9 +50,9 @@ Plugin 通过更新 Catalyst 流程中的某些子程序，或者给 $c 添加�
 
 通常更改 Catalyst 流程的 plugin 是值得的。但是如果仅仅是方便调用，给 $c 添加某个函数，是非常没有必要成为一个 plugin 的。
 
-=over 4
-
 Catalyst 的整个流程包括两个部分。
+
+=over 4
 
 =item * setup
 
@@ -250,9 +250,9 @@ finalize_headers 主要用于更改 cookie 的 Expire 时间。
 
 Authentication 指的是 L<Catalyst::Plugin::Authentication>
 
-=over 4
-
 Authentication 分为两个部分
+
+=over 4
 
 =item * Credential
 
