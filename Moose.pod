@@ -8,7 +8,7 @@ Book::Chinese::MasterPerlToday::Moose - Moose, OO
 
 Perl 的面对对象系统很强大（Moose 是由 Perl 编写），但并不是很好使用。建议使用 L<Moose>。
 
-学习 L<Moose> 最好的方法是阅读 L<Moose::Manual>。
+学习 Moose 最好的方法是阅读 L<Moose::Manual>。
 
 =head2 对象系统
 
@@ -261,7 +261,7 @@ C<override> 和 C<super> 与普通的 C<< $self->SUPER::display_name >> 并无�
 
 一般建议使用 L<MooseX::Types> 而不是内置的 Moose Type。
 
-Moose Type 是全局类型，当你使用多个外部包的时候就有可能会造成类型冲突（除非所有的外部包都是用各自的 'packageA.name.' 作为前缀）。L<MooseX::Types> 是属于当前包变量的类型，不容易冲突。
+Moose Type 是全局类型，当你使用多个外部包的时候就有可能会造成类型冲突（除非所有的外部包都是用各自的 'packageA.name.' 作为前缀）。C<MooseX::Types> 是属于当前包变量的类型，不容易冲突。
 
 Moose Type 是放在引号之内如 'Int'，这种检测是在运行时检测，出错比较难发现。而 L<MooseX::Types> 是不放在引号里的（如 Int），这种在编译时就会检测。
 
