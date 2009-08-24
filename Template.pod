@@ -6,6 +6,50 @@ Book::Chinese::MasterPerlToday::Template - Template::Toolkit
 
 =head1 DESCRIPTION
 
+=head2 细节语法
+
+=over 4
+
+=item * 注释
+
+    [%# a = 77
+       b = 88
+    %]
+    [% # a = 77
+       b = 88
+    %]
+
+在 [% 后紧跟注释符号代表注释整个 [% %], 而之间有空格意味着只注释该行。
+
+=item * 合并多行代码
+
+    [% IF cond;
+        a = a + 1;
+       ELSE;
+        b = b + 2;
+        c = c + 2;
+       END; %]
+
+多行代码用 ';' 分开。
+
+=item * FOREACH 的 loop 变量
+
+    [% FOREACH item IN items;
+        IF loop.first; # 第一个
+            '<b>' _ item _ '</b>';
+            loop.next; # 下一个
+        END;
+        IF loop.even; '<br />'; END; # 双数的时候，等同于 loop.count MOD 2 == 0
+        IF loop.count == 5; # 第五个
+            '<i>' _ item _ '</i>';
+            loop.last; # 退出循环
+        END;
+       END; %]
+
+更多更详尽的参考 L<Template::Iterator>
+
+=back
+
 =head2 INSERT INCLUDE PROCESS
 
 为了更好的组织和复用代码，我们会经常将一个网页所调用的 tt 模板分为好几个。
