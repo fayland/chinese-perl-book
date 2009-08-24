@@ -12,7 +12,7 @@ Book::Chinese::MasterPerlToday::BeACPANAuthor - Be a CPAN Author
 
 =head2 PAUSE
 
-上传模块到 CPAN 之前，您首先需要到 L<PAUSE|http://pause.perl.org/> 申请一个帐号。通常帐号会在一周之内被批准（因为是志愿者自愿维护和批准整个 PAUSE 网站，所以有点慢）。
+上传模块到 CPAN 之前，您首先需要到 PAUSE L<http://pause.perl.org/> 申请一个帐号。通常帐号会在一周之内被批准（因为是志愿者自愿维护和批准整个 PAUSE 网站，所以有点慢）。
 
 上传模块将在您通过帐号批准之后，登录 PAUSE 网站，然后点击左侧的 'Upload a file to CPAN' 来上传您的打包文件。
 
@@ -260,9 +260,9 @@ dzil 跟 L<ExtUtils::MakeMaker>，L<Module::Build>，L<Module::Install> 或 L<Mo
 
 =over 4
 
-=item * dzil 是 distribution builder 而不是 installer。这是跟 L<Module::Install> 的最大区别。
+=item * dzil 是 distribution builder 而不是 installer。这是跟 Module::Install 的最大区别。
 
-=item * dzil 的 installer 还是可以选择用 L<ExtUtils::MakeMaker> 或 L<Module::Build>。
+=item * dzil 的 installer 还是可以选择用 ExtUtils::MakeMaker 或 Module::Build。
 
 =item * dzil 的优点在于你只需要专注于你所要开发的代码，而不用关心 MANIFEST，Makefile.PL，Build.PL 版本或者多余的 POD 代码（如 AUTHOR，COPYRIGHT & LICENSE）。
 
@@ -382,7 +382,7 @@ L<http://search.cpan.org/> 在 dist 的主页上是否显示 Repository （如 L
 
 =over 4
 
-=item * Build.PL (L<Module::Build>)
+=item * Build.PL (Module::Build)
 
   meta_merge     => {
     resources => {
@@ -396,7 +396,7 @@ L<http://search.cpan.org/> 在 dist 的主页上是否显示 Repository （如 L
 
 将类似上面的东西传进 Module::Build->new，参考 L<http://search.cpan.org/dist/Module-Build/Build.PL>。
 
-=item * Makefile.PL (L<ExtUtils::MakeMaker>)
+=item * Makefile.PL (ExtUtils::MakeMaker)
 
     META_MERGE      => {
         resources => {
@@ -410,7 +410,7 @@ L<http://search.cpan.org/> 在 dist 的主页上是否显示 Repository （如 L
 
 将类似上面的东西传进 WriteMakefile，参考 L<http://search.cpan.org/dist/ExtUtils-MakeMaker/Makefile.PL>。
 
-=item * Makefile.PL (L<Module::Install>)
+=item * Makefile.PL (Module::Install)
 
     repository 'http://svn.ali.as/cpan/trunk/Module-Install';
     homepage 'http://homepage/';
@@ -418,7 +418,7 @@ L<http://search.cpan.org/> 在 dist 的主页上是否显示 Repository （如 L
 
 将类似上面的东西直接写进 Makefile.PL。
 
-=item * dist.ini (L<Dist::Zilla>)
+=item * dist.ini (Dist::Zilla)
 
     [MetaResources]
     repository = http://github.com/rjbs/dist-zilla
@@ -466,89 +466,89 @@ CPAN 使用 L<Gravatar::URL> 调用 L<http://gravatar.com> 上的公用图片。
 
 =over 4
 
-=item * L<ADAMK|http://search.cpan.org/~ADAMK/>
+=item * ADAMK L<http://search.cpan.org/~ADAMK/>
 
 Adam Kennedy 是 CPAN 最多产的作者之一。L<File::HomeDir>，L<IPC::Run>，L<Perl::Dist>，L<pip>，L<PPI> 等等。
 
-=item * L<AUTRIJUS|http://search.cpan.org/~AUTRIJUS/>
+=item * AUTRIJUS L<http://search.cpan.org/~AUTRIJUS/>
 
-=item * L<AUDREYT|http://search.cpan.org/~AUDREYT/>
+=item * AUDREYT L<http://search.cpan.org/~AUDREYT/>
 
 ☻ 唐鳳 ☺, 国人的骄傲（台湾）。Perl6 pugs 的开发者。L<Locale::Maketext::Lexicon>, L<Module::Install>, L<PAR> 的发起者
 
-=item * L<CHROMATIC|http://search.cpan.org/~CHROMATIC/>
+=item * CHROMATIC L<http://search.cpan.org/~CHROMATIC/>
 
 chromatic, L<Modern::Perl>.
 
-=item * L<DROLSKY|http://search.cpan.org/~DROLSKY/>
+=item * DROLSKY L<http://search.cpan.org/~DROLSKY/>
 
 Dave Rolsky, L<Moose>, L<DateTime> 和 L<HTML::Mason> 的开发者和维护者。
 
-=item * L<FLORA|http://search.cpan.org/~FLORA/>
+=item * FLORA L<http://search.cpan.org/~FLORA/>
 
 Florian Ragwitz, L<Catalyst>, L<Moose> 的作者之一
 
-=item * L<GAAS|http://search.cpan.org/~GAAS/>
+=item * GAAS L<http://search.cpan.org/~GAAS/>
 
 Gisle Aas, L<Digest::MD5>, L<Digest::SHA1>, L<HTML::Parser>, L<LWP>, L<URI>
 
-=item * L<JESSE|http://search.cpan.org/~JESSE/>
+=item * JESSE L<http://search.cpan.org/~JESSE/>
 
 Jesse Vincent, 来自 Best Practical Solutions, L<Jifty>, RT, L<CommitBit> 等
 
-=item * L<MIYAGAWA|http://search.cpan.org/~MIYAGAWA/>
+=item * MIYAGAWA L<http://search.cpan.org/~MIYAGAWA/>
 
 Tatsuhiko Miyagawa, L<Plagger>, L<Web::Scraper>, L<XML::Atom>, Template-Plugin-*, 
 
-=item * L<MSCHWERN|http://search.cpan.org/~MSCHWERN/>
+=item * MSCHWERN L<http://search.cpan.org/~MSCHWERN/>
 
 Michael G Schwern, L<ExtUtils::MakeMaker>, L<Test::More>, L<Time::y2038>, L<URI::Find>
 
-=item * L<MSTROUT|http://search.cpan.org/~MSTROUT/>
+=item * MSTROUT L<http://search.cpan.org/~MSTROUT/>
 
 Matt S Trout, L<DBIx::Class>, L<Catalyst>, L<Devel::REPL>, L<local::lib>, L<Reaction>
 
-=item * L<NUFFIN|http://search.cpan.org/~NUFFIN/>
+=item * NUFFIN L<http://search.cpan.org/~NUFFIN/>
 
 יובל קוג'מן (Yuval Kogman), Catalyst n 多 Plugin 和 n 多 MooseX 的作者。L<Moose> 的作者之一。L<KiokuDB> 的发起者
 
-=item * L<OVID|http://search.cpan.org/~OVID/>
+=item * OVID L<http://search.cpan.org/~OVID/>
 
 Curtis "Ovid" Poe, L<Class::Sniff>, L<HTML::TokeParser::Simple>, L<Test::Aggregate>, L<Test::Most>
 
-=item * L<PERIGRIN|http://search.cpan.org/~PERIGRIN/>
+=item * PERIGRIN L<http://search.cpan.org/~PERIGRIN/>
 
 Chris Prather, L<JSON::Any>, L<Task::Kensho>
 
-=item * L<PETDANCE|http://search.cpan.org/~PETDANCE/>
+=item * PETDANCE L<http://search.cpan.org/~PETDANCE/>
 
 Andy Lester, L<ack>, L<File::Next>, L<Test::Harness>, L<WWW::Mechanize>
 
-=item * L<RJBS|http://search.cpan.org/~RJBS/>
+=item * RJBS L<http://search.cpan.org/~RJBS/>
 
 Ricardo SIGNES, Email 模块最多的作者。L<Dist::Zilla>, L<Email::Sender>
 
-=item * L<SMUELLER|http://search.cpan.org/~SMUELLER/>
+=item * SMUELLER L<http://search.cpan.org/~SMUELLER/>
 
 Steffen Müller, L<Class::XSAccessor>, L<PAR>
 
-=item * L<SRI|http://search.cpan.org/~SRI/>
+=item * SRI L<http://search.cpan.org/~SRI/>
 
 Sebastian Riedel, L<Catalyst> 创建者，L<Maypole> 维护者，L<Mojo> 创建者
 
-=item * L<SARTAK|http://search.cpan.org/~SARTAK/>
+=item * SARTAK L<http://search.cpan.org/~SARTAK/>
 
 Shawn M Moore, 来自 Best Practical Solutions, Moose 核心开发者
 
-=item * L<STEVAN|http://search.cpan.org/~STEVAN/>
+=item * STEVAN L<http://search.cpan.org/~STEVAN/>
 
 Stevan Little, L<Moose> 的原始作者。L<Class::C3>, L<JSORB>
 
-=item * L<SZABGAB|http://search.cpan.org/~SZABGAB/>
+=item * SZABGAB L<http://search.cpan.org/~SZABGAB/>
 
 גאבור סבו - Gábor Szabó, L<Padre>
 
-=item * L<TIMB|http://search.cpan.org/~TIMB/>
+=item * TIMB L<http://search.cpan.org/~TIMB/>
 
 Tim Bunce, L<DBI>, L<Devel::NYTProf>
 
@@ -564,121 +564,121 @@ Tim Bunce, L<DBI>, L<Devel::NYTProf>
 
 =over 4
 
-=item * L<AGENT|http://search.cpan.org/~AGENT/>
+=item * AGENT L<http://search.cpan.org/~AGENT/>
 
 agentzh (章亦春)，大陆最牛的 Perler 之一，L<OpenResty> 的源码值得学习
 
-=item * L<ALEXE|http://search.cpan.org/~ALEXE/>
+=item * ALEXE L<http://search.cpan.org/~ALEXE/>
 
 Alexe, 运营自己的公司（以 Perl 为主）。
 
-=item * L<CHAOSLAW|http://search.cpan.org/~CHAOSLAW/>
+=item * CHAOSLAW L<http://search.cpan.org/~CHAOSLAW/>
 
 王晓哲，smth Perl 版主力
 
-=item * L<CHENYR|http://search.cpan.org/~CHENYR/>
+=item * CHENYR L<http://search.cpan.org/~CHENYR/>
 
 Chen Yirong (春江)
 
-=item * L<CHUNZI|http://search.cpan.org/~CHUNZI/>
+=item * CHUNZI L<http://search.cpan.org/~CHUNZI/>
 
 chunzi, 译有《Perl Testing 程序高手秘笈》
 
-=item * L<CNANGEL|http://search.cpan.org/~CNANGEL/>
+=item * CNANGEL L<http://search.cpan.org/~CNANGEL/>
 
 李俊良
 
-=item * L<DONGXU|http://search.cpan.org/~DONGXU/>
+=item * DONGXU L<http://search.cpan.org/~DONGXU/>
 
 Dongxu Ma
 
-=item * L<FAYLAND|http://search.cpan.org/~FAYLAND/>
+=item * FAYLAND L<http://search.cpan.org/~FAYLAND/>
 
 Fayland 林，本书作者
 
-=item * L<FOOLFISH|http://search.cpan.org/~FOOLFISH/>
+=item * FOOLFISH L<http://search.cpan.org/~FOOLFISH/>
 
 钱宇/Qian Yu
 
-=item * L<HGNENG|http://search.cpan.org/~HGNENG/>
+=item * HGNENG L<http://search.cpan.org/~HGNENG/>
 
 黄冠能
 
-=item * L<HOOWA|http://search.cpan.org/~HOOWA/>
+=item * HOOWA L<http://search.cpan.org/~HOOWA/>
 
 孙冰
 
-=item * L<ISLUE|http://search.cpan.org/~ISLUE/>
+=item * ISLUE L<http://search.cpan.org/~ISLUE/>
 
 胡海麟
 
-=item * L<JOEJIANG|http://search.cpan.org/~JOEJIANG/>
+=item * JOEJIANG L<http://search.cpan.org/~JOEJIANG/>
 
 蒋永清，译有《Perl Testing 程序高手秘笈》
 
-=item * L<JWU|http://search.cpan.org/~JWU/>
+=item * JWU L<http://search.cpan.org/~JWU/>
 
-=item * L<MAIN|http://search.cpan.org/~MAIN/>
+=item * MAIN L<http://search.cpan.org/~MAIN/>
 
 吴健源
 
-=item * L<JZHANG|http://search.cpan.org/~JZHANG/>
+=item * JZHANG L<http://search.cpan.org/~JZHANG/>
 
 张军
 
-=item * L<KAILI|http://search.cpan.org/~KAILI/>
+=item * KAILI L<http://search.cpan.org/~KAILI/>
 
 李凯
 
-=item * L<LAOMOI|http://search.cpan.org/~LAOMOI/>
+=item * LAOMOI L<http://search.cpan.org/~LAOMOI/>
 
 xiaoshengcaicai
 
-=item * L<NSNAKE|http://search.cpan.org/~NSNAKE/>
+=item * NSNAKE L<http://search.cpan.org/~NSNAKE/>
 
 徐昊
 
-=item * L<PANGJ|http://search.cpan.org/~PANGJ/>
+=item * PANGJ L<http://search.cpan.org/~PANGJ/>
 
 Jeff Pang
 
-=item * L<PANYU|http://search.cpan.org/~PANYU/>
+=item * PANYU L<http://search.cpan.org/~PANYU/>
 
 PAN YU
 
-=item * L<QJZHOU|http://search.cpan.org/~QJZHOU/>
+=item * QJZHOU L<http://search.cpan.org/~QJZHOU/>
 
 Qing-Jie Zhou
 
-=item * L<RANN|http://search.cpan.org/~RANN/>
+=item * RANN L<http://search.cpan.org/~RANN/>
 
 灿烂微笑 / Ran Ningyu
 
-=item * L<REDICAPS|http://search.cpan.org/~REDICAPS/>
+=item * REDICAPS L<http://search.cpan.org/~REDICAPS/>
 
 woshini
 
-=item * L<ROOTKWOK|http://search.cpan.org/~ROOTKWOK/>
+=item * ROOTKWOK L<http://search.cpan.org/~ROOTKWOK/>
 
 ☰郭樂聰☷ ☯βαggiσ☯
 
-=item * L<SAL|http://search.cpan.org/~SAL/>
+=item * SAL L<http://search.cpan.org/~SAL/>
 
 Sal Zhong (仲伟祥)
 
-=item * L<SUNNAVY|http://search.cpan.org/~SUNNAVY/>
+=item * SUNNAVY L<http://search.cpan.org/~SUNNAVY/>
 
 孙海军，来自 Best Practical Solutions, L<Shipwright> 维护者
 
-=item * L<SUNTONG|http://search.cpan.org/~SUNTONG/>
+=item * SUNTONG L<http://search.cpan.org/~SUNTONG/>
 
 Tong Sun
 
-=item * L<SWANSUN|http://search.cpan.org/~SWANSUN/>
+=item * SWANSUN L<http://search.cpan.org/~SWANSUN/>
 
 swansun huang
 
-=item * L<YEWENBIN|http://search.cpan.org/~YEWENBIN/>
+=item * YEWENBIN L<http://search.cpan.org/~YEWENBIN/>
 
 叶文彬，smth Perl 版主力
 
