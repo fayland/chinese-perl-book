@@ -37,14 +37,16 @@ Book::Chinese::MasterPerlToday::Template - Template::Toolkit
     [% FOREACH item IN items;
         IF loop.first; # 第一个
             '<b>' _ item _ '</b>';
-            loop.next; # 下一个
+            NEXT; # 下一个
         END;
         IF loop.even; '<br />'; END; # 双数的时候，等同于 loop.count MOD 2 == 0
         IF loop.count == 5; # 第五个
-            '<i>' _ item _ '</i>';
-            loop.last; # 退出循环
+            item _ ' More... ';
+            LAST; # 退出循环
         END;
        END; %]
+
+注意 loop.next 是得到下一个函数，而 NEXT 是下一个循环；loop.last 是判断是否是最后一个元素，而 LAST 是退出循环。
 
 更多更详尽的参考 L<Template::Iterator>
 
