@@ -240,7 +240,7 @@ Template 定义了一些常用的过滤器，我们将通过语法介绍来认�
 
 这两种不同的过滤器有两种不同的写法。
 
-=head3 FILTERS
+=head4 FILTERS
 
     my $tt = Template->new({
         FILTERS => {
@@ -285,7 +285,7 @@ Template 定义了一些常用的过滤器，我们将通过语法介绍来认�
     tEMPLATE IS GREAT
     templa
 
-=head3 PLUGINS
+=head4 PLUGINS
 
 L<Template::Plugin::Filter>
 
