@@ -24,7 +24,7 @@ TT 里有几个内置变量需要注意。如 [% template; component; loop; erro
 
 =item * VMethods 虚拟方法
 
-虚拟方法大部分由 Perl 内在函数转化而已。L<Template::Manual::VMethods>
+虚拟方法大部分由 Perl 内在函数转化而成。L<Template::Manual::VMethods>
 
 比如正则替换，排序，删除或切分等。虚拟方法与变量的类型密切相关。
 
