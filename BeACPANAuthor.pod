@@ -752,6 +752,10 @@ lilo
 
 單中杰
 
+=item * LEEYM L<http://search.cpan.org/~LEEYM/>
+
+Yen-Ming Lee (李彥明)
+
 =item * LUKHNOS L<http://search.cpan.org/~LUKHNOS/>
 
 Lukhnos D. Liu
