@@ -94,6 +94,12 @@ L<Template::Manual::Filters>
 
 CALL 与 GET 相似但不输出任何东西（忽略返回结果）。
 
+=item * Hash 的键里含有特殊符号
+
+    [% feed.item('openSearch:totalResults') %]
+
+当键里含有特殊符号如 ':' 时，可以使用 item 来获取值。参考 L<Template::Manual::VMethods>
+
 =back
 
 更多的请参考 L<Template::Manual::Syntax>
