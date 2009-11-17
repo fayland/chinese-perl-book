@@ -692,6 +692,96 @@ Xueron Nee
 
 =back
 
+台湾 Perl CPAN 作者，参考 L<Acme::CPANAuthors::Taiwanese>
+
+首字母排序：
+
+=over 4
+
+=item * AUDREYT L<http://search.cpan.org/~AUDREYT/>
+
+=item * BLUET L<http://search.cpan.org/~BLUET/>
+
+BlueT - Matthew Lien - 練喆明
+
+=item * CLKAO L<http://search.cpan.org/~CLKAO/>
+
+Chia-liang Kao (高嘉良), L<SVK>
+
+=item * CLSUNG L<http://search.cpan.org/~CLSUNG/>
+
+Cheng-Lung Sung (宋政隆)
+
+=item * CORNELIUS L<http://search.cpan.org/~CORNELIUS/>
+
+Yo-An Lin (林佑安), c9s
+
+=item * DRBEAN L<http://search.cpan.org/~DRBEAN/>
+
+Dr Bean
+
+=item * GUGOD L<http://search.cpan.org/~GUGOD/>
+
+劉康民, L<Markapl>, L<Perl6ish>, L<Rubyish>
+
+=item * GSLIN L<http://search.cpan.org/~GSLIN/>
+
+Gea-Suan Lin
+
+=item * HCCHIEN L<http://search.cpan.org/~HCCHIEN/>
+
+簡信昌
+
+=item * IJLIAO L<http://search.cpan.org/~IJLIAO/>
+
+Ying-Chieh Liao
+
+=item * IMACAT L<http://search.cpan.org/~IMACAT/>
+
+依瑪貓
+
+=item * KCWU L<http://search.cpan.org/~KCWU/>
+
+Kuang-che Wu (吳光哲)
+
+=item * KENWU L<http://search.cpan.org/~KENWU/>
+
+lilo
+
+=item * KENSHAN L<http://search.cpan.org/~KENSHAN/>
+
+單中杰
+
+=item * LEEYM L<http://search.cpan.org/~LEEYM/>
+
+Yen-Ming Lee (李彥明)
+
+=item * LUKHNOS L<http://search.cpan.org/~LUKHNOS/>
+
+Lukhnos D. Liu
+
+=item * MINDOS L<http://search.cpan.org/~MINDOS/>
+
+鄭智中
+
+=item * SHELLING L<http://search.cpan.org/~SHELLING/>
+
+許家瑋
+
+=item * SNOWFLY L<http://search.cpan.org/~SNOWFLY/>
+
+飄然似雪
+
+=item * VICTOR L<http://search.cpan.org/~VICTOR/>
+
+謝毓庭, Victor Hsieh
+
+=item * XERN L<http://search.cpan.org/~XERN/>
+
+☼ 林永忠 ☼
+
+=back
+
 =head1 SEE ALSO
 
 L<Book::Chinese::MasterPerlToday::BeACPANTester>
