@@ -142,7 +142,7 @@ cpan 默认缓存 index, 这样每次 install 模块的时候可以直接从索�
 
 =head2 CPAN 工具
 
-=head3 App::cpanminus
+=head3 cpanm
 
 L<App::cpanminus> 拥有如下优势：
 
@@ -158,7 +158,11 @@ L<App::cpanminus> 拥有如下优势：
 
 =back
 
-=head2 minicpan
+=head3 cpanf
+
+L<App::CPAN::Fresh> 使用最快的镜像来安装模块。如果您在 CPAN Feed 上看到一个想安装的模块，但是它还没有到您的镜像时，可以使用 cpanf 来安装这个模块。
+
+=head3 minicpan
 
     cpan> install CPAN::Mini
 
