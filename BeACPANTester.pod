@@ -93,11 +93,11 @@ cpan 默认缓存 index, 这样每次 install 模块的时候可以直接从索�
 
 =item * 安装某个本地或远程地址的包
 
-有时候某个包不在 CPAN 上，但是你想通过 cpan 简化安装的话，请安装 L<pip>。安装之后：
+有时候某个包不在 CPAN 上，但是你想通过 cpan 简化安装的话，请安装 L<App::cpanminus>。安装之后：
 
-    $> pip http://fayland.org/CPAN/Book-Chinese-MasterPerlToday-0.01.tar.gz
+    $> cpanm http://fayland.org/CPAN/Book-Chinese-MasterPerlToday-0.01.tar.gz
     # 或者
-    $> pip Local-Package.tar.gz
+    $> cpanm Local-Package.tar.gz
 
 =item * 测试无法通过，但是我想强制安装
 
@@ -106,6 +106,7 @@ cpan 默认缓存 index, 这样每次 install 模块的时候可以直接从索�
 或者在命令行：
 
     $> perl -MCPAN -e 'force("install", "Foorum");'
+    $> cpanm -f Foorum
 
 =item * 我想手工运行 perl Makefile.PL
 
@@ -138,6 +139,24 @@ cpan 默认缓存 index, 这样每次 install 模块的时候可以直接从索�
     cpan> o conf init test_report
 
 这就是成为一个 CPAN 测试者您所需要的所有动作。
+
+=head2 CPAN 工具
+
+=head3 App::cpanminus
+
+L<App::cpanminus> 拥有如下优势：
+
+=over 4
+
+=item * 快速
+
+快速不仅仅是安装的整个过程很快，还在于它会自动使用最优默认选项来回答所有问题，无需任何手工输入。
+
+=item * 简约
+
+很少 debug 信息输出。
+
+=back
 
 =head2 minicpan
 
