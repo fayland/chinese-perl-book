@@ -180,6 +180,15 @@ L<CPAN::Mini> 主要用于创建一个本地最小的 CPAN 镜像。它可以加
 
 =back
 
+=head3 perlbrew
+
+L<App::perlbrew> 可以在您的 $HOME 目录安装不同的 Perl 版本，并且通过命令行来切换使用不同的 Perl 版本。
+
+    $ perlbrew init
+    $ perlbrew install perl-5.12.1
+    $ perlbrew switch perl-5.12.1
+    $ perlbrew off
+
 =head2 CPAN 相关网站
 
 =over 4
