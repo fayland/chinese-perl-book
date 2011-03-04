@@ -238,7 +238,7 @@ C<inner> 和 C<augment> 一般用于基础的父类定义通用代码，而继�
       return $xml;
   };
 
-可以在 argment 里再次调用 inner.
+可以在 augment 里再次调用 inner.
 
 C<override> 和 C<super> 与普通的 C<< $self->SUPER::display_name >> 并无特别大的不同。
 
