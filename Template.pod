@@ -61,12 +61,12 @@ L<Template::Manual::Filters>
 
 =item * 合并多行代码
 
-    [% IF cond;
-        a = a + 1;
-       ELSE;
-        b = b + 2;
-        c = c + 2;
-       END; %]
+    [%  IF cond;
+            a = a + 1;
+        ELSE;
+            b = b + 2;
+            c = c + 2;
+        END; %]
 
 多行代码用 ';' 分开。
 
@@ -94,7 +94,7 @@ L<Template::Manual::Filters>
 
 CALL 与 GET 相似但不输出任何东西（忽略返回结果）。
 
-=item * Hash 的键里含有特殊符号
+=item * Hash 的键里含有特殊符号或者空格
 
     [% feed.item('openSearch:totalResults') %]
 
@@ -129,7 +129,7 @@ INSERT 一般不常用。它仅仅是将外部文件读取然后输出，不经�
 输出结果如下：
 
     E:\Fayland\chinese-perl-book\eg\Template>tpage insert.tt2
-    
+
     foo = main in Main
     [% foo = 'bar' %]
     foo = [% foo %] in External File.
@@ -145,7 +145,7 @@ INSERT 一般不常用。它仅仅是将外部文件读取然后输出，不经�
 输出结果：(eg/Template/include.tt2)
 
     E:\Fayland\chinese-perl-book\eg\Template>tpage --pre_chomp include.tt2
-    
+
     foo = main in Main
     foo = bar in External File.
     foo = main in Main after insert/include/process
@@ -160,7 +160,7 @@ INSERT 一般不常用。它仅仅是将外部文件读取然后输出，不经�
 输出结果：(eg/Template/process.tt2)
 
     E:\Fayland\chinese-perl-book\eg\Template>tpage --pre_chomp process.tt2
-    
+
     foo = main in Main
     foo = bar in External File.
     foo = bar in Main after insert/include/process
@@ -182,12 +182,12 @@ INCLUDE 和 PROCESS 是最常用的调用方法。如上面的例子说显示的
     -guide text-
     [% END %]
     [% INCLUDE guide %]
-    
+
     [% blk_var = BLOCK %]
     -block var-
     [% END %]
     [% blk_var %]
-    
+
     [% INCLUDE guide %]
     [% blk_var %]
 
@@ -255,7 +255,7 @@ Template 定义了一些常用的过滤器，我们将通过语法介绍来认�
             'cut' => [ \&cut, 1 ], # our dynamic filter
         },
     });
-    
+
     sub ucf {
         my $text = shift;
         $text = ucfirst lc $text;
@@ -281,7 +281,7 @@ Template 定义了一些常用的过滤器，我们将通过语法介绍来认�
     [% END %]
     [% lcf_text = 'template is great' %]
     [% lcf_text | lcf %]
-    
+
     [% FILTER cut(6) %]template is great[% END %]
 
 运行结果为
@@ -302,12 +302,12 @@ L<Template::Plugin::Filter>
     use Template::Plugin::Filter;
     use base qw(Template::Plugin::Filter);
     use Text::Textile ();
-    
+
     sub filter {
        my ($self, $text) = @_;
        return Text::Textile::textile($text);
     }
-    
+
     1;
 
 另一种过滤器的写法是通过继承 L<Template::Plugin::Filter>
