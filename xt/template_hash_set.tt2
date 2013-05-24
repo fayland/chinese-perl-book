@@ -1,0 +1,4 @@
+[% 	hash = {};
+	hash.item("space stuff") = "space value"; %]
+
+HASH "space stuff" = [% hash.item("space stuff") %]

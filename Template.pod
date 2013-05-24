@@ -97,6 +97,7 @@ CALL 与 GET 相似但不输出任何东西（忽略返回结果）。
 =item * Hash 的键里含有特殊符号或者空格
 
     [% feed.item('openSearch:totalResults') %]
+    [% hash.item("space stuff") = "space value"; %]
 
 当键里含有特殊符号如 ':' 时，可以使用 item 来获取值。参考 L<Template::Manual::VMethods>
 
